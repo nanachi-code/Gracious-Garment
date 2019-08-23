@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nanachi1/Gracious-Garment"
+    "url": "git+https://github.com/nanachi1/Gracious-Garment.git"
   },
   "keywords": [
     "nodejs",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/nanachi1/Gracious-Garment#readme",
   "dependencies": {
+    "ejs": "^2.6.2",
     "express": "^4.17.1",
     "nodemon": "^1.19.1"
   }
