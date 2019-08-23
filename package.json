@@ -1,0 +1,29 @@
+{
+  "name": "gracious-garment",
+  "version": "1.0.0",
+  "description": "Final Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanachi1/Gracious-Garment"
+  },
+  "keywords": [
+    "nodejs",
+    "html5",
+    "bootstrap",
+    "ejs"
+  ],
+  "author": "Nanachi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nanachi1/Gracious-Garment/issues"
+  },
+  "homepage": "https://github.com/nanachi1/Gracious-Garment#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
+}
