@@ -37,15 +37,16 @@ select {
 .card{
     padding: 0 !important;
     background-color: #ededed !important;
-    height: 40px;
-    line-height: 40px;
+    height: 45px;
+    line-height: 45px;
+    border: none !important;
 }
 .card-body{
     width: 100%;
     position: absolute !important;
 }
 #collapseExample{
-    padding-top: 10px;
+    padding-top: 5px;
 }
 h5 {
     font-size: 1rem;
@@ -60,8 +61,8 @@ h5 {
     display: inline-table;
     /*float: left;*/
     width: 14%;
-    height: 40px;
-    line-height: 40px;
+    height: 45px;
+    line-height: 45px;
     position: relative;
     text-align: center;
 }
