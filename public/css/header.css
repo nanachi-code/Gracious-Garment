@@ -91,9 +91,3 @@ h5 {
     width: 500px!important;
     text-align: left !important;
 }
-
-.collapsing {
-    -webkit-transition: none;
-    transition: none;
-    display: none;
-}
