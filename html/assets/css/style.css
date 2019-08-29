@@ -182,6 +182,7 @@ a {
 
 h5 {
     font-size: 18px;
+    color: #000000;
 }
 
 /* ====================================
@@ -200,12 +201,14 @@ header {
 }
 
 .iconlogo img {
-    width: 50px;
+    width: 50px !important;
+    height: 50px !important;
     background-repeat: no-repeat;
+    position: absolute;
 }
-
 #navbar-menu a {
-    color: black;
+    color: #000000;
+    font-weight: 500;
 }
 
 #navbar-menu a:hover {
@@ -227,10 +230,12 @@ select {
 
 #sel1 {
     padding: 0;
+    background-color: #e3e3e3;
 }
 
 #lang {
     padding: 0;
+    background-color: #e3e3e3;
 }
 
 .card {
@@ -244,7 +249,7 @@ select {
 .card-body {
     width: 100%;
     position: absolute !important;
-    margin-top: 15px;
+    margin-top: 13px;
     left: 0;
     right: 0;
 }
