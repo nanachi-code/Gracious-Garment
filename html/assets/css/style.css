@@ -44,116 +44,30 @@ img {
     max-width: 100%;
 }
 
-input[type=date],
-input[type=datetime-local],
-input[type=email],
-input[type=number],
-input[type=password],
-input[type=search-md],
-input[type=search],
-input[type=tel],
-input[type=text],
-input[type=time],
-input[type=url],
-textarea,
-select {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    outline: none;
-    width: 100%;
-    padding: 0 20px;
+::-webkit-scrollbar {
+    width: 4px;
 }
 
-select.text_field {
-    height: 50px;
+::-webkit-scrollbar-track {
+    background: #e7e7e7;
 }
 
-select.text_field {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
 }
 
-input {
-    line-height: 45px;
-    height: 45px;
-    border: 1px solid #ececec;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    color: #747b86;
-    font-size: 16px;
+button,
+input[type=reset]{
+    font-size: 12px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold !important;
+    text-transform: uppercase;
 }
-
-label,
-.form-group p.label {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 26px;
-    text-transform: capitalize;
-    margin-bottom: 10px;
-    color: #000;
-}
-
-label span,
-.form-group p.label span {
-    font-weight: 400;
-    font-size: 15px;
-    color: #555;
-}
-
-label sup,
-.form-group p.label sup {
-    color: #ff6a6d;
-}
-
-select[multiple] {
-    height: 80px;
-}
-
-select:focus {
-    outline: 0;
-    border-color: #0674ec;
-}
-
-.select--field {
-    height: 55px;
-    border: 1px solid #dcdcdc;
-}
-
-.text_field {
-    line-height: 50px;
-    background: #f4f5f8;
-    border: none;
-}
-
-textarea {
-    border: 1px solid #ececec;
-    min-height: 135px;
-    line-height: 25px;
-    padding-top: 15px;
-}
-
-textarea.text_field {
-    line-height: 25px;
-    padding-top: 15px;
-    min-height: 135px;
-}
-
-button {
-    margin: 0;
-    padding: 0;
-}
-
-button:focus {
-    outline: 0;
-}
-
 /* ====================================
         Typography
 ======================================= */
 body {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
 }
 
 p {
@@ -180,15 +94,23 @@ a {
     color: #000;
 }
 
-h5 {
+h4 {
     font-size: 18px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
 }
 
 /* ====================================
         Helper class
 ======================================= */
 .text-bold {
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 /* ====================================
@@ -345,4 +267,33 @@ footer a {
 
 .footer-nav-content ul li {
     margin-bottom: 16px;
+}
+
+/* ====================================
+        Category
+======================================= */
+.sidebar {
+    border: #c5c5c5 solid 2px;
+    padding: 10px;
+    margin-bottom: 20px;
+    max-height: 255px;
+}
+
+.sidebar .form-group label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sidebar .form-check label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sidebar .form-group input {
+    width: 100%;
+}
+
+.sidebar-title {
+    margin-bottom: 10px;
+    color: #838383;
 }
