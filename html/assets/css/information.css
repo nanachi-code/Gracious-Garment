@@ -42,3 +42,7 @@ tr{
     padding-top: 35px !important;
     padding-left: 35px !important;
 }
+#map{
+    width: 500px;
+    height: 500px;
+}
