@@ -296,7 +296,10 @@ footer a {
     border: #c5c5c5 solid 2px;
     padding: 10px;
     margin-bottom: 20px;
-    max-height: 255px;
+}
+
+.sidebar-content {
+    max-height: 215px;
 }
 
 .sidebar .form-group label {
@@ -331,6 +334,14 @@ footer a {
     font-family: 'Oswald', sans-serif;
 }
 
+.brand{
+   color: #b69f62;
+}
+
+.pagination span.active, .pagination a{
+    font-size: 12px;
+    font-weight: bold;
+}
 /* ====================================
         Information
 ======================================= */
