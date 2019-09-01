@@ -105,7 +105,7 @@ h2 {
     font-weight: bold;
 }
 
-h3{
+h3 {
     font-size: 20px;
 }
 
@@ -296,7 +296,10 @@ footer a {
     border: #c5c5c5 solid 2px;
     padding: 10px;
     margin-bottom: 20px;
-    max-height: 255px;
+}
+
+.sidebar-content {
+    max-height: 215px;
 }
 
 .sidebar .form-group label {
@@ -331,6 +334,14 @@ footer a {
     font-family: 'Oswald', sans-serif;
 }
 
+.brand{
+   color: #b69f62;
+}
+
+.pagination span.active, .pagination a{
+    font-size: 12px;
+    font-weight: bold;
+}
 /* ====================================
         Information
 ======================================= */
@@ -367,6 +378,7 @@ tr {
     height: 500px;
 }
 
+
     /* ====================================
             Checkout
     ======================================= */
@@ -386,31 +398,17 @@ tr {
     margin-top: 15px;
 
 }
-.box{
+.box {
+
     margin-top: 15px;
     padding: 15px;
     background-color: #fafafa
 }
+
 .icon{
     font-size: 30px;
 }
 .line{
     padding: 10px 0 10px;
 }
-.text1{
-    font-family: Montserrat;
-    font-size: 18px;
-}
-.text2{
-    font-family: Montserrat;
-    font-size: 13px;
-}
-.text3{
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: bold;
-}
-.text4{
-    font-family: Montserrat;
-    font-size: 14px;
-}
+

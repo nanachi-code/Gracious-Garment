@@ -149,132 +149,147 @@
                             Filter
                         </h5>
 
-                        <!-- Price range -->
-                        <div class="overflow-auto sidebar mt-2">
+                        <!-- Price range start-->
+                        <div class="sidebar mt-2">
                             <h6 class="text-bold sidebar-title">
                                 Price range
                             </h6>
 
-                            <div class="form-group">
-                                <label for="maxPrice">
-                                    Max price
-                                </label>
-                                <input type="number" name="maxPrice" id="maxPrice">
+                            <div class="overflow-auto sidebar-content">
+                                <div class="form-group">
+                                    <label for="maxPrice">
+                                        Max price
+                                    </label>
+                                    <input type="number" name="maxPrice" id="maxPrice">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="minPrice">
+                                        Min price
+                                    </label>
+                                    <input type="number" name="minPrice" id="minPrice">
+
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="minPrice">
-                                    Min price
-                                </label>
-                                <input type="number" name="minPrice" id="minPrice">
-
-                            </div>
                         </div>
 
                         <!-- Sort by -->
-                        <div class="overflow-auto sidebar mt-2">
+                        <div class="sidebar mt-2">
                             <h6 class="text-bold sidebar-title">
                                 Sort by
                             </h6>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sort" id="sortNew" value="new">
-                                <label class="form-check-label" for="sortNew">
-                                    New
-                                </label>
+                            <div class="overflow-auto sidebar-content">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sort" id="sortNew" value="new">
+                                    <label class="form-check-label" for="sortNew">
+                                        New
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sort" id="sortPriceASC"
+                                        value="priceASC">
+                                    <label class="form-check-label" for="sortPriceASC">
+                                        Price ascending
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sort" id="sortPriceDESC"
+                                        value="priceDESC">
+                                    <label class="form-check-label" for="sortPriceDESC">
+                                        Price descending
+                                    </label>
+                                </div>
                             </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sort" id="sortPriceASC"
-                                    value="priceASC">
-                                <label class="form-check-label" for="sortPriceASC">
-                                    Price ascending
-                                </label>
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sort" id="sortPriceDESC"
-                                    value="priceDESC">
-                                <label class="form-check-label" for="sortPriceDESC">
-                                    Price descending
-                                </label>
-                            </div>
                         </div>
 
                         <!-- Size -->
-                        <div class="overflow-auto sidebar mt-2">
+                        <div class="sidebar mt-2">
                             <h6 class="text-bold sidebar-title">
                                 Size
                             </h6>
+                            <div class="overflow-auto sidebar-content">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="sizeXS" value="XS">
+                                    <label class="form-check-label" for="sizeXS">
+                                        XS
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="sizeXS" value="XS">
-                                <label class="form-check-label" for="sizeXS">
-                                    XS
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="sizeS" value="S">
+                                    <label class="form-check-label" for="sizeS">
+                                        S
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="sizeS" value="S">
-                                <label class="form-check-label" for="sizeS">
-                                    S
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="sizeM" value="M">
+                                    <label class="form-check-label" for="sizeM">
+                                        M
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="sizeM" value="M">
-                                <label class="form-check-label" for="sizeM">
-                                    M
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="sizeXL" value="XL">
+                                    <label class="form-check-label" for="sizeML">
+                                        XL
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="sizeXL" value="XL">
-                                <label class="form-check-label" for="sizeML">
-                                    XL
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="sizeXXL"
+                                        value="XXL">
+                                    <label class="form-check-label" for="sizeXXL">
+                                        XXL
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="sizeXXL" value="XXL">
-                                <label class="form-check-label" for="sizeXXL">
-                                    XXL
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="size26" value="26">
+                                    <label class="form-check-label" for="size26">
+                                        26
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="size26" value="26">
-                                <label class="form-check-label" for="size26">
-                                    26
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="size28" value="28">
+                                    <label class="form-check-label" for="size28">
+                                        28
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="size28" value="28">
-                                <label class="form-check-label" for="size28">
-                                    28
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="size29" value="29">
+                                    <label class="form-check-label" for="size29">
+                                        29
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="size29" value="29">
-                                <label class="form-check-label" for="size29">
-                                    29
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="size30" value="30">
+                                    <label class="form-check-label" for="size30">
+                                        30
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="size30" value="30">
-                                <label class="form-check-label" for="size30">
-                                    30
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="size31" value="31">
+                                    <label class="form-check-label" for="size31">
+                                        31
+                                    </label>
+                                </div>
 
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="size31" value="31">
-                                <label class="form-check-label" for="size31">
-                                    31
-                                </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="size" id="size32" value="32">
+                                    <label class="form-check-label" for="size32">
+                                        32
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
@@ -299,7 +314,7 @@
                     <!-- row start -->
                     <div class="row">
                         <!-- col md-4 start-->
-                        <div class="col-md-4">
+                        <div class="col-md-4 pb-3">
                             <div class="category-product-img">
                                 <img src="" alt="" srcset="">
                             </div>
@@ -308,7 +323,7 @@
                                 <div class="clearfix">
                                     <div class="float-left">
                                         <h6 class="text-white text-bold">Yellow Ethan Jacket<br>
-                                            by <span class="text-warning">Velour</span></h6>
+                                            by <span class="brand">Velour</span></h6>
                                     </div>
                                     <div class="float-right">
                                         <h3 class="category-product-price text-white price">205.00$</h3>
@@ -317,8 +332,9 @@
                             </div>
                         </div>
                         <!-- col md-4 end -->
+
                         <!-- col md-4 start-->
-                        <div class="col-md-4">
+                        <div class="col-md-4 pb-3">
                             <div class="category-product-img">
                                 <img src="" alt="" srcset="">
                             </div>
@@ -327,7 +343,7 @@
                                 <div class="clearfix">
                                     <div class="float-left">
                                         <h6 class="text-white text-bold">Yellow Ethan Jacket<br>
-                                            by <span class="text-warning">Velour</span></h6>
+                                            by <span class="brand">Velour</span></h6>
                                     </div>
                                     <div class="float-right">
                                         <h3 class="category-product-price text-white price">205.00$</h3>
@@ -336,8 +352,9 @@
                             </div>
                         </div>
                         <!-- col md-4 end -->
+
                         <!-- col md-4 start-->
-                        <div class="col-md-4">
+                        <div class="col-md-4 pb-3">
                             <div class="category-product-img">
                                 <img src="" alt="" srcset="">
                             </div>
@@ -346,7 +363,7 @@
                                 <div class="clearfix">
                                     <div class="float-left">
                                         <h6 class="text-white text-bold">Yellow Ethan Jacket<br>
-                                            by <span class="text-warning">Velour</span></h6>
+                                            by <span class="brand">Velour</span></h6>
                                     </div>
                                     <div class="float-right">
                                         <h3 class="category-product-price text-white price">205.00$</h3>
@@ -355,8 +372,9 @@
                             </div>
                         </div>
                         <!-- col md-4 end -->
+
                         <!-- col md-4 start-->
-                        <div class="col-md-4">
+                        <div class="col-md-4 pb-3">
                             <div class="category-product-img">
                                 <img src="" alt="" srcset="">
                             </div>
@@ -365,7 +383,7 @@
                                 <div class="clearfix">
                                     <div class="float-left">
                                         <h6 class="text-white text-bold">Yellow Ethan Jacket<br>
-                                            by <span class="text-warning">Velour</span></h6>
+                                            by <span class="brand">Velour</span></h6>
                                     </div>
                                     <div class="float-right">
                                         <h3 class="category-product-price text-white price">205.00$</h3>
@@ -374,8 +392,9 @@
                             </div>
                         </div>
                         <!-- col md-4 end -->
+
                         <!-- col md-4 start-->
-                        <div class="col-md-4">
+                        <div class="col-md-4 pb-3">
                             <div class="category-product-img">
                                 <img src="" alt="" srcset="">
                             </div>
@@ -384,7 +403,7 @@
                                 <div class="clearfix">
                                     <div class="float-left">
                                         <h6 class="text-white text-bold">Yellow Ethan Jacket<br>
-                                            by <span class="text-warning">Velour</span></h6>
+                                            by <span class="brand">Velour</span></h6>
                                     </div>
                                     <div class="float-right">
                                         <h3 class="category-product-price text-white price">205.00$</h3>
@@ -393,8 +412,9 @@
                             </div>
                         </div>
                         <!-- col md-4 end -->
+
                         <!-- col md-4 start-->
-                        <div class="col-md-4">
+                        <div class="col-md-4 pb-3">
                             <div class="category-product-img">
                                 <img src="" alt="" srcset="">
                             </div>
@@ -403,7 +423,7 @@
                                 <div class="clearfix">
                                     <div class="float-left">
                                         <h6 class="text-white text-bold">Yellow Ethan Jacket<br>
-                                            by <span class="text-warning">Velour</span></h6>
+                                            by <span class="brand">Velour</span></h6>
                                     </div>
                                     <div class="float-right">
                                         <h3 class="category-product-price text-white price">205.00$</h3>
@@ -415,6 +435,18 @@
 
                     </div>
                     <!-- row end -->
+
+                    <div class="clearfix">
+                        <div class="float-right">
+                            <div class="pagination">
+                                <span class="active btn btn-dark">1</span>
+                                <a href="" class="btn">2</a>
+                                <a href="" class="btn">3</a>
+                                <a href="" class="btn">4</a>
+                                <a href="" class="btn">5</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- col md-9 end-->
             </div>
