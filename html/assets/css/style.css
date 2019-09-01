@@ -378,61 +378,37 @@ tr {
     height: 500px;
 }
 
-/* ====================================
-        Checkout
-======================================= */
-.product {
+
+    /* ====================================
+            Checkout
+    ======================================= */
+.product{
     width: 50%;
 }
-
-.qty {
+.qty{
     width: 30%;
 }
-
-.price {
+.price{
     width: 20%;
 }
-
-.tfooter {
+.tfooter{
     background-color: #ededed;
 }
-
-.button {
+.button{
     margin-top: 15px;
 
 }
-
 .box {
+
     margin-top: 15px;
     padding: 15px;
     background-color: #fafafa
 }
 
-.icon {
+.icon{
     font-size: 30px;
 }
-
-.line {
+.line{
     padding: 10px 0 10px;
 }
 
-.text1 {
-    font-family: Montserrat;
-    font-size: 18px;
-}
-
-.text2 {
-    font-family: Montserrat;
-    font-size: 13px;
-}
-
-.text3 {
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.text4 {
-    font-family: Montserrat;
-    font-size: 14px;
-}
