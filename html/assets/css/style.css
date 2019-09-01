@@ -57,7 +57,8 @@ img {
 }
 
 button,
-input[type=reset] {
+input[type=reset],
+.btn {
     font-size: 12px !important;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold !important;
@@ -128,12 +129,50 @@ h6 {
     font-weight: bold !important;
 }
 
+.dropdowns {
+    position: absolute;
+    width: 230px;
+    background: #fff;
+    z-index: 3;
+    right: -1px;
+    top: calc(100% + 21px);
+}
+
+.dropdowns:before {
+    content: '';
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    bottom: 100%;
+}
+
+.has_dropdown {
+    position: relative;
+}
+
+.cart-dropdown {
+    border: #ededed solid 1px;
+    border-radius: 10px;
+}
+
+.cart-product {
+    border-bottom: #efefef solid 2px;
+}
+
+.cart-product .row .col-md-8 .price-tag {
+    margin-top: 20px;
+}
+
+.price-tag {
+    font-family: 'Oswald', sans-serif;
+}
+
 /* ====================================
         Header
 ======================================= */
 header {
     background-color: #ededed;
-    height: 150px;
 }
 
 .iconlogo img {
@@ -330,18 +369,25 @@ footer a {
     padding: 10px;
 }
 
-.price {
-    font-family: 'Oswald', sans-serif;
+.brand {
+    color: #b69f62;
 }
 
-.brand{
-   color: #b69f62;
-}
-
-.pagination span.active, .pagination a{
+.pagination span.active,
+.pagination a {
     font-size: 12px;
     font-weight: bold;
 }
+
+.pagination a:hover {
+    background-color: #1d2124;
+    color: #fff;
+}
+
+.category-banner a img {
+    width: 100%;
+}
+
 /* ====================================
         Information
 ======================================= */
