@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e8945662-edd1-4d92-9e68-2c22a3ed6d24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/html/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/address.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/assets/css/checkout.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/html/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/summary.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,42 +15,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/cart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
+            <state relative-caret-position="227">
+              <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/assets/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="358" column="17" lean-forward="true" selection-start-line="358" selection-start-column="17" selection-end-line="358" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/summary.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="8" column="81" selection-start-line="8" selection-start-column="81" selection-end-line="8" selection-end-column="81" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/address.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1255">
-              <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
+            <state relative-caret-position="145">
+              <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -63,11 +36,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/payment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="71" selection-start-line="6" selection-start-column="71" selection-end-line="6" selection-end-column="71" />
+            <state relative-caret-position="326">
+              <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
               <folding>
-                <element signature="n#style#0;n#input#1;n#div#1;n#div#4;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/assets/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="47">
+              <caret line="399" column="1" selection-start-line="399" selection-start-column="1" selection-end-line="399" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -81,6 +63,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>text1</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -90,11 +77,11 @@
         <option value="$PROJECT_DIR$/html/checkout.html" />
         <option value="$PROJECT_DIR$/html/aa.html" />
         <option value="$PROJECT_DIR$/html/assets/css/checkout.css" />
-        <option value="$PROJECT_DIR$/html/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/html/cart.html" />
-        <option value="$PROJECT_DIR$/html/address.html" />
         <option value="$PROJECT_DIR$/html/summary.html" />
+        <option value="$PROJECT_DIR$/html/cart.html" />
         <option value="$PROJECT_DIR$/html/payment.html" />
+        <option value="$PROJECT_DIR$/html/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/html/address.html" />
       </list>
     </option>
   </component>
@@ -109,9 +96,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-48" />
-    <option name="y" value="146" />
-    <option name="width" value="1179" />
+    <option name="x" value="34" />
+    <option name="y" value="19" />
+    <option name="width" value="1175" />
     <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -120,7 +107,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,6 +160,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,7 +195,8 @@
       <updated>1567086389935</updated>
       <workItem from="1567086391562" duration="13006000" />
       <workItem from="1567125052288" duration="13220000" />
-      <workItem from="1567147927128" duration="8750000" />
+      <workItem from="1567147927128" duration="12791000" />
+      <workItem from="1567348384843" duration="2018000" />
     </task>
     <task id="LOCAL-00001" summary="shipment">
       <created>1567154491415</created>
@@ -224,17 +212,38 @@
       <option name="project" value="LOCAL" />
       <updated>1567156172003</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="shipment">
+      <created>1567156890177</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1567156890177</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge branch 'master' of https://github.com/nanachi1/Gracious-Garment into shipment&#10;&#10;# Conflicts:&#10;#&#9;html/assets/css/style.css">
+      <created>1567348467920</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1567348467920</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Merge branch 'master' of https://github.com/nanachi1/Gracious-Garment into shipment">
+      <created>1567348669201</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1567348669201</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34976000" />
+    <option name="totallyTimeSpent" value="41035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21205357" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21205357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -248,7 +257,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32733223" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32733223" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -279,7 +288,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="shipment" />
-    <option name="LAST_COMMIT_MESSAGE" value="shipment" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/nanachi1/Gracious-Garment into shipment&#10;&#10;# Conflicts:&#10;#&#9;html/assets/css/style.css" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/nanachi1/Gracious-Garment into shipment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/nanachi1/Gracious-Garment into shipment" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/views/footer.ejs">
@@ -294,45 +305,30 @@
     <entry file="file://$PROJECT_DIR$/html/assets/css/all.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/footer.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/html/footer.html" />
     <entry file="file://$PROJECT_DIR$/html/information.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/html/header.html" />
     <entry file="file://$PROJECT_DIR$/html/aa.html" />
-    <entry file="file://$PROJECT_DIR$/html/assets/css/information.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-341" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/html/assets/css/information.css" />
     <entry file="file://$PROJECT_DIR$/html/assets/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/assets/css/style.css">
+    <entry file="file://$PROJECT_DIR$/html/assets/css/checkout.css" />
+    <entry file="file://$PROJECT_DIR$/html/category.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="358" column="17" lean-forward="true" selection-start-line="358" selection-start-column="17" selection-end-line="358" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/assets/css/checkout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="-1494">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/summary.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="112">
           <caret line="8" column="81" selection-start-line="8" selection-start-column="81" selection-end-line="8" selection-end-column="81" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -341,27 +337,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/payment.html">
+    <entry file="file://$PROJECT_DIR$/html/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="71" selection-start-line="6" selection-start-column="71" selection-end-line="6" selection-end-column="71" />
-          <folding>
-            <element signature="n#style#0;n#input#1;n#div#1;n#div#4;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="47">
+          <caret line="399" column="1" selection-start-line="399" selection-start-column="1" selection-end-line="399" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/address.html">
+    <entry file="file://$PROJECT_DIR$/html/payment.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1255">
-          <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
+        <state relative-caret-position="326">
+          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
+        <state relative-caret-position="227">
+          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/address.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
         </state>
       </provider>
     </entry>
