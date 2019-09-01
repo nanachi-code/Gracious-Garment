@@ -9,89 +9,91 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-5" >
-                <div class="line text1">Choose shipping options</div>
-                <div class="box">
-                    <div class="line text3">DHL Standard delivery</div>
-                    <div class="line text2">The shipment will be delivered in 2-5 working days.</div>
-                    <div class="row line align-items-baseline">
-                        <div class="col-md-8 text3">price: 2.99€</div>
-                        <div class="col-md-4 text3"><button type="button" class="btn btn-secondary">select</button></div>
+        <form action="" method="get">
+            <div class="row">
+                <div class="col-md-5" >
+                    <h4 class="line">Choose shipping options</h4>
+                    <div class="box">
+                        <h5 class="line text-bold">DHL Standard delivery</h5>
+                        <h6 class="line">The shipment will be delivered in 2-5 working days.</h6>
+                        <div class="row line align-items-baseline">
+                            <h5 class="col-md-8 text-bold">price: 2.99€</h5>
+                            <h5 class="col-md-4 text-bold"><button type="button" class="btn btn-secondary">select</button></h5>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h5 class="line text-bold">Fedex express delivery</h5>
+                        <h6 class="line">The shipment will be delivered in 1-2 working days.</h6>
+                        <div class="row line align-items-baseline">
+                            <h5 class="col-md-8 text-bold">price: 6.99€</h5>
+                            <h5 class="col-md-4 text-bold"><button type="button" class="btn btn-secondary ">select</button></h5>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h5 class="line text-bold">postoffice delivery</h5>
+                        <h6 class="line ">The shipment will be delivered in 5-7 working days.</h6>
+                        <div class="row line align-items-baseline">
+                            <h5 class="col-md-8 text-bold">price: 1.49€</h5>
+                            <h5 class="col-md-4 text-bold"><button type="button" class="btn btn-secondary">select</button></h5>
+                        </div>
                     </div>
                 </div>
-                <div class="box">
-                    <div class="line text3">Fedex express delivery</div>
-                    <div class="line text2">The shipment will be delivered in 1-2 working days.</div>
-                    <div class="row line align-items-baseline">
-                        <div class="col-md-8 text3">price: 6.99€</div>
-                        <div class="col-md-4 text3"><button type="button" class="btn btn-secondary ">select</button></div>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="line text3">postoffice delivery</div>
-                    <div class="line text2">The shipment will be delivered in 5-7 working days.</div>
-                    <div class="row line align-items-baseline">
-                        <div class="col-md-8 text3">price: 1.49€</div>
-                        <div class="col-md-4 text3"><button type="button" class="btn btn-secondary">select</button></div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-5 offset-md-2">
-                <div class="line text1">Choose payment method</div>
-                <div class="box">
-                    <div class="line text3">Credit card</div>
-                    <div class="line text2">You  need to enter the essential credit card and
-                        payment details online using the ipayment interface.</div>
-                    <div class="row line">
-                        <div class="col-md-2 text4">Select card</div>
-                        <div class="col-md-8 row icon">
-                            <div class="col-md-2"><a href=""><i class="fab fa-cc-visa"></i></a></div>
-                            <div class="col-md-3"><a href=""><i class="fab fa-cc-mastercard"></i></a></div>
+                <div class="col-md-5 offset-md-2">
+                    <h4 class="line">Choose payment method</h4>
+                    <div class="box">
+                        <h5 class="line text-bold">Credit card</h5>
+                        <h6 class="line ">You  need to enter the essential credit card and
+                            payment details online using the ipayment interface.</h6>
+                        <div class="row line">
+                            <div class="col-md-2 text4">Select card</div>
+                            <div class="col-md-8 row icon">
+                                <div class="col-md-2"><a href=""><i class="fab fa-cc-visa"></i></a></div>
+                                <div class="col-md-3"><a href=""><i class="fab fa-cc-mastercard"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="row line">
+                            <h5 class="col-md-2">Card number</h5>
+                            <div class="col-md-8">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="row line">
+                            <h5 class="col-md-2 ">Card valid</h5>
+                            <div class="col-md-10 d-inline">
+                                <input type="text" class="col-md-3">
+                                <input type="text" class="col-md-4" style="margin-left:10px ">
+                            </div>
+                        </div>
+                        <div class="row line align-items-baseline">
+                            <h5 class="col-md-2 ">CCV</h5>
+                            <div class="col-md-10">
+                                <input type="text" class="col-md-3">
+                            </div>
                         </div>
                     </div>
-                    <div class="row line">
-                        <div class="col-md-2 text4">Card number</div>
-                        <div class="col-md-8">
-                            <input type="text">
-                        </div>
-                    </div>
-                    <div class="row line">
-                        <div class="col-md-2 text4">Card valid</div>
-                        <div class="col-md-10 d-inline">
-                            <input type="text" class="col-md-3">
-                            <input type="text" class="col-md-4" style="margin-left:10px ">
-                        </div>
-                    </div>
-                    <div class="row line align-items-baseline">
-                        <div class="col-md-2 text4">CCV</div>
-                        <div class="col-md-10">
-                            <input type="text" class="col-md-3">
+                    <div class="box">
+                        <h5 class="line text-bold">Paypal</h5>
+                        <h6 class="line ">The procedure prescribed by PayPal is used for
+                            payments via PayPal. </h6>
+                        <div class="row line">
+                            <div class="col-md-3 text4">Paypal username</div>
+                            <div class="col-md-8">
+                                <input type="text">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="box">
-                    <div class="line text3">Paypal</div>
-                    <div class="line text2">The procedure prescribed by PayPal is used for
-                        payments via PayPal. </div>
-                    <div class="row line">
-                        <div class="col-md-3 text4">Paypal username</div>
-                        <div class="col-md-8">
-                            <input type="text">
-                        </div>
-                    </div>
+            </div>
+            <div class="row button">
+                <div class="col-md-6">
+                    <a href="" class="btn btn-secondary">Back to address</a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button type="submit" class="btn btn-warning">Process to summary</button>
                 </div>
             </div>
-        </div>
-        <div class="row button">
-            <div class="col-md-6">
-                <button type="button" class="btn btn-secondary">Back to address</button>
-            </div>
-            <div class="col-md-6 text-right">
-                <button type="button" class="btn btn-warning">Process to summary</button>
-            </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>
