@@ -57,8 +57,7 @@ img {
 }
 
 button,
-input[type=reset],
-.btn {
+input[type=reset] {
     font-size: 12px !important;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold !important;
@@ -134,8 +133,18 @@ h6 {
     width: 230px;
     background: #fff;
     z-index: 3;
-    right: -1px;
-    top: calc(100% + 21px);
+    right: -3px;
+    top: 100%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.dropdowns.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .dropdowns:before {
@@ -151,6 +160,12 @@ h6 {
     position: relative;
 }
 
+.has_dropdown:hover .dropdowns {
+    visibility: visible;
+    opacity: 1;
+    top: calc(100% + 21px);;
+}
+
 .cart-dropdown {
     border: #ededed solid 1px;
     border-radius: 10px;
@@ -161,11 +176,20 @@ h6 {
 }
 
 .cart-product .row .col-md-8 .price-tag {
-    margin-top: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.cart-checkout .row .col-md-4 .clearfix .float-left .price-tag {
+    font-size: 18px;
 }
 
 .price-tag {
     font-family: 'Oswald', sans-serif;
+}
+
+.cart-btn {
+    font-size: 14px;
 }
 
 /* ====================================
@@ -425,25 +449,30 @@ tr {
 }
 
 
-    /* ====================================
+/* ====================================
             Checkout
     ======================================= */
-.product{
+.product {
     width: 50%;
 }
-.qty{
+
+.qty {
     width: 30%;
 }
-.price{
+
+.price {
     width: 20%;
 }
-.tfooter{
+
+.tfooter {
     background-color: #ededed;
 }
-.button{
+
+.button {
     margin-top: 15px;
 
 }
+
 .box {
 
     margin-top: 15px;
@@ -451,10 +480,10 @@ tr {
     background-color: #fafafa
 }
 
-.icon{
+.icon {
     font-size: 30px;
 }
-.line{
+
+.line {
     padding: 10px 0 10px;
 }
-
