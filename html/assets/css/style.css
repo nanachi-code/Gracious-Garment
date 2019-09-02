@@ -265,6 +265,9 @@ footer {
 footer a {
     color: black;
 }
+.page-footer{
+    background-color: #f7f7f7;
+}
 
 .page-footer p {
     line-height: 1.5;
