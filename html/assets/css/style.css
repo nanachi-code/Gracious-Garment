@@ -510,3 +510,6 @@ tr {
     box-sizing: border-box;
     margin: 15px;
 }
+.border-3 {
+    border-width:2px !important;
+}

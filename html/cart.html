@@ -12,14 +12,147 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container ">
-        <form action="" method="post" >
-            <div class="row border-bottom">
-                <div class="col-md-8 ">PRODUCT</div>
-                <div class="col-md-2">QTY.</div>
-                <div class="col-md-2">PRICE</div>
+<header>
+    <div class="container">
+        <!-- row start -->
+        <div class="row">
+            <!-- col-md-3 start -->
+            <div class="col-md-3">
+                <a href="#">
+                    <img src="assets/images/Logo-alt.png" alt="">
+                </a>
             </div>
-            <div class="row border-bottom">
+            <!-- col-md-3 end -->
+
+            <!-- col-md-9 start -->
+            <div class="col-md-9 py-3">
+                <div class="float-right cart">
+                    <div class="ml-2 d-inline-block btn cart-btn text-bold">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart-btn text-bold" id="cart-total-quantity"> 1</span>
+                    </div>
+                    <div class="ml-2 btn btn-dark d-inline-block has-dropdown">
+                        <span class="cart-btn text-bold" id="cart-total-price"> $123</span>
+                        <div class="dropdowns cart-dropdown px-2">
+                            <div class="cart-product py-2">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div>
+                                            <img src="assets/images/logo.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div>
+                                            <h6 class="text-dark text-left text-bold">Yellow Ethan Jacket<br>
+                                                by <span class="brand">Velour</span>
+                                            </h6>
+                                        </div>
+                                        <div class="float-left text-dark mt-2">
+                                            <span class="price-tag">$123</span>
+                                            <span class="cart-quantity text-bold">x 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-product py-2">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div>
+                                            <img src="assets/images/logo.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div>
+                                            <h6 class="text-dark text-left text-bold">Yellow Ethan Jacket<br>
+                                                by <span class="brand">Velour</span>
+                                            </h6>
+                                        </div>
+                                        <div class="float-left text-dark mt-2">
+                                            <span class="price-tag">$123</span>
+                                            <span class="cart-quantity text-bold">x 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-checkout py-2">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="clearfix">
+                                            <div class="float-left">
+                                                <h6 class="text-dark text-bold text-uppercase">
+                                                    Subtotal
+                                                </h6>
+                                                <div class="price-tag text-dark float-left">
+                                                    $123
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <a href="/checkout"
+                                           class="text-uppercase btn btn-dark float-right text-bold"
+                                           style="font-size: 12px;">
+                                            View cart
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- col-md-9 -->
+        </div>
+        <!-- row end -->
+
+        <!-- row start -->
+        <div class="row py-2">
+            <!-- col-md-3 start -->
+            <div class="col-md-3">
+                <div class="menu-title text-uppercase text-bold">
+                    You are now in
+                </div>
+                <div class="menu-toggle text-uppercase text-bold">
+                    Template
+                </div>
+            </div>
+            <!-- col-md-3 end -->
+
+            <!-- col-md-9 start -->
+            <div class="col-md-9">
+                <div class="search-wrapper">
+                    <div class="search-bar">
+                        <input type="text" name="" id="" class="form-control" placeholder="Product search">
+                    </div>
+                    <div class="search-submit">
+                        <button type="submit" class="btn btn-dark">
+                            Search
+                            <i class="fas fa-search text-grey pl-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- col-md-9 end -->
+        </div>
+        <!-- row end -->
+    </div>
+</header>
+    <div class="container ">
+        <div class="row">
+            <h4 class="col-md-3 border-bottom border-3 border-dark line">1. SHOPPING CART</h4>
+            <h4 class="col-md-3 border-bottom border-3 border-light line">2. DELIVERY ADDRESS</h4>
+            <h4 class="col-md-3 border-bottom border-3 border-light line">3. SHIPPING & PAYMENT</h4>
+            <h4 class="col-md-3 border-bottom border-3 border-light line">4. SUMMARY</h4>
+        </div>
+        <form action="" method="post" >
+            <div class="row border-bottom border-3">
+                <div class="col-md-8 line">PRODUCT</div>
+                <div class="col-md-2 line">QTY.</div>
+                <div class="col-md-2 line">PRICE</div>
+            </div>
+            <div class="row border-bottom border-3">
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-2"><img src="" alt=""></div>
@@ -38,7 +171,7 @@
                     <h1>70.00€</h1>
                 </div>
             </div>
-            <div class="row border-bottom bg-light">
+            <div class="row border-bottom border-3 bg-light">
                     <div class="col-md-3 offset-md-7 text-center line">1 items in total price</div>
                     <div class="col-md-2 line">70.00€</div>
             </div>
