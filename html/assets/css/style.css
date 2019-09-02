@@ -195,10 +195,7 @@ select {
     padding-top: 5px;
 }
 
-h5 {
-    font-size: 1rem;
-    font-weight: bold;
-}
+
 
 #menu ul {
     list-style-type: none;
@@ -382,24 +379,12 @@ tr {
     /* ====================================
             Checkout
     ======================================= */
-.product{
-    width: 50%;
-}
-.qty{
-    width: 30%;
-}
-.price{
-    width: 20%;
-}
-.tfooter{
-    background-color: #ededed;
-}
+
 .button{
     margin-top: 15px;
 
 }
-.box {
-
+.pay-box {
     margin-top: 15px;
     padding: 15px;
     background-color: #fafafa
@@ -409,6 +394,13 @@ tr {
     font-size: 30px;
 }
 .line{
-    padding: 10px 0 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.sum-box{
+    width: calc(50% - 30px);
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 15px;
 }
 
