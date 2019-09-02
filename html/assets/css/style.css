@@ -137,9 +137,10 @@ h6 {
     font-weight: bold !important;
 }
 
-.text-12{
+.text-12 {
     font-size: 12px;
 }
+
 /* ====================================
         Header
 ======================================= */
@@ -196,7 +197,6 @@ header {
 }
 
 .cart-product .row .col-md-8 .price-tag {
-    margin-top: 10px;
     font-size: 18px;
 }
 
@@ -211,6 +211,12 @@ header {
 .cart-btn {
     font-size: 14px;
 }
+
+.cart-quantity {
+    font-size: 12px;
+    margin-top: 15px;
+}
+
 .search-bar {
     height: 44px;
 }
@@ -253,28 +259,33 @@ header {
     margin-right: 20px;
 }
 
-.menu{
+.menu {
     border-bottom: #d5d5d5 solid 2px;
 }
 
-.header-breadcrumb{
+.header-breadcrumb {
     font-size: 12px;
     font-weight: bold;
 }
-.header-breadcrumb .clearfix .float-left span, .header-breadcrumb .clearfix .float-left i, .header-breadcrumb .clearfix .float-left a{
+
+.header-breadcrumb .clearfix .float-left span,
+.header-breadcrumb .clearfix .float-left i,
+.header-breadcrumb .clearfix .float-left a {
     display: inline-block;
     vertical-align: middle;
     margin-right: 5px;
     padding-top: 8px;
-    padding-bottom: 8px; 
+    padding-bottom: 8px;
 }
-.header-breadcrumb .clearfix .float-left span{
+
+.header-breadcrumb .clearfix .float-left span {
     color: #8c8c8c;
 }
 
-.header-breadcrumb .clearfix .float-left a{
+.header-breadcrumb .clearfix .float-left a {
     color: #c9af69;
 }
+
 /* ====================================
         Footer
 ======================================= */
@@ -286,7 +297,8 @@ footer {
 footer a {
     color: black;
 }
-.page-footer{
+
+.page-footer {
     background-color: #f7f7f7;
 }
 
@@ -418,7 +430,7 @@ tr {
     ======================================= */
 
 
-.button{
+.button {
     margin-top: 15px;
 
 }
@@ -455,11 +467,12 @@ tr {
     font-size: 30px;
 }
 
-.line{
+.line {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.sum-box{
+
+.sum-box {
     width: calc(50% - 30px);
     padding: 15px;
     box-sizing: border-box;

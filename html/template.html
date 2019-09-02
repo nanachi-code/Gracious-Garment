@@ -38,10 +38,10 @@
                     <div class="float-right cart">
                         <div class="ml-2 d-inline-block btn cart-btn text-bold">
                             <i class="fas fa-shopping-basket"></i>
-                            <span class=" cart-btn text-bold"> 1</span>
+                            <span class="cart-btn text-bold" id="cart-total-quantity"> 1</span>
                         </div>
                         <div class="ml-2 btn btn-dark d-inline-block has_dropdown">
-                            <span class="cart-btn text-bold"> $123</span>
+                            <span class="cart-btn text-bold" id="cart-total-price"> $123</span>
                             <div class="dropdowns cart-dropdown px-2">
                                 <div class="cart-product py-2">
                                     <div class="row">
@@ -56,8 +56,9 @@
                                                     by <span class="brand">Velour</span>
                                                 </h6>
                                             </div>
-                                            <div class="price-tag text-dark float-left">
-                                                $123
+                                            <div class="float-left text-dark mt-2">
+                                                <span class="price-tag">$123</span>
+                                                <span class="cart-quantity text-bold">x 1</span>
                                             </div>
                                         </div>
                                     </div>
@@ -75,8 +76,9 @@
                                                     by <span class="brand">Velour</span>
                                                 </h6>
                                             </div>
-                                            <div class="price-tag text-dark float-left">
-                                                $123
+                                            <div class="float-left text-dark mt-2">
+                                                <span class="price-tag">$123</span>
+                                                <span class="cart-quantity text-bold">x 1</span>
                                             </div>
                                         </div>
                                     </div>
@@ -100,7 +102,7 @@
                                             <a href="/checkout"
                                                 class="text-uppercase btn btn-dark float-right text-bold"
                                                 style="font-size: 12px;">
-                                                checkout
+                                                View cart
                                             </a>
                                         </div>
                                     </div>
@@ -178,7 +180,8 @@
                         <span class="active">This Item</span>
                     </div>
                     <div class="float-right">
-                        <a href="" class="btn text-uppercase text-12 text-bold text-white" style="background-color: #b8b8b8">back to list</a>
+                        <a href="" class="btn text-uppercase text-12 text-bold text-white"
+                            style="background-color: #b8b8b8">back to list</a>
                     </div>
                 </div>
             </div>
