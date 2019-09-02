@@ -211,7 +211,6 @@ header {
 .cart-btn {
     font-size: 14px;
 }
-
 .search-bar {
     height: 44px;
 }
@@ -417,6 +416,14 @@ tr {
 /* ====================================
             Checkout
     ======================================= */
+
+
+.button{
+    margin-top: 15px;
+
+}
+
+
 .product {
     width: 50%;
 }
@@ -438,8 +445,7 @@ tr {
 
 }
 
-.box {
-
+.pay-box {
     margin-top: 15px;
     padding: 15px;
     background-color: #fafafa
@@ -449,6 +455,13 @@ tr {
     font-size: 30px;
 }
 
-.line {
-    padding: 10px 0 10px;
+.line{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.sum-box{
+    width: calc(50% - 30px);
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 15px;
 }

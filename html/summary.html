@@ -11,39 +11,89 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 row" style="background-color: #5a6268">
+<div class="container ">
+    <div class="row">
+        <div class="sum-box bg-light">
+            <div class="row ">
                 <div class="col-md-6">
-                    <div>Billing address</div>
-                    <div>Hoho</div>
-                    <div>ha noi</div>
-                    <div>cai gi do</div>
-                </div>
-                <div class="col-md-6">
-                    <div>Delivery address</div>
-                    <div>Hoho</div>
-                    <div>ha noi</div>
-                    <div>cai gi do</div>
-
-                </div>
-                <div class="offset-md-9"><button type="button" class="btn btn-secondary ">change</button></div>
-            </div>
-            <div class="col-md-6 row " style="background-color: red">
-                <div class="col-md-6">
-                    <div>Shipping op</div>
-                    <div>Hoho</div>
+                    <h4 class="text-bold  line">Billing address</h4>
+                    <h5>Pixel Fabric</h5>
+                    <h5>Redbull Street 66</h5>
+                    <h5>909 66 Heineken</h5>
+                    <h5>Slovak republic</h5>
 
                 </div>
                 <div class="col-md-6">
-                    <div>Pay method</div>
-                    <div>Hoho</div>
-                    <div>ha noi</div>
-                    <div>cai gi do</div>
+                    <h4 class="text-bold line">Delivery address</h4>
+                    <h5>Pixel Fabric</h5>
+                    <h5>Redbull Street 66</h5>
+                    <h5>909 66 Heineken</h5>
+                    <h5>Slovak republic</h5>
+
                 </div>
-                <div class="offset-md-10"><button type="button" class="btn btn-secondary ">change</button></div>
             </div>
+            <div class="line text-right"><a href="" class="btn btn-secondary">Change</a></div>
+        </div>
+        <div class="sum-box  bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="text-bold line">Shipping option</h4>
+                    <h5>DHL Standard Delivery</h5>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="text-bold line">Payment method</h4>
+                    <h5>Creditcard</h5>
+                    <h5>1234 567 890/9876</h5>
+                    <h5>05/15</h5>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="line text-right"><a href="" class="btn btn-secondary">Change</a></div>
         </div>
     </div>
+    <div class="line"></div>
+    <form action="" method="post" >
+        <div class="row border-bottom">
+            <div class="col-md-8 ">PRODUCT</div>
+            <div class="col-md-2 ">QTY.</div>
+            <div class="col-md-2">PRICE</div>
+        </div>
+        <div class="row border-bottom">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-2"><img src="" alt=""></div>
+                    <div class="col-md-10">
+                        <h5 class=" line">Eskimo ...</h5>
+                        <h5 class=" line">Size: S</h5>
+                        <h5 class=" line">Colour: Blue</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 line">
+                <input type="number" class="form-control col-md-5 text-center" value="1">
+            </div>
+            <div class="col-md-2">
+                <h5 class="line">2x35.00€</h5>
+                <h1>70.00€</h1>
+            </div>
+        </div>
+        <div class="row border-bottom">
+            <h4 class="col-md-8 line">Shipping: DHL Standard Delivery (2-5 working days)</h4>
+            <h2 class="col-md-2 offset-md-2 line">2.99€</h2>
+        </div>
+        <div class="row border-bottom bg-light">
+            <h4 class="col-md-2 offset-md-8">Total price:</h4>
+            <h1 class="col-md-2">70.00€</h1>
+        </div>
+        <div class="row button">
+            <div class="col-md-6">
+                <a href="" class="btn btn-secondary">Back to shipping</a>
+            </div>
+            <div class="col-md-6 text-right">
+                <button type="submit" class="btn btn-warning">Confirm order</button>
+            </div>
+        </div>
+    </form>
+</div>
 </body>
 </html>
