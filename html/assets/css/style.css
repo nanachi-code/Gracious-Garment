@@ -137,6 +137,9 @@ h6 {
     font-weight: bold !important;
 }
 
+.text-12{
+    font-size: 12px;
+}
 /* ====================================
         Header
 ======================================= */
@@ -252,7 +255,26 @@ header {
 }
 
 .menu{
-    display:none;
+    border-bottom: #d5d5d5 solid 2px;
+}
+
+.header-breadcrumb{
+    font-size: 12px;
+    font-weight: bold;
+}
+.header-breadcrumb .clearfix .float-left span, .header-breadcrumb .clearfix .float-left i, .header-breadcrumb .clearfix .float-left a{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px; 
+}
+.header-breadcrumb .clearfix .float-left span{
+    color: #8c8c8c;
+}
+
+.header-breadcrumb .clearfix .float-left a{
+    color: #c9af69;
 }
 /* ====================================
         Footer
@@ -381,7 +403,7 @@ tr {
     justify-content: center;
 }
 
-.py-4 {
+.ptl-4 {
     padding-top: 35px !important;
     padding-left: 35px !important;
 }
