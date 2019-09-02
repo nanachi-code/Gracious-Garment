@@ -411,6 +411,7 @@ footer a {
 .pagination a {
     font-size: 12px;
     font-weight: bold;
+    margin-left: 8px;
 }
 
 .pagination a:hover {
