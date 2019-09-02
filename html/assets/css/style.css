@@ -5,6 +5,9 @@
 /*
 01. Header
 02. Footer
+03. Category
+04. Info
+05. Checkout
 */
 
 /* ====================================
@@ -391,7 +394,9 @@ footer a {
     background-color: #383838;
     padding: 10px;
 }
-
+.category-product-title .clearfix .float-left h6 a:hover{
+    color: #b8b8b8!important;
+}
 .brand {
     color: #b69f62;
 }
@@ -400,6 +405,7 @@ footer a {
 .pagination a {
     font-size: 12px;
     font-weight: bold;
+    margin-left: 8px;
 }
 
 .pagination a:hover {
@@ -500,6 +506,9 @@ tr {
     padding: 15px;
     box-sizing: border-box;
     margin: 15px;
+}
+.border-3 {
+    border-width:2px !important;
 }
 /* ====================================
        Login
