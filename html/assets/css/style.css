@@ -400,7 +400,9 @@ footer a {
     background-color: #383838;
     padding: 10px;
 }
-
+.category-product-title .clearfix .float-left h6 a:hover{
+    color: #b8b8b8!important;
+}
 .brand {
     color: #b69f62;
 }
