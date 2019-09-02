@@ -150,6 +150,8 @@ header {
 
 
 .dropdowns {
+    border: #ededed solid 1px;
+    border-radius: 10px;
     position: absolute;
     background: #fff;
     z-index: 3;
@@ -159,6 +161,8 @@ header {
     -webkit-transition: 0.3s ease;
     -o-transition: 0.3s ease;
     transition: 0.3s ease;
+    box-shadow: 0px 8px 16px 0px rgba(224, 224, 224, 1);
+    
 }
 
 .dropdowns.active {
@@ -189,8 +193,6 @@ header {
 }
 
 .cart-dropdown {
-    border: #ededed solid 1px;
-    border-radius: 10px;
     width: 230px;
     right: -3px;
 }
@@ -283,7 +285,7 @@ header {
 }
 
 .has-dropdown:hover .menu-dropdown {
-    top: calc(100% + 1.5rem + 2px);
+    top: calc(100% + 1.5rem + 4px);
 }
 
 .header-breadcrumb {
