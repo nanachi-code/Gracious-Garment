@@ -18,121 +18,173 @@
 </head>
 
 <body>
+    <!-- header start -->
     <header>
-        <div class="container position-relative">
+        <!-- container start -->
+        <div class="container">
+            <!-- row start -->
             <div class="row">
+                <!-- col-md-3 start -->
                 <div class="col-md-3">
-                    <div class="navbar-brand d-none d-lg-block col-md-3">
-                        <a href="/homepage" class="iconlogo transition">
-                            <img src="../html/assets/images/logo.png" class="without-header logo responsive" />
-                        </a>
-                    </div>
+                    <a href="#">
+                        <img src="assets/images/Logo-alt.png" alt="">
+                    </a>
                 </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <div id="navbar-menu" class="navbar col-md-9 justify-content-end">
-                            <a class="nav-item nav-link" href="">
-                                <span><i class="fas fa-info-circle"></i> Information </span>
-                            </a>
-                            <a class="nav-item nav-link" href="">
-                                <span><i class="fas fa-shopping-basket"></i> Empty</span>
-                            </a>
+                <!-- col-md-3 end -->
+
+                <!-- col-md-9 start -->
+                <div class="col-md-9 py-3">
+                    <div class="float-right cart">
+                        <div class="ml-2 d-inline-block btn cart-btn text-bold">
+                            <i class="fas fa-shopping-basket"></i>
+                            <span class="cart-btn text-bold" id="cart-total-quantity"> 1</span>
                         </div>
-                        <div class="navbar-nav ml-auto user-navbar col-md-3">
-                            <div class="input-group justify-content-end md-form form-sm form-2 pl-0">
-                                <div class="navbar-nav">
-                                    <div class="currency d-block">
-                                        <select class="form-control" id="sel1">
-                                            <option>USD</option>
-                                            <option>EUR</option>
-                                            <option>VND</option>
-                                        </select>
+                        <div class="ml-2 btn btn-dark d-inline-block has-dropdown">
+                            <span class="cart-btn text-bold" id="cart-total-price"> $123</span>
+                            <div class="dropdowns cart-dropdown px-2">
+                                <div class="cart-product py-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div>
+                                                <img src="assets/images/logo.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div>
+                                                <h6 class="text-dark text-left text-bold">Yellow Ethan Jacket<br>
+                                                    by <span class="brand">Velour</span>
+                                                </h6>
+                                            </div>
+                                            <div class="float-left text-dark mt-2">
+                                                <span class="price-tag">$123</span>
+                                                <span class="cart-quantity text-bold">x 1</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="currency d-block">
-                                        <select class="form-control" id="lang">
-                                            <option>EN</option>
-                                            <option>VN</option>
-                                        </select>
+                                </div>
+                                <div class="cart-product py-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div>
+                                                <img src="assets/images/logo.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div>
+                                                <h6 class="text-dark text-left text-bold">Yellow Ethan Jacket<br>
+                                                    by <span class="brand">Velour</span>
+                                                </h6>
+                                            </div>
+                                            <div class="float-left text-dark mt-2">
+                                                <span class="price-tag">$123</span>
+                                                <span class="cart-quantity text-bold">x 1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-checkout py-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <h6 class="text-dark text-bold text-uppercase">
+                                                        Subtotal
+                                                    </h6>
+                                                    <div class="price-tag text-dark float-left">
+                                                        $123
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            <a href="/checkout"
+                                                class="text-uppercase btn btn-dark float-right text-bold"
+                                                style="font-size: 12px;">
+                                                View cart
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+                <!-- col-md-9 -->
             </div>
-            <div class="row pt-2">
-                <div class="department justify-content-start">
-                    <div data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-                        aria-controls="collapseExample">
-                        <h4>MEN DEPARTMENT <i class="fas fa-sort-down"></i></h4>
+            <!-- row end -->
+
+            <!-- row start -->
+            <div class="row py-2">
+                <!-- col-md-3 start -->
+                <div class="col-md-3">
+                    <div class="menu-title text-uppercase text-bold">
+                        You are now in
                     </div>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            <div id="menu">
-                                <ul>
-                                    <li>
-                                        <a href="">MEN <i class="fas fa-sort-down"></i></a>
-                                        <ul class="sub-menu list-unstyled">
-                                            <li><a class="menu-item pl-0" href="">News</a></li>
-                                            <li><a class="menu-item pl-0" href="">Sale</a></li>
-                                            <li><a class="menu-item pl-0" href="">Bestseller</a></li>
-                                            <li><a class="menu-item pl-0" href="">T-Shirts</a></li>
-                                            <li><a class="menu-item pl-0" href="">Long Sheeves</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="">WOMEN <i class="fas fa-sort-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="">News</a></li>
-                                            <li><a href="">Sale</a></li>
-                                            <li><a href="">Bestseller</a></li>
-                                            <li><a href="">T-Shirts</a></li>
-                                            <li><a href="">Long Sheeves</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="">YOUTH <i class="fas fa-sort-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="">News</a></li>
-                                            <li><a href="">Sale</a></li>
-                                            <li><a href="">Bestseller</a></li>
-                                            <li><a href="">T-Shirts</a></li>
-                                            <li><a href="">Long Sheeves</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="">OUT LET </a>
-                                    </li>
-                                    <li>
-                                        <a href="">50% SALE</a>
-                                    </li>
-                                    <li>
-                                        <a href="">BRANDS</a>
-                                    </li>
-                                    <li>
-                                        <a href="">TOP100</a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="menu-toggle text-uppercase text-bold">
+                        Template
+                    </div>
+                </div>
+                <!-- col-md-3 end -->
+
+                <!-- col-md-9 start -->
+                <div class="col-md-9">
+                    <div class="search-wrapper">
+                        <div class="search-bar">
+                            <input type="text" name="" id="" class="form-control" placeholder="Product search">
+                        </div>
+                        <div class="search-submit">
+                            <button type="submit" class="btn btn-dark">
+                                Search
+                                <i class="fas fa-search text-grey pl-2"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="search">
-                    <div class="navbar-nav ml-auto user-navbar">
-                        <div class="input-group md-form form-sm form-2 pl-0">
-                            <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Product Search"
-                                aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="input-group-text amber lighten-3">
-                                    Search<i class="fas fa-search text-grey pl-2"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- col-md-9 end -->
             </div>
+            <!-- row end -->
+
+            <!-- menu start -->
+            <div class="pb-4 pt-2 menu">
+                <ul>
+                    <li>
+                        <a href="#" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Category</a>
+                    </li>
+                    <li>
+                        <a href="#">About us</a>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Brand</a>
+                        <div class="dropdowns menu-dropdown">
+                            <ul>
+                                <li>
+                                    <a href="#">Adidas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Dolce Gabana</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nike</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- menu end -->
         </div>
+        <!-- container end -->
     </header>
+    <!-- header end -->
+
 
     <!-- Category Start -->
     <div class="category">
@@ -595,6 +647,7 @@
 <script src="assets/js/jquery-3.4.1.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/information.js"></script>
+<script src="assets/js/main.js"></script>
+
 
 </html>

@@ -4,429 +4,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Information</title>
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Gracious Garment</title>
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/all.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i&display=swap"
-          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/all.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
-<header>
-    <div class="container position-relative">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="navbar-brand d-none d-lg-block col-md-3">
-                    <a href="/homepage" class="iconlogo transition">
-                        <img src="../html/assets/images/logo.png" class="without-header logo responsive"/>
+    <!-- header start -->
+    <header>
+        <!-- container start -->
+        <div class="container">
+            <!-- row start -->
+            <div class="row">
+                <!-- col-md-3 start -->
+                <div class="col-md-3">
+                    <a href="#">
+                        <img src="assets/images/Logo-alt.png" alt="">
                     </a>
                 </div>
-            </div>
-            <div class="col-md-9">
-                <div class="row">
-                    <div id="navbar-menu" class="navbar col-md-9 justify-content-end">
-                        <a class="nav-item nav-link" href="">
-                            <span><i class="fas fa-info-circle"></i> Imfomation </span>
-                        </a>
-                        <a class="nav-item nav-link" href="">
-                            <span><i class="fas fa-shopping-basket"></i> Empty</span>
-                        </a>
-                    </div>
-                    <div class="navbar-nav ml-auto user-navbar col-md-3">
-                        <div class="input-group justify-content-end md-form form-sm form-2 pl-0">
-                            <div class="navbar-nav">
-                                <div class="currency d-block pt-2">
-                                    <select class="form-control rounded-0" id="sel1">
-                                        <option>USD</option>
-                                        <option>EUR</option>
-                                        <option>VND</option>
-                                    </select>
+                <!-- col-md-3 end -->
+
+                <!-- col-md-9 start -->
+                <div class="col-md-9 py-3">
+                    <div class="float-right cart">
+                        <div class="ml-2 d-inline-block btn cart-btn text-bold">
+                            <i class="fas fa-shopping-basket"></i>
+                            <span class="cart-btn text-bold" id="cart-total-quantity"> 1</span>
+                        </div>
+                        <div class="ml-2 btn btn-dark d-inline-block has-dropdown">
+                            <span class="cart-btn text-bold" id="cart-total-price"> $123</span>
+                            <div class="dropdowns cart-dropdown px-2">
+                                <div class="cart-product py-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div>
+                                                <img src="assets/images/logo.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div>
+                                                <h6 class="text-dark text-left text-bold">Yellow Ethan Jacket<br>
+                                                    by <span class="brand">Velour</span>
+                                                </h6>
+                                            </div>
+                                            <div class="float-left text-dark mt-2">
+                                                <span class="price-tag">$123</span>
+                                                <span class="cart-quantity text-bold">x 1</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="currency d-block">
-                                    <select class="form-control rounded-0" id="lang">
-                                        <option>EN</option>
-                                        <option>VN</option>
-                                    </select>
+                                <div class="cart-product py-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div>
+                                                <img src="assets/images/logo.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div>
+                                                <h6 class="text-dark text-left text-bold">Yellow Ethan Jacket<br>
+                                                    by <span class="brand">Velour</span>
+                                                </h6>
+                                            </div>
+                                            <div class="float-left text-dark mt-2">
+                                                <span class="price-tag">$123</span>
+                                                <span class="cart-quantity text-bold">x 1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-checkout py-2">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <h6 class="text-dark text-bold text-uppercase">
+                                                        Subtotal
+                                                    </h6>
+                                                    <div class="price-tag text-dark float-left">
+                                                        $123
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            <a href="/checkout"
+                                                class="text-uppercase btn btn-dark float-right text-bold"
+                                                style="font-size: 12px;">
+                                                View cart
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+                <!-- col-md-9 -->
             </div>
-        </div>
-        <div class="row pt-2">
-            <div class="department justify-content-start">
-                <div data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-                     aria-controls="collapseExample">
-                    <h5>MEN DEPARTMENT <i class="fas fa-sort-down"></i></h5>
+            <!-- row end -->
+
+            <!-- row start -->
+            <div class="row py-2">
+                <!-- col-md-3 start -->
+                <div class="col-md-3">
+                    <div class="menu-title text-uppercase text-bold">
+                        You are now in
+                    </div>
+                    <div class="menu-toggle text-uppercase text-bold">
+                        Template
+                    </div>
                 </div>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        <div id="menu">
+                <!-- col-md-3 end -->
+
+                <!-- col-md-9 start -->
+                <div class="col-md-9">
+                    <div class="search-wrapper">
+                        <div class="search-bar">
+                            <input type="text" name="" id="" class="form-control" placeholder="Product search">
+                        </div>
+                        <div class="search-submit">
+                            <button type="submit" class="btn btn-dark">
+                                Search
+                                <i class="fas fa-search text-grey pl-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- col-md-9 end -->
+            </div>
+            <!-- row end -->
+
+            <!-- menu start -->
+            <div class="pb-4 pt-2 menu">
+                <ul>
+                    <li>
+                        <a href="#" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Category</a>
+                    </li>
+                    <li>
+                        <a href="#">About us</a>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Brand</a>
+                        <div class="dropdowns menu-dropdown">
                             <ul>
                                 <li>
-                                    <a href="">MEN <i class="fas fa-sort-down"></i></a>
-                                    <ul class="sub-menu list-unstyled">
-                                        <li><a class="menu-item pl-0" href="">News</a></li>
-                                        <li><a class="menu-item pl-0" href="">Sale</a></li>
-                                        <li><a class="menu-item pl-0" href="">Bestseller</a></li>
-                                        <li><a class="menu-item pl-0" href="">T-Shirts</a></li>
-                                        <li><a class="menu-item pl-0" href="">Long Sheeves</a></li>
-                                    </ul>
+                                    <a href="#">Adidas</a>
                                 </li>
                                 <li>
-                                    <a href="">WOMEN <i class="fas fa-sort-down"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="">News</a></li>
-                                        <li><a href="">Sale</a></li>
-                                        <li><a href="">Bestseller</a></li>
-                                        <li><a href="">T-Shirts</a></li>
-                                        <li><a href="">Long Sheeves</a></li>
-                                    </ul>
+                                    <a href="#">Dolce Gabana</a>
                                 </li>
                                 <li>
-                                    <a href="">YOUTH <i class="fas fa-sort-down"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="">News</a></li>
-                                        <li><a href="">Sale</a></li>
-                                        <li><a href="">Bestseller</a></li>
-                                        <li><a href="">T-Shirts</a></li>
-                                        <li><a href="">Long Sheeves</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">OUT LET </a>
-                                </li>
-                                <li>
-                                    <a href="">50% SALE</a>
-                                </li>
-                                <li>
-                                    <a href="">BRANDS</a>
-                                </li>
-                                <li>
-                                    <a href="">TOP100</a>
+                                    <a href="#">Nike</a>
                                 </li>
                             </ul>
                         </div>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- menu end -->
+
+            <!-- breadcrumb start -->
+            <div class="py-2 header-breadcrumb">
+                <div class="clearfix">
+                    <div class="float-left">
+                        <a href="#">Home</a>
+                        <i class="fa fa-angle-right"></i>
+                        <a href="#">Adidas</a>
+                        <i class="fa fa-angle-right"></i>
+                        <span class="active">This Item</span>
+                    </div>
+                    <div class="float-right">
+                        <a href="" class="btn text-uppercase text-12 text-bold text-white"
+                            style="background-color: #b8b8b8">back to list</a>
                     </div>
                 </div>
             </div>
-            <div class="search">
-                <div class="navbar-nav ml-auto user-navbar">
-                    <div class="input-group md-form form-sm form-2 pl-0">
-                        <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Product Search"
-                               aria-label="Search">
-                        <div class="input-group-append">
-                                <span class="input-group-text amber lighten-3">
-                                    Search<i class="fas fa-search text-grey pl-2"></i>
-                                </span>
-                        </div>
+            <!-- breadcrumb end -->
+        </div>
+        <!-- container end -->
+    </header>
+    <!-- header end -->
+    <!--Section-->
+    <section>
+        <div class="container rounded d-block justify-content-between">
+            <h2 class="text-center ptl-4 text-uppercase">Information</h2>
+            <div class="about text-justify">
+                <h5>About Urbanix Store</h5>
+                <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit velit, gravida
+                    vel
+                    felis id, convallis posuere est. Suspendisse fermentum vestibulum odio
+                    suscipit fringilla. Quisque feugiat laoreet pretium. Integer tincidunt est id odio ornare, ac
+                    blandit
+                    mauris laoreet. Sed imperdiet orci in placerat consequat.</p>
+                <div class="row pt-3">
+                    <div class="col-6 text-justify">
+                        <p>
+                            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                            inceptos himenaeos. Fusce tristique, velit sed scelerisque eleifend, lorem
+                            diam accumsan ligula, rutrum euismod metus justo id turpis. Cras a turpis
+                            dolor. Donec commodo ipsum non neque pellentesque, nec sollicitudin
+                            orci mattis.
+                        </p>
+                    </div>
+                    <div class="col-6 text-justify">
+                        <p>
+                            Ut tempus urna massa, at porttitor ante pulvinar vel. Suspendisse purus
+                            libero, lobortis in augue et, feugiat consectetur quam. Aliquam lectus sem,
+                            sodales a aliquet sit amet, congue non est. Fusce vel dui ante. Cras hendrerit
+                            ipsum ut libero consectetur, nec tincidunt velit mollis.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</header>
-<!--Section-->
-<section>
-    <div class="container rounded d-block justify-content-between">
-        <h2 class="text-center ptl-4 text-uppercase">Information</h2>
-        <div class="about text-justify">
-            <h5>About Urbanix Store</h5>
-            <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit velit, gravida vel
-                felis id, convallis posuere est. Suspendisse fermentum vestibulum odio
-                suscipit fringilla. Quisque feugiat laoreet pretium. Integer tincidunt est id odio ornare, ac blandit
-                mauris laoreet. Sed imperdiet orci in placerat consequat.</p>
-            <div class="row pt-3">
-                <div class="col-6 text-justify">
-                    <p>
-                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                        inceptos himenaeos. Fusce tristique, velit sed scelerisque eleifend, lorem
-                        diam accumsan ligula, rutrum euismod metus justo id turpis. Cras a turpis
-                        dolor. Donec commodo ipsum non neque pellentesque, nec sollicitudin
-                        orci mattis.
-                    </p>
+            <div class="shopping text-justify pt-3">
+                <h5>Shipping</h5>
+                <div class="row pt-3">
+                    <div class="col-3">
+                        <h5>DHL<br>
+                            from 2,99 €</h5>
+                    </div>
+                    <div class="col-9">
+                        <p>
+                            Nunc dignissim nibh quis viverra iaculis. Pellentesque rutrum varius pretium. Vestibulum
+                            rutrum
+                            facilisis viverra. Suspendisse dictum
+                            eros in justo luctus, sed volutpat massa pharetra. Donec et metus fermentum, tincidunt quam
+                            ac,
+                            imperdiet orci.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-6 text-justify">
-                    <p>
-                        Ut tempus urna massa, at porttitor ante pulvinar vel. Suspendisse purus
-                        libero, lobortis in augue et, feugiat consectetur quam. Aliquam lectus sem,
-                        sodales a aliquet sit amet, congue non est. Fusce vel dui ante. Cras hendrerit
-                        ipsum ut libero consectetur, nec tincidunt velit mollis.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="shopping text-justify pt-3">
-            <h5>Shipping</h5>
-            <div class="row pt-3">
-                <div class="col-3">
-                    <h5>DHL<br>
-                        from 2,99 €</h5>
-                </div>
-                <div class="col-9">
-                    <p>
-                        Nunc dignissim nibh quis viverra iaculis. Pellentesque rutrum varius pretium. Vestibulum rutrum
-                        facilisis viverra. Suspendisse dictum
-                        eros in justo luctus, sed volutpat massa pharetra. Donec et metus fermentum, tincidunt quam ac,
-                        imperdiet orci.
-                    </p>
-                </div>
-            </div>
-            <div class="row pt-3">
-                <div class="col-3">
-                    <h5>
-                        FedEx<br>
-                        from 3,49 €
-                    </h5>
-                </div>
-                <div class="col-9">
-                    <p>
-                        Nunc dignissim nibh quis viverra iaculis. Pellentesque rutrum varius pretium. Vestibulum rutrum
-                        facilisis viverra. Suspendisse dictum
-                        eros in justo luctus, sed volutpat massa pharetra. Donec et metus fermentum, tincidunt quam ac,
-                        imperdiet orci.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="countries text-justify pt-3">
-            <h5>Countries</h5>
-            <div class="pt-3">
-                <table class="table">
-                    <tbody>
-                    <tr class="table-one">
-                        <td>Europe</td>
-                        <td>Austria, Belgium, Czech republic, Finland, France, Germany, Hungary, Italy, Poland,
-                            Russia,<br>
-                            Slovakia, Spain, Turkey, United Kingdom
-                        </td>
-                        <td>2,99 €</td>
-                    </tr>
-                    <tr class="table-two">
-                        <td>North America</td>
-                        <td>United States, Canada, Mexico, Alaska</td>
-                        <td>8,99 €</td>
-                    </tr>
-                    <tr class="table-one">
-                        <td>Asia</td>
-                        <td>China, Japan, Malaysia, Thailand, Vietnam</td>
-                        <td>10,99 €</td>
-                    </tr>
-                    <tr class="table-two">
-                        <td>Rest of world</td>
-                        <td>Australia, South America, Africa, Middle East</td>
-                        <td>20,99 €</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="faq text-justify pt-3">
-            <h5>FAQ</h5>
-            <p class="pt-3"><span class="text-bold pb-2">Vivamus mauris orci, tempus ac aliquam quis</span><br>
-                Nunc dignissim nibh quis viverra iaculis. Pellentesque rutrum varius pretium. Vestibulum rutrum
-                facilisis viverra. Suspendisse dictum eros in justo luctus, sed volutpat massa pharetra. Donec et metus
-                fermentum, tincidunt quam ac, imperdiet orci. </p>
-            <p class="pt-3"><span
-                    class="text-bold pb-2">Quisque commodo augue ante, eget ultricies risus lacinia sed</span><br>
-                In hac habitasse platea dictumst. Pellentesque convallis, nunc convallis commodo aliquet, diam nulla
-                varius magna, eu semper ipsum nibh at mi. Suspendisse viverra hendrerit justo, sit amet ultricies ipsum
-                elementum sit amet. Praesent ultricies tellus odio, ac malesuada augue tincidunt.</p>
-            <p class="pt-3"><span class="text-bold pb-2">Praesent venenatis mi ac erat rhoncus?</span><br>
-                Phasellus quis convallis metus. Sed sapien ligula, ultricies et porta at, elementum ut ante. Nullam
-                feugiat libero non velit mollis consectetur. Donec tempor tempus metus, sit amet rutrum nisi egestas
-                non. Praesent venenatis mi ac erat rhoncus, quis convallis quam scelerisque. Aenean blandit eros ut leo
-                cursus tempor.</p>
-        </div>
-        <div class="d-flex pb-4">
-            <div id="map" class="mx-auto"></div>
-        </div>
-    </div>
-
-    <div class="newsletter container-fluid">
-        <div class="container">
-            <div class="row d-flex newsletter align-items-center">
-                <div class="col-9">
-                    <h1 class="text-uppercase">subscribe to newsletter<span>get a 10% discount on 1st purchase</span>
-                    </h1>
-                </div>
-                <div class="col-3">
-                    <div class="input-group rounded-0">
-                        <input class="form-control my-0 py-1  amber-border" type="email" placeholder="Email address">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="row pt-3">
+                    <div class="col-3">
+                        <h5>
+                            FedEx<br>
+                            from 3,49 €
+                        </h5>
+                    </div>
+                    <div class="col-9">
+                        <p>
+                            Nunc dignissim nibh quis viverra iaculis. Pellentesque rutrum varius pretium. Vestibulum
+                            rutrum
+                            facilisis viverra. Suspendisse dictum
+                            eros in justo luctus, sed volutpat massa pharetra. Donec et metus fermentum, tincidunt quam
+                            ac,
+                            imperdiet orci.
+                        </p>
                     </div>
                 </div>
             </div>
+            <div class="countries text-justify pt-3">
+                <h5>Countries</h5>
+                <div class="pt-3">
+                    <table class="table">
+                        <tbody>
+                            <tr class="table-one">
+                                <td>Europe</td>
+                                <td>Austria, Belgium, Czech republic, Finland, France, Germany, Hungary, Italy, Poland,
+                                    Russia,<br>
+                                    Slovakia, Spain, Turkey, United Kingdom
+                                </td>
+                                <td>2,99 €</td>
+                            </tr>
+                            <tr class="table-two">
+                                <td>North America</td>
+                                <td>United States, Canada, Mexico, Alaska</td>
+                                <td>8,99 €</td>
+                            </tr>
+                            <tr class="table-one">
+                                <td>Asia</td>
+                                <td>China, Japan, Malaysia, Thailand, Vietnam</td>
+                                <td>10,99 €</td>
+                            </tr>
+                            <tr class="table-two">
+                                <td>Rest of world</td>
+                                <td>Australia, South America, Africa, Middle East</td>
+                                <td>20,99 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="faq text-justify pt-3">
+                <h5>FAQ</h5>
+                <p class="pt-3"><span class="text-bold pb-2">Vivamus mauris orci, tempus ac aliquam quis</span><br>
+                    Nunc dignissim nibh quis viverra iaculis. Pellentesque rutrum varius pretium. Vestibulum rutrum
+                    facilisis viverra. Suspendisse dictum eros in justo luctus, sed volutpat massa pharetra. Donec et
+                    metus
+                    fermentum, tincidunt quam ac, imperdiet orci. </p>
+                <p class="pt-3"><span class="text-bold pb-2">Quisque commodo augue ante, eget ultricies risus lacinia
+                        sed</span><br>
+                    In hac habitasse platea dictumst. Pellentesque convallis, nunc convallis commodo aliquet, diam nulla
+                    varius magna, eu semper ipsum nibh at mi. Suspendisse viverra hendrerit justo, sit amet ultricies
+                    ipsum
+                    elementum sit amet. Praesent ultricies tellus odio, ac malesuada augue tincidunt.</p>
+                <p class="pt-3"><span class="text-bold pb-2">Praesent venenatis mi ac erat rhoncus?</span><br>
+                    Phasellus quis convallis metus. Sed sapien ligula, ultricies et porta at, elementum ut ante. Nullam
+                    feugiat libero non velit mollis consectetur. Donec tempor tempus metus, sit amet rutrum nisi egestas
+                    non. Praesent venenatis mi ac erat rhoncus, quis convallis quam scelerisque. Aenean blandit eros ut
+                    leo
+                    cursus tempor.</p>
+            </div>
+            <div class="d-flex pb-4">
+                <div id="map" class="mx-auto"></div>
+            </div>
         </div>
-    </div>
-</section>
-<!--Section-->
-<footer class="page-footer font-small">
+    </section>
+    <!--Section-->
+    <!-- Footer -->
+    <footer class="page-footer font-small">
 
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left ptl-4">
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left pt-4">
 
-        <!-- Grid row -->
-        <div class="row">
-
-            <!-- Grid column -->
-            <div class="col-md-3 mt-md-0 mt-3">
-
-                <!-- Content -->
-                <h5 class="text-uppercase text-dark footer-nav-title">BRANDS</h5>
-                <div class="footer-nav-content text-bold pt-md-4">
-                    <ul class="list-unstyled">
-                        <li>Adidas, Adio, Birdhouse, C1rca,</li>
-                        <li>Calvin Klein, Cheap Monday, Dickies,</li>
-                        <li>Element, Emerica, Fallen, Herschel,</li>
-                        <li>HUF, Irie Daily, Lee, Levis, LRG,</li>
-                        <li>Mishka, Nike, Obey, Puma, Ray-ban,</li>
-                        <li>The Hundreds, Vans, Volcom</li>
-                    </ul>
-                </div>
-
-            </div>
-            <!-- Grid column -->
-
-            <hr class="clearfix w-100 d-md-none pb-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h5 class="text-uppercase text-dark footer-nav-title">CUSTOMER SEVER</h5>
-                <div class="footer-nav-content text-bold pt-md-4">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#">Help</a>
-                        </li>
-                        <li>
-                            <a href="#">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="#">Gift Cards</a>
-                        </li>
-                        <li>
-                            <a href="">Order Status</a>
-                        </li>
-                        <li>
-                            <a href="">Free Shipping</a>
-                        </li>
-                        <li>
-                            <a href="">Returns & Exchanges</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h5 class="text-uppercase text-dark footer-nav-title">INFORMATION</h5>
-                <div class="footer-nav-content text-bold pt-md-4">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#">Shipping</a>
-                        </li>
-                        <li>
-                            <a href="#">Returns</a>
-                        </li>
-                        <li>
-                            <a href="#">Payments</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-            <!-- Grid column -->
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase text-dark footer-nav-title">STAY CONNECTED</h5>
-                <div class="footer-nav-content text-bold pt-md-4">
-                    <ul class="list-unstyled list-inline text-left py-2">
-                        <li class="list-inline-item ">
-                            <a class="btn-floating btn-fb mx-1" href="#">
-                                <i class="fab fa-facebook-square fa-lg fa-2x"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-tw mx-1" href="#">
-                                <i class="fab fa-twitter-square fa-lg fa-2x"> </i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-gplus mx-1" href="#">
-                                <i class="fab fa-pinterest-square fa-lg fa-2x"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-
-    </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <div class="container-fluid footer-copyright py-3">
-        <div class="container align-items-center">
+            <!-- Grid row -->
             <div class="row">
-                <div class="texl-left col-6">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mt-md-0">
+
+                    <!-- Content -->
+                    <h4 class="text-uppercase text-dark footer-nav-title">BRANDS</h4>
+                    <div class="footer-nav-content text-bold pt-md-4">
+                        <ul class="list-unstyled">
+                            <li>Adidas, Adio, Birdhouse, C1rca,</li>
+                            <li>Calvin Klein, Cheap Monday, Dickies,</li>
+                            <li>Element, Emerica, Fallen, Herschel,</li>
+                            <li>HUF, Irie Daily, Lee, Levis, LRG,</li>
+                            <li>Mishka, Nike, Obey, Puma, Ray-ban,</li>
+                            <li>The Hundreds, Vans, Volcom</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h4 class="text-uppercase text-dark footer-nav-title">CUSTOMER SEVER</h4>
+                    <div class="footer-nav-content text-bold pt-md-4">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!">Help</a>
+                            </li>
+                            <li>
+                                <a href="#!">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="#!">Gift Cards</a>
+                            </li>
+                            <li>
+                                <a href="about">Order Status</a>
+                            </li>
+                            <li>
+                                <a href="">Free Shipping</a>
+                            </li>
+                            <li>
+                                <a href="">Returns & Exchanges</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h4 class="text-uppercase text-dark footer-nav-title">INFORMATION</h4>
+                    <div class="footer-nav-content text-bold pt-md-4">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!">Shipping</a>
+                            </li>
+                            <li>
+                                <a href="#!">Returns</a>
+                            </li>
+                            <li>
+                                <a href="#!">Payments</a>
+                            </li>
+                            <li>
+                                <a href="#!">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h4 class="text-uppercase text-dark footer-nav-title">STAY CONNECTED</h4>
+                    <div class="footer-nav-content text-bold pt-md-4">
+                        <ul class="list-unstyled list-inline text-left py-2">
+                            <li class="list-inline-item ">
+                                <a class="btn-floating btn-fb mx-1" href="#">
+                                    <i class="fab fa-facebook-square fa-lg fa-2x"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-tw mx-1" href="#">
+                                    <i class="fab fa-twitter-square fa-lg fa-2x"> </i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-gplus mx-1" href="#">
+                                    <i class="fab fa-pinterest-square fa-lg fa-2x"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="container-fluid footer-copyright py-3">
+            <div class="container align-items-center">
+                <div class="row">
+                    <div class="texl-left col-6">
                         <span class="text-uppercase text-bold">
                             © 2019
                             <a class="pl-1" href="#" style="font-size: 10px; color: #bababa">
-                                Design by Team Posivity
+                                Design by Team Positivity
                             </a>
                         </span>
 
-                </div>
-                <div class="text-right col-6">
-                    <ul>
-                        <span><strong> WE ACCEPT</strong></span>
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-fb mx-1" href="#">
-                                <i class="fab fa-cc-visa fa-lg"> </i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-fb mx-1" href="#">
-                                <i class="fab fa-cc-mastercard fa-lg"> </i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-fb mx-1" href="#">
-                                <i class="fab fa-cc-paypal fa-lg"> </i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    </div>
+                    <div class="text-right col-6">
+                        <ul>
+                            <span><strong> WE ACCEPT</strong></span>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-fb mx-1" href="#">
+                                    <i class="fab fa-cc-visa fa-lg"> </i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-fb mx-1" href="#">
+                                    <i class="fab fa-cc-mastercard fa-lg"> </i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-fb mx-1" href="#">
+                                    <i class="fab fa-cc-paypal fa-lg"> </i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
+                </div>
             </div>
-        </div>
 
-    </div>
-    <!-- Copyright -->
-</footer>
-<!-- Footer -->
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+</body>
 <!-- Javascript -->
 <script src="assets/js/jquery-3.4.1.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyAnh2MrJ8HxRrlAI7vgPiqxUNXq2KfC5Iw">
+<script type="text/javascript" src="maps.googleapis.com/maps/api/js?key=AIzaSyAnh2MrJ8HxRrlAI7vgPiqxUNXq2KfC5Iw">
 </script>
 <script src="assets/js/information.js"></script>
-</body>
+
 </html>
