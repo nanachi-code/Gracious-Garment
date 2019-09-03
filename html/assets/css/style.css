@@ -153,6 +153,8 @@ header {
 
 
 .dropdowns {
+    border: #ededed solid 1px;
+    border-radius: 10px;
     position: absolute;
     background: #fff;
     z-index: 3;
@@ -162,6 +164,7 @@ header {
     -webkit-transition: 0.3s ease;
     -o-transition: 0.3s ease;
     transition: 0.3s ease;
+    box-shadow: 0px 8px 16px 0px rgba(224, 224, 224, 1);
 }
 
 .dropdowns.active {
@@ -192,8 +195,6 @@ header {
 }
 
 .cart-dropdown {
-    border: #ededed solid 1px;
-    border-radius: 10px;
     width: 230px;
     right: -3px;
 }
@@ -285,8 +286,12 @@ header {
     font-weight: bold;
 }
 
+.menu-dropdown ul li:last-child {
+    margin-bottom: 0;
+}
+
 .has-dropdown:hover .menu-dropdown {
-    top: calc(100% + 1.5rem + 2px);
+    top: calc(100% + 1.5rem + 4px);
 }
 
 .header-breadcrumb {
@@ -394,9 +399,11 @@ footer a {
     background-color: #383838;
     padding: 10px;
 }
-.category-product-title .clearfix .float-left h6 a:hover{
-    color: #b8b8b8!important;
+
+.category-product-title .clearfix .float-left h6 a:hover {
+    color: #b8b8b8 !important;
 }
+
 .brand {
     color: #b69f62;
 }
@@ -507,52 +514,61 @@ tr {
     box-sizing: border-box;
     margin: 15px;
 }
+
 .border-3 {
-    border-width:2px !important;
+    border-width: 2px !important;
 }
+
 /* ====================================
        Login
 ======================================= */
-#login-box{
+#login-box {
     background-image: url("../images/backround-login.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
     height: 100%;
 }
+
 .main-section {
     margin: 0 auto;
     margin-top: 130px;
     padding: 0;
 
 }
-.modal-content{
+
+.modal-content {
     background-color: #3b4652;
     opacity: 0.95;
     padding: 0 18px;
     box-shadow: 0px 0px 3px #848484;
 }
-.user-images{
+
+.user-images {
     margin-top: -50px;
 
 }
+
 .user-images img {
     height: 100px;
     width: 100px;
     border-radius: 100%;
     box-shadow: 0px 0px 3px #848484;
 }
-.form-group{
+
+.form-group {
     margin-bottom: 25px;
 }
-.form-group input{
+
+.form-group input {
     height: 42px;
     border-radius: 5px;
     border: 0;
     font-size: 16px;
     padding-left: 50px;
 }
-.form-group::before{
+
+.form-group::before {
     font-family: 'Font Awesome 5 Free';
     content: "\f007";
     position: absolute;
@@ -561,16 +577,20 @@ tr {
     left: 28px;
     padding-top: 4px;
 }
-.form-group:last-of-type::before{
+
+.form-group:last-of-type::before {
     content: "\f023";
 }
-#login-box button{
+
+#login-box button {
     width: 40%;
     margin: 5px 0 25px;
 }
-.fa-sign-in-alt{
+
+.fa-sign-in-alt {
     margin-right: 7px;
 }
-#login-box h2{
+
+#login-box h2 {
     color: #848484;
 }
