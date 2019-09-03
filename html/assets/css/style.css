@@ -132,6 +132,10 @@ h5 {
 h6 {
     font-size: 12px;
 }
+label{
+    font-size: 14px;
+    font-weight: bold;
+}
 
 /* ====================================
         Helper class
@@ -614,4 +618,13 @@ footer a {
 
 #login-box h2 {
     color: #848484;
+}
+/* ====================================
+      Contact
+======================================= */
+
+.contact .map-iframe{
+    width: 100%;
+    height: 350px;
+    border: none;
 }
