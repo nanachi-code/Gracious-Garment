@@ -28,6 +28,7 @@
             //* if cartObject is set then display the header cart
             let totalPrice;
             cartObject.forEach(element => {
+                let singleTotalPrice = element.price * element.quantity;
                 let cartHTML =
                     `<div class="cart-product py-2">
                         <div class="row">
@@ -52,18 +53,18 @@
 
                 $('.cart-checkout').parent().prepend(cartHTML);
 
-                totalPrice += element.price
+                totalPrice += singleTotalPrice
             });
             $('cart-total-quantity').text(cartObject.length());
-            $('#cart-total-price').text('$'+totalPrice);
-            $('.cart-checkout').find('.price-tag').text('$'+totalPrice);
+            $('#cart-total-price').text('$' + totalPrice);
+            $('.cart-checkout').find('.price-tag').text('$' + totalPrice);
         } else {
             let cartHTML =
                 `<div class="cart-product py-2">
                     <span class="text-dark">Cart is empty</span>
                 </div>`
-            
-            $('.cart-checkout').parent().prepend(cartHTML);
+
+            $('.cart-product').parent().prepend(cartHTML);
             $('#cart-total-quantity').text('0');
             $('.cart-checkout').find('.price-tag').text('$0');
             $('#cart-total-price').text('$0');
@@ -83,8 +84,6 @@
             'id': id,
             'name': name,
             'brand': brand,
-            'size': size,
-            'color': color,
             'price': price,
             'imgURL': imgURL,
             'quantity': quantity
@@ -92,30 +91,70 @@
         cartObject.push(cartItem);
         setLocalData('graciousCart', JSON.stringify(cartObject));
     }
-    
-    $(window).ready(function () {
+
+    function loadPageCart() {
+        if (cartObject != null) {
+            //* if cartObject is set then display the header cart
+            let totalPrice;
+            cartObject.forEach(element => {
+                let singleTotalPrice = element.price * element.quantity;
+                let cartHTML =
+                    `<div class="row border-top border-3">
+                        <div class="col-md-8 align-self-center">
+                            <div class="row py-2">
+                                <div class="col-md-2"><img src="${element.imageURL}" alt=""></div>
+                                <div class="col-md-10 align-self-center">
+                                    <h5 class="text-bold line">${element.name} by <a href="" class="brand">${element.brand}</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 line align-self-center">
+                            <input type="number" class="form-control text-26 col-md-5 text-bold" value="${element.quantity}">
+                        </div>
+                        <div class="col-md-2 align-self-center">
+                            <div>
+                                <h5 class="line price-tag text-secondary">${element.quantity}x/$${element.price}</h5>
+                                <h1 class="price-tag text-bold">/$${singleTotalPrice}</h1>
+                            </div>
+                        </div>
+                    </div>`
+
+                $('#cart-product').append(cartHTML);
+
+                totalPrice += singleTotalPrice
+            });
+        } else {
+            let cartHTML =
+                `<div class="">
+                    <span class="text-dark">Cart is empty</span>
+                </div>`
+
+            $('#cart-product').append(cartHTML);
+        }
+    }
+
+    $(document).ready(function () {
         initCart();
         loadHeaderCart();
     });
 
-    $(document).ready(function () {
-        $("#checkbox").change( function (){
-            if(this.checked){
-                $("#firstname1").val($("#firstname").val());
-                $("#lastname1").val($("#lastname").val());
-                $("#streetname1").val($("#streetname").val());
-                $("#city1").val($("#city").val());
-                $("#country1").val($("#country").val());
-                $("#phone1").val($("#phone").val());
-            } else{
-                $("#firstname1").val("");
-                $("#lastname1").val("");
-                $("#streetname1").val("");
-                $("#city1").val("");
-                $("#country1").val("");
-                $("#phone1").val("");
-            }
-        })
+    $("#checkbox").change(function () {
+        if (this.checked) {
+            $("#firstname1").val($("#firstname").val());
+            $("#lastname1").val($("#lastname").val());
+            $("#streetname1").val($("#streetname").val());
+            $("#city1").val($("#city").val());
+            $("#country1").val($("#country").val());
+            $("#phone1").val($("#phone").val());
+        } else {
+            $("#firstname1").val("");
+            $("#lastname1").val("");
+            $("#streetname1").val("");
+            $("#city1").val("");
+            $("#country1").val("");
+            $("#phone1").val("");
+        }
     });
+
 
 })(jQuery);
