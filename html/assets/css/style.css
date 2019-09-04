@@ -541,8 +541,10 @@ footer a {
 }
 
 .border-3 {
-    border-width: 2px !important;
+
+    border-width:2px !important;
 }
+
 
 /* ====================================
        Login
@@ -628,3 +630,4 @@ footer a {
     height: 350px;
     border: none;
 }
+
