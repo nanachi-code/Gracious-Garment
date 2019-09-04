@@ -109,12 +109,10 @@ a:hover {
 
 h1 {
     font-size: 26px;
-    font-weight: bold;
 }
 
 h2 {
     font-size: 24px;
-    font-weight: bold;
 }
 
 h3 {
@@ -132,7 +130,8 @@ h5 {
 h6 {
     font-size: 12px;
 }
-label{
+
+label {
     font-size: 14px;
     font-weight: bold;
 }
@@ -146,6 +145,31 @@ label{
 
 .text-12 {
     font-size: 12px;
+}
+
+.text-14 {
+    font-size: 14px;
+}
+
+.text-26 {
+    font-size: 26px;
+}
+
+.border-light {
+    border-color: #dbdbdb !important;
+}
+
+.bg-light {
+    background-color: #ededed !important;
+}
+
+.text-secondary {
+    color: #acacac !important;
+}
+
+.btn-warning {
+    background-color: #c9af69 !important;
+    border-color: #c9af69 !important;
 }
 
 /* ====================================
@@ -431,27 +455,33 @@ footer a {
 /* ====================================
         Information
 ======================================= */
-.information h4 , h5 {
+.information h4,
+.information h5 {
     font-weight: bold;
 }
-.information h5{
+
+.information h5 {
     font-size: 16px;
 }
+
 .information p {
     font-weight: 500;
 }
-.information td:first-child{
+
+.information td:first-child {
     font-weight: 500;
     font-size: 14px;
     padding-left: 20px;
     width: 25%;
 }
-.information td:last-child{
+
+.information td:last-child {
     font-size: 14px;
     font-weight: bold;
     width: 15%;
 }
-.information td{
+
+.information td {
     font-size: 12px;
     font-weight: 500;
     width: 60%;
@@ -542,7 +572,7 @@ footer a {
 
 .border-3 {
 
-    border-width:2px !important;
+    border-width: 2px !important;
 }
 
 
@@ -621,13 +651,13 @@ footer a {
 #login-box h2 {
     color: #848484;
 }
+
 /* ====================================
       Contact
 ======================================= */
 
-.contact .map-iframe{
+.contact .map-iframe {
     width: 100%;
     height: 350px;
     border: none;
 }
-
