@@ -132,6 +132,10 @@ h5 {
 h6 {
     font-size: 12px;
 }
+label{
+    font-size: 14px;
+    font-weight: bold;
+}
 
 /* ====================================
         Helper class
@@ -165,7 +169,6 @@ header {
     -o-transition: 0.3s ease;
     transition: 0.3s ease;
     box-shadow: 0px 8px 16px 0px rgba(224, 224, 224, 1);
-
 }
 
 .dropdowns.active {
@@ -282,13 +285,13 @@ header {
     min-width: 150px;
 }
 
-.menu-dropdown ul li:last-child {
-    margin-bottom: 0;
-}
-
 .menu-dropdown ul li a {
     font-size: 12px;
     font-weight: bold;
+}
+
+.menu-dropdown ul li:last-child {
+    margin-bottom: 0;
 }
 
 .has-dropdown:hover .menu-dropdown {
@@ -401,6 +404,10 @@ footer a {
     padding: 10px;
 }
 
+.category-product-title .clearfix .float-left h6 a:hover {
+    color: #b8b8b8 !important;
+}
+
 .brand {
     color: #b69f62;
 }
@@ -409,6 +416,7 @@ footer a {
 .pagination a {
     font-size: 12px;
     font-weight: bold;
+    margin-left: 8px;
 }
 
 .pagination a:hover {
@@ -423,35 +431,56 @@ footer a {
 /* ====================================
         Information
 ======================================= */
-.table-one {
+.information h4 , h5 {
+    font-weight: bold;
+}
+.information h5{
+    font-size: 16px;
+}
+.information p {
+    font-weight: 500;
+}
+.information td:first-child{
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 20px;
+    width: 25%;
+}
+.information td:last-child{
+    font-size: 14px;
+    font-weight: bold;
+    width: 15%;
+}
+.information td{
+    font-size: 12px;
+    font-weight: 500;
+    width: 60%;
+}
+
+.information .table-one {
     background-color: #f9f9f9 !important;
 }
 
-.table-two {
+.information .table-two {
     background-color: #efefef !important;
 }
 
-.newsletter {
-    height: 80px;
-    background-color: #383838;
-}
-
-h1 span {
+.information h1 span {
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
 }
 
-tr {
+.information tr {
     height: 70px;
     justify-content: center;
 }
 
-.ptl-4 {
+.information .ptl-4 {
     padding-top: 35px !important;
     padding-left: 35px !important;
 }
 
-#map {
+.information #map {
     width: 100%;
     height: 500px;
 }
@@ -510,6 +539,95 @@ tr {
     box-sizing: border-box;
     margin: 15px;
 }
+
 .border-3 {
+
     border-width:2px !important;
 }
+
+
+/* ====================================
+       Login
+======================================= */
+#login-box {
+    background-image: url("../images/backround-login.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    height: 100%;
+}
+
+.main-section {
+    margin: 0 auto;
+    margin-top: 130px;
+    padding: 0;
+
+}
+
+.modal-content {
+    background-color: #3b4652;
+    opacity: 0.95;
+    padding: 0 18px;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+.user-images {
+    margin-top: -50px;
+
+}
+
+.user-images img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+#login-box .form-group {
+    margin-bottom: 25px;
+}
+
+#login-box .form-group input {
+    height: 42px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 16px;
+    padding-left: 50px;
+}
+
+#login-box .form-group::before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f007";
+    position: absolute;
+    font-size: 22px;
+    color: #555e60;
+    left: 28px;
+    padding-top: 4px;
+}
+
+#login-box .form-group:last-of-type::before {
+    content: "\f023";
+}
+
+#login-box button {
+    width: 40%;
+    margin: 5px 0 25px;
+}
+
+.fa-sign-in-alt {
+    margin-right: 7px;
+}
+
+#login-box h2 {
+    color: #848484;
+}
+/* ====================================
+      Contact
+======================================= */
+
+.contact .map-iframe{
+    width: 100%;
+    height: 350px;
+    border: none;
+}
+
