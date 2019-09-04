@@ -97,4 +97,25 @@
         initCart();
         loadHeaderCart();
     });
+
+    $(document).ready(function () {
+        $("#checkbox").change( function (){
+            if(this.checked){
+                $("#firstname1").val($("#firstname").val());
+                $("#lastname1").val($("#lastname").val());
+                $("#streetname1").val($("#streetname").val());
+                $("#city1").val($("#city").val());
+                $("#country1").val($("#country").val());
+                $("#phone1").val($("#phone").val());
+            } else{
+                $("#firstname1").val("");
+                $("#lastname1").val("");
+                $("#streetname1").val("");
+                $("#city1").val("");
+                $("#country1").val("");
+                $("#phone1").val("");
+            }
+        })
+    });
+
 })(jQuery);

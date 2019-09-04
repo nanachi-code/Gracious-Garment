@@ -12,6 +12,7 @@
 </head>
 <body>
 <header>
+    <!-- container start -->
     <div class="container">
         <!-- row start -->
         <div class="row">
@@ -114,7 +115,7 @@
                     You are now in
                 </div>
                 <div class="menu-toggle text-uppercase text-bold">
-                    Template
+                    Checkout
                 </div>
             </div>
             <!-- col-md-3 end -->
@@ -136,103 +137,145 @@
             <!-- col-md-9 end -->
         </div>
         <!-- row end -->
+
+        <!-- menu start -->
+        <div class="pb-4 pt-2 menu">
+            <ul>
+                <li>
+                    <a href="#" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="#">Category</a>
+                </li>
+                <li>
+                    <a href="#">About us</a>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Brand</a>
+                    <div class="dropdowns menu-dropdown">
+                        <ul>
+                            <li>
+                                <a href="#">Adidas</a>
+                            </li>
+                            <li>
+                                <a href="#">Dolce Gabana</a>
+                            </li>
+                            <li>
+                                <a href="#">Nike</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- menu end -->
+
     </div>
+    <!-- container end -->
 </header>
-<div class="container">
-    <div class="row">
-        <h4 class="col-md-3 border-bottom border-3 border-light line">1. SHOPPING CART</h4>
-        <h4 class="col-md-3 border-bottom border-3 border-secondary line">2. DELIVERY ADDRESS</h4>
-        <h4 class="col-md-3 border-bottom border-3 border-light line">3. SHIPPING & PAYMENT</h4>
-        <h4 class="col-md-3 border-bottom border-3 border-light line">4. SUMMARY</h4>
-    </div>
-    <form action="" method="get">
+<section class="py-4">
+    <div class="container">
         <div class="row">
-            <div class="col-md-5">
-                <div class="line form-group">Billing address</div>
-                <div class="form-group row">
-                    <label for="firstname" class="col-md-4">FirstName</label>
-                    <input type="text" class="form-control col-md-6" id="firstname" name="firstname">
-                </div>
+            <h4 class="col-md-3 border-bottom border-3 border-light line text-center">1. SHOPPING CART</h4>
+            <h4 class="col-md-3 border-bottom border-3 border-secondary line text-center">2. DELIVERY ADDRESS</h4>
+            <h4 class="col-md-3 border-bottom border-3 border-light line text-center">3. SHIPPING & PAYMENT</h4>
+            <h4 class="col-md-3 border-bottom border-3 border-light line text-center">4. SUMMARY</h4>
+        </div>
+        <form action="" method="get">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="line form-group">Billing address</div>
+                    <div class="form-group row">
+                        <label for="firstname" class="col-md-4">FirstName</label>
+                        <input type="text" class="form-control col-md-6" id="firstname" name="firstname">
+                    </div>
 
-                <div class="form-group row">
-                    <label for="lastname" class="col-md-4">LastName</label>
-                    <input type="text" class="form-control col-md-6" id="lastname" name="lastname">
-                </div>
+                    <div class="form-group row">
+                        <label for="lastname" class="col-md-4">LastName</label>
+                        <input type="text" class="form-control col-md-6" id="lastname" name="lastname">
+                    </div>
 
-                <div class="form-group row">
-                    <label for="streetname" class="col-md-4">StreetName</label>
-                    <input type="text" class="form-control col-md-6" id="streetname" name="streetname">
-                </div>
+                    <div class="form-group row">
+                        <label for="streetname" class="col-md-4">StreetName</label>
+                        <input type="text" class="form-control col-md-6" id="streetname" name="streetname">
+                    </div>
 
-                <div class="form-group row">
-                    <label for="city" class="col-md-4">City</label>
-                    <input type="text" class="form-control col-md-6" id="city" name="city">
-                </div>
+                    <div class="form-group row">
+                        <label for="city" class="col-md-4">City</label>
+                        <input type="text" class="form-control col-md-6" id="city" name="city">
+                    </div>
 
-                <div class="form-group row">
-                    <label for="country" class="col-md-4">Country</label>
-                    <input type="text" class="form-control col-md-6" id="country" name="country">
-                </div>
+                    <div class="form-group row">
+                        <label for="country" class="col-md-4">Country</label>
+                        <input type="text" class="form-control col-md-6" id="country" name="country">
+                    </div>
 
-                <div class="form-group row">
-                    <label for="phone" class="col-md-4">Phone</label>
-                    <input type="tel" class="form-control col-md-6" id="phone" name="phone">
-                </div>
-            </div>
-            <div class="col-md-5 offset-md-2">
-                <div class="row offset-md-2 no-gutters line">
-                    <div class="col-md-6 ">Delivery address</div>
-                    <div class="col-md-6 form-group form-check">
-                        <input type="checkbox" id="checkbox" class="form-check-input" name="autofill">
-                        <label for="checkbox" class="form-check-label">Same as billing address</label>
+                    <div class="form-group row">
+                        <label for="phone" class="col-md-4">Phone</label>
+                        <input type="tel" class="form-control col-md-6" id="phone" name="phone">
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div>
+                        <div class="row offset-md-2 line">
+                            <div class="col-md-6 p-0">Delivery address</div>
+                            <div class="col-md-6 form-group form-check text-right">
+                                <input type="checkbox" id="checkbox" class="form-check-input" name="autofill">
+                                <label for="checkbox" class="form-check-label">Same as billing address</label>
+                            </div>
+                        </div>
 
-                <div class="offset-md-2 form-group row no-gutters">
-                    <label for="firstname1" class="col-md-4">FirstName</label>
-                    <input type="text" class="form-control col-md-8" id="firstname1" name="firstname1">
-                </div>
-                <div class="offset-md-2 form-group row no-gutters">
-                    <label for="lastname1" class="col-md-4">LastName</label>
-                    <input type="text" class="form-control col-md-8" id="lastname1" name="lastname1">
-                </div>
+                        <div class="offset-md-2 form-group row mr-0">
+                            <label for="firstname1" class="col-md-4 px-0">FirstName</label>
+                            <input type="text" class="form-control col-md-8" id="firstname1" name="firstname1">
+                        </div>
+                        <div class="offset-md-2 form-group row mr-0">
+                            <label for="lastname1" class="col-md-4 px-0">LastName</label>
+                            <input type="text" class="form-control col-md-8" id="lastname1" name="lastname1">
+                        </div>
 
-                <div class="offset-md-2 form-group row no-gutters">
-                    <label for="streetname1" class="col-md-4">StreetName</label>
-                    <input type="text" class="form-control col-md-8" id="streetname1" name="streetname1">
-                </div>
+                        <div class="offset-md-2 form-group row mr-0">
+                            <label for="streetname1" class="col-md-4 px-0">StreetName</label>
+                            <input type="text" class="form-control col-md-8" id="streetname1" name="streetname1">
+                        </div>
 
-                <div class="offset-md-2 form-group row no-gutters">
-                    <label for="city1" class="col-md-4">City</label>
-                    <input type="text" class="form-control col-md-8" id="city1" name="city1">
-                </div>
+                        <div class="offset-md-2 form-group row mr-0">
+                            <label for="city1" class="col-md-4 px-0">City</label>
+                            <input type="text" class="form-control col-md-8" id="city1" name="city1">
+                        </div>
 
-                <div class="offset-md-2 form-group row no-gutters">
-                    <label for="country1" class="col-md-4">Country</label>
-                    <input type="text" class="form-control col-md-8" id="country1" name="country1">
-                </div>
+                        <div class="offset-md-2 form-group row mr-0">
+                            <label for="country1" class="col-md-4 px-0">Country</label>
+                            <input type="text" class="form-control col-md-8" id="country1" name="country1">
+                        </div>
 
-                <div class="offset-md-2 form-group row no-gutters">
-                    <label for="phone1" class="col-md-4">Phone</label>
-                    <input type="tel" class="form-control col-md-8" id="phone1" name="phone1">
+                        <div class="offset-md-2 form-group row mr-0">
+                            <label for="phone1" class="col-md-4 px-0">Phone</label>
+                            <input type="tel" class="form-control col-md-8" id="phone1" name="phone1">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="comment">ORDER COMMENT</label>
-            <textarea class="form-control" rows="5" id="comment"></textarea>
-        </div>
-        <div class="row button">
-            <div class="col-md-6">
-                <a href="" class="btn btn-secondary">Back to cart</a>
+            <div class="form-group">
+                <label for="comment">ORDER COMMENT</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
             </div>
-            <div class="col-md-6 text-right">
-                <button type="submit" class="btn btn-warning">Process to payment</button>
+            <div class="row button">
+                <div class="col-md-6">
+                    <a href="" class="btn btn-secondary">Back to cart</a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button type="submit" class="btn btn-warning">Process to payment</button>
+                </div>
             </div>
-        </div>
-    </form>
-</div>
-<div class="line"></div>
+        </form>
+    </div>
+</section>
+
+
 <footer class="page-footer font-small">
 
     <!-- Footer Links -->
@@ -388,6 +431,13 @@
     <!-- Copyright -->
 
 </footer>
+
 <!-- Footer -->
+
 </body>
+<!-- Javascript -->
+<script src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/main.js"></script>
 </html>
