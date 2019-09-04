@@ -92,7 +92,7 @@
         cartObject.push(cartItem);
         setLocalData('graciousCart', JSON.stringify(cartObject));
     }
-
+    
     $(window).ready(function () {
         initCart();
         loadHeaderCart();
