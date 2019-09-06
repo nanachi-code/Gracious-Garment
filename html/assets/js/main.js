@@ -64,10 +64,10 @@
                     <span class="text-dark">Cart is empty</span>
                 </div>`
 
-            $('.cart-product').parent().prepend(cartHTML);
-            $('#cart-total-quantity').text('0');
+            $('.cart-dropdown').prepend(cartHTML);
+            $('.cart-total-quantity').text('0');
             $('.cart-checkout').find('.price-tag').text('$0');
-            $('#cart-total-price').text('$0');
+            $('.cart-total-price').text('$0');
         }
     }
 
@@ -125,17 +125,20 @@
             });
         } else {
             let cartHTML =
-                `<div class="">
-                    <span class="text-dark">Cart is empty</span>
+                `<div class="py-2 border-top border-3">
+                    <span class="text-dark text-bold">Cart is empty</span>
                 </div>`
 
             $('#cart-product').append(cartHTML);
+            $('.cart-total-quantity').text('0');
+            $('.cart-total-price').text('$0');
         }
     }
 
     $(document).ready(function () {
         initCart();
         loadHeaderCart();
+        loadPageCart();
     });
 
     $("#checkbox").change(function () {
