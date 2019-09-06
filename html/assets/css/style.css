@@ -180,6 +180,10 @@ label {
     border-color: #c9af69 !important;
 }
 
+.btn:hover {
+    cursor: pointer;
+}
+
 /* ====================================
         Header
 ======================================= */
@@ -570,7 +574,20 @@ footer a {
     border-width: 2px !important;
 }
 
+.option-selected {
+    background-color: #64c975;
+    border-color: #64c975;
+}
 
+.option-selected:hover {
+    background-color: #64c975;
+    border-color: #64c975;
+}
+
+.payment:hover, .delivery:hover{
+    background-color: #64c975;
+    border-color: #64c975;
+}
 /* ====================================
        Login
 ======================================= */
