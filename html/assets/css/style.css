@@ -644,7 +644,7 @@ footer a {
     font-size: 22px;
     color: #555e60;
     left: 28px;
-    padding-top: 4px;
+    padding-top: 8px;
 }
 
 #login-box .form-group:last-of-type::before {
@@ -672,4 +672,64 @@ footer a {
     width: 100%;
     height: 350px;
     border: none;
+}
+
+/* ====================================
+    Home Page
+======================================= */
+.homepage-big-picture {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 324px;
+}
+.introduce-img img{
+    width: 60px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.introduce-singer{
+    background-color: #f7f7f7;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.homepage-product h4 {
+    font-weight: bold;
+    font-size: 24px;
+}
+.homepage-product h4 span{
+    font-weight: 400;
+}
+.homepage-product .duong-ke{
+    background-color: #f7f7f7;
+    height: 24px;
+}
+.product-brand h4{
+    font-weight: bold;
+    font-size: 24px;
+}
+.product-brand .duong-ke{
+    background-color: #f7f7f7;
+    height: 24px;
+}
+.brand-product{
+    display: flex;
+    justify-content: center;
+    border-radius: initial  ;
+}
+.featured-end {
+    background-color: #383838;
+    height: 50px;
+}
+.featured-end h5 {
+    font-size: 11px;
+    color: #fff;
+}
+.featured-end h5 span {
+    color: #ebca70;
+}
+.featured-end h4 {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
 }
