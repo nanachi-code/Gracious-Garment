@@ -38,15 +38,15 @@
                         <!-- cart btn start -->
                         <div class="ml-2 d-inline-block btn cart-btn text-bold">
                             <i class="fas fa-shopping-basket"></i>
-                            <span class="cart-btn text-bold cart-total-quantity">0</span>
+                            <span class="cart-btn text-bold" id="header-cart-quantity">0</span>
                         </div>
                         <!-- cart btn end -->
 
                         <!-- has dropdown start -->
                         <div class="ml-2 btn btn-dark d-inline-block has-dropdown">
-                            <span class="cart-btn text-bold cart-total-price">$0</span>
+                            <span class="cart-btn text-bold" id="header-cart-total">$0</span>
                             <!-- dropdowns start -->
-                            <div class="dropdowns cart-dropdown px-2">
+                            <div class="dropdowns cart-dropdown px-2" id="header-cart-product">
                                 <!-- cart product start -->
                                 <div class="cart-product py-2">
                                     <!-- row start -->
@@ -80,7 +80,7 @@
                                 <!-- cart product end -->
 
                                 <!-- cart checkout start -->
-                                <div class="cart-checkout py-2">
+                                <div class="cart-checkout py-2" id="header-cart-price">
                                     <!-- row start -->
                                     <div class="row">
                                         <!-- col md 4 start -->
@@ -93,7 +93,7 @@
                                                         Subtotal
                                                     </h6>
                                                     <div class="price-tag text-dark float-left">
-                                                        <span class="">$123</span>
+                                                        $123
                                                     </div>
                                                 </div>
                                                 <!-- float left end -->
@@ -202,6 +202,7 @@
         <!-- container end -->
     </header>
     <!-- header end -->
+
     <section class="py-4">
         <div class="container ">
             <div class="row">
@@ -288,9 +289,9 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-md-8 line text-bold">PRODUCT</div>
-                <div class="col-md-2 line text-bold">QTY.</div>
-                <div class="col-md-2 line text-bold">PRICE</div>
+                <div class="col-md-8 py-2 text-bold">PRODUCT</div>
+                <div class="col-md-2 py-2 text-bold">QTY.</div>
+                <div class="col-md-2 py-2 text-bold">PRICE</div>
             </div>
             <div id="summary-product" class="border-top border-3">
                 <div class="row">
@@ -298,30 +299,30 @@
                         <div class="row py-2">
                             <div class="col-md-2"><img src="assets/images/vest.jpg" alt=""></div>
                             <div class="col-md-10 align-self-center">
-                                <h5 class="text-bold line">Eskimo ... by <a href="" class="brand">Nigga</a></h5>
-                                <h5 class="text-bold line">Size: S</h5>
-                                <h5 class="text-bold line">Colour: Blue</h5>
+                                <h5 class="text-bold py-2">Eskimo ... by <a href="" class="brand">Nigga</a></h5>
+                                <h5 class="text-bold py-2">Size: S</h5>
+                                <h5 class="text-bold py-2">Colour: Blue</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2 line align-self-center">
+                    <div class="col-md-2 py-2 align-self-center">
                         <div class="text-26 col-md-5 text-bold">1</div>
                     </div>
                     <div class="col-md-2 align-self-center">
                         <div>
-                            <h5 class="line price-tag text-secondary">1x$35.00</h5>
+                            <h5 class="py-2 price-tag text-secondary">1x$35.00</h5>
                             <h1 class="price-tag text-bold">$35.00</h1>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-light">
+            <div class="bg-light" id="summary-price">
                 <div class="row">
-                    <div class="col-md-3 offset-md-7 align-self-center line text-bold text-14"><span
-                            class="cart-total-quantity">1</span> items in total price
+                    <div class="col-md-3 offset-md-7 align-self-center py-2 text-bold text-14">
+                        <span class="cart-total-quantity">1</span> items in total price
                     </div>
-                    <div class="col-md-2 line">
+                    <div class="col-md-2 py-2">
                         <h1 class="text-bold price-tag cart-total-price">$35</h1>
                     </div>
                 </div>

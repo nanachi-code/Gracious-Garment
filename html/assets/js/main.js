@@ -1,7 +1,7 @@
 (function ($) {
     "use strict";
-    let cartObject = null; //* global pointer to cart
-
+    let cartObject = null; //* global pointer to cart   
+    
     //* localStorage function
     function getLocalData(name) {
         return localStorage.getItem(name)
@@ -23,6 +23,25 @@
         }
     }
 
+    $("#checkbox").change(function () {
+        if (this.checked) {
+            $("#firstname1").val($("#firstname").val());
+            $("#lastname1").val($("#lastname").val());
+            $("#streetname1").val($("#streetname").val());
+            $("#city1").val($("#city").val());
+            $("#country1").val($("#country").val());
+            $("#phone1").val($("#phone").val());
+        } else {
+            $("#firstname1").val("");
+            $("#lastname1").val("");
+            $("#streetname1").val("");
+            $("#city1").val("");
+            $("#country1").val("");
+            $("#phone1").val("");
+        }
+    });
+
+    //* Load header cart
     function loadHeaderCart() {
         if (cartObject != null) {
             //* if cartObject is set then display the header cart
@@ -55,22 +74,24 @@
 
                 totalPrice += singleTotalPrice
             });
+
             $('cart-total-quantity').text(cartObject.length());
             $('#cart-total-price').text('$' + totalPrice);
-            $('.cart-checkout').find('.price-tag').text('$' + totalPrice);
+            $('#header-cart-price').find('.price-tag').text('$' + totalPrice);
         } else {
             let cartHTML =
                 `<div class="cart-product py-2">
                     <span class="text-dark">Cart is empty</span>
                 </div>`
 
-            $('.cart-dropdown').prepend(cartHTML);
-            $('.cart-total-quantity').text('0');
-            $('.cart-checkout').find('.price-tag').text('$0');
-            $('.cart-total-price').text('$0');
+            $('#header-cart-product').prepend(cartHTML);
+            $('#header-cart-quantity').text('0');
+            $('#header-cart-price').find('.price-tag').text('$0');
+            $('#header-cart-total').text('$0');
         }
     }
 
+    //* Add to cart
     function addToCart(id, name, brand, size, color, price, quantity, imgURL) {
         //* Check if this item is already in the cart or not
         cartObject.forEach(element => {
@@ -92,6 +113,7 @@
         setLocalData('graciousCart', JSON.stringify(cartObject));
     }
 
+    //* Load cart page
     function loadPageCart() {
         if (cartObject != null) {
             //* if cartObject is set then display the header cart
@@ -119,44 +141,78 @@
                         </div>
                     </div>`
 
-                $('#cart-product').append(cartHTML);
+                $('#cart-product').prepend(cartHTML);
 
                 totalPrice += singleTotalPrice
             });
+
+            $('#cart-price').find('.cart-total-quantity').text(cartObject.length());
+            $('#cart-price').find('.cart-total-price').text('$' + totalPrice);
         } else {
             let cartHTML =
-                `<div class="py-2 border-top border-3">
-                    <span class="text-dark text-bold">Cart is empty</span>
+                `<div class="py-2">
+                    <span class="text-dark text-18">Cart is empty</span>
                 </div>`
 
-            $('#cart-product').append(cartHTML);
-            $('.cart-total-quantity').text('0');
-            $('.cart-total-price').text('$0');
+            $('#cart-product').prepend(cartHTML);
+            $('#cart-price').find('.cart-total-quantity').text('0');
+            $('#cart-price').find('.cart-total-price').text('$0');
         }
     }
+
+    //* load summary page
+    function loadPageSummary() {
+        if (cartObject != null) {
+            //* if cartObject is set then display the header cart
+            let totalPrice;
+            cartObject.forEach(element => {
+                let singleTotalPrice = element.price * element.quantity;
+                let cartHTML =
+                    `<div class="row border-top border-3">
+                        <div class="col-md-8 align-self-center">
+                            <div class="row py-2">
+                                <div class="col-md-2"><img src="${element.imageURL}" alt=""></div>
+                                <div class="col-md-10 align-self-center">
+                                    <h5 class="text-bold line">${element.name} by <a href="" class="brand">${element.brand}</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 line align-self-center">
+                            <div class="text-26 col-md-5 text-bold">${element.quantity}</div>
+                        </div>
+                        <div class="col-md-2 align-self-center">
+                            <div>
+                                <h5 class="line price-tag text-secondary">${element.quantity}x/$${element.price}</h5>
+                                <h1 class="price-tag text-bold">/$${singleTotalPrice}</h1>
+                            </div>
+                        </div>
+                    </div>`
+
+                $('#summary-product').prepend(cartHTML);
+
+                totalPrice += singleTotalPrice
+            });
+
+            $('#summary-price').find('.cart-total-quantity').text(cartObject.length());
+            $('#summary-price').find('.cart-total-price').text('$' + totalPrice);
+        } else {
+            let cartHTML =
+                `<div class="py-2">
+                    <span class="text-dark text-18">Cart is empty</span>
+                </div>`
+
+            $('#summary-product').prepend(cartHTML);
+            $('#summary-price').find('.cart-total-quantity').text('0');
+            $('#summary-price').find('.cart-total-price').text('$0');
+        }
+    }
+
 
     $(document).ready(function () {
         initCart();
         loadHeaderCart();
         loadPageCart();
-    });
-
-    $("#checkbox").change(function () {
-        if (this.checked) {
-            $("#firstname1").val($("#firstname").val());
-            $("#lastname1").val($("#lastname").val());
-            $("#streetname1").val($("#streetname").val());
-            $("#city1").val($("#city").val());
-            $("#country1").val($("#country").val());
-            $("#phone1").val($("#phone").val());
-        } else {
-            $("#firstname1").val("");
-            $("#lastname1").val("");
-            $("#streetname1").val("");
-            $("#city1").val("");
-            $("#country1").val("");
-            $("#phone1").val("");
-        }
+        loadPageSummary();
     });
 
 

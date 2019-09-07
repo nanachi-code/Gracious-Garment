@@ -39,15 +39,15 @@
                         <!-- cart btn start -->
                         <div class="ml-2 d-inline-block btn cart-btn text-bold">
                             <i class="fas fa-shopping-basket"></i>
-                            <span class="cart-btn text-bold" id="cart-total-quantity"> 1</span>
+                            <span class="cart-btn text-bold" id="header-cart-quantity">0</span>
                         </div>
                         <!-- cart btn end -->
 
                         <!-- has dropdown start -->
                         <div class="ml-2 btn btn-dark d-inline-block has-dropdown">
-                            <span class="cart-btn text-bold" id="cart-total-price"> $123</span>
+                            <span class="cart-btn text-bold" id="header-cart-total">$0</span>
                             <!-- dropdowns start -->
-                            <div class="dropdowns cart-dropdown px-2">
+                            <div class="dropdowns cart-dropdown px-2" id="header-cart-product">
                                 <!-- cart product start -->
                                 <div class="cart-product py-2">
                                     <!-- row start -->
@@ -81,7 +81,7 @@
                                 <!-- cart product end -->
 
                                 <!-- cart checkout start -->
-                                <div class="cart-checkout py-2">
+                                <div class="cart-checkout py-2" id="header-cart-price">
                                     <!-- row start -->
                                     <div class="row">
                                         <!-- col md 4 start -->
@@ -139,7 +139,7 @@
 
                     <!-- menu toggle start -->
                     <div class="menu-toggle text-uppercase text-bold">
-                        Template
+                        Checkout
                     </div>
                     <!-- menu toggle end -->
                 </div>
@@ -203,7 +203,6 @@
         <!-- container end -->
     </header>
     <!-- header end -->
-
 
     <!-- Category Start -->
     <section class="category">
@@ -274,7 +273,7 @@
                                     </label>
                                 </div>
                                 <!-- form check end -->
-                                
+
                                 <!-- form check start -->
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="sort" id="sortPriceDESC"

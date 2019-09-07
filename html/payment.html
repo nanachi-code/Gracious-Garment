@@ -38,15 +38,15 @@
                         <!-- cart btn start -->
                         <div class="ml-2 d-inline-block btn cart-btn text-bold">
                             <i class="fas fa-shopping-basket"></i>
-                            <span class="cart-btn text-bold cart-total-quantity">0</span>
+                            <span class="cart-btn text-bold" id="header-cart-quantity">0</span>
                         </div>
                         <!-- cart btn end -->
 
                         <!-- has dropdown start -->
                         <div class="ml-2 btn btn-dark d-inline-block has-dropdown">
-                            <span class="cart-btn text-bold cart-total-price">$0</span>
+                            <span class="cart-btn text-bold" id="header-cart-total">$0</span>
                             <!-- dropdowns start -->
-                            <div class="dropdowns cart-dropdown px-2">
+                            <div class="dropdowns cart-dropdown px-2" id="header-cart-product">
                                 <!-- cart product start -->
                                 <div class="cart-product py-2">
                                     <!-- row start -->
@@ -80,7 +80,7 @@
                                 <!-- cart product end -->
 
                                 <!-- cart checkout start -->
-                                <div class="cart-checkout py-2">
+                                <div class="cart-checkout py-2" id="header-cart-price">
                                     <!-- row start -->
                                     <div class="row">
                                         <!-- col md 4 start -->
@@ -93,7 +93,7 @@
                                                         Subtotal
                                                     </h6>
                                                     <div class="price-tag text-dark float-left">
-                                                        <span class="">$123</span>
+                                                        $123
                                                     </div>
                                                 </div>
                                                 <!-- float left end -->
@@ -286,7 +286,8 @@
                             <div class="row">
                                 <div class="col-md-4 offset-md-8">
                                     <input type="hidden" name="payment" value="cod">
-                                    <span class="payment btn btn-dark option-selected text-uppercase text-bold text-12 px-4">
+                                    <span
+                                        class="payment btn btn-dark option-selected text-uppercase text-bold text-12 px-4">
                                         Select
                                     </span>
                                 </div>
