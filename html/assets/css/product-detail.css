@@ -228,7 +228,7 @@
 }
 .text-recommend{
     font-family: 'Oswald', sans-serif;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 14pt;
     padding-bottom: 20px;
 }
@@ -265,10 +265,8 @@
 }
 .text-advertise{
     font-family: 'Oswald', sans-serif;
-    font-weight: 500;
     font-size: 14pt;
     padding-bottom: 20px;
-    color:#444444;
     font-weight: bold;
 }
 .div-short{
