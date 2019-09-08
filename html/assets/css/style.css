@@ -584,10 +584,12 @@ footer a {
     border-color: #64c975;
 }
 
-.payment:hover, .delivery:hover{
+.payment:hover,
+.delivery:hover {
     background-color: #64c975;
     border-color: #64c975;
 }
+
 /* ====================================
        Login
 ======================================= */
@@ -677,61 +679,36 @@ footer a {
 /* ====================================
     Home Page
 ======================================= */
-#homepage .container-fluid {
+.slider .container-fluid {
     margin: 0;
     padding: 0;
 }
+
 .homepage-big-picture img {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.introduce-singer{
-    background-color: #f7f7f7;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.homepage-product h4 {
-    font-weight: bold;
-    font-size: 24px;
-}
-.introduce p {
-    font-weight: 500;
-}
-.homepage-product h4 span{
-    font-weight: 400;
-}
-.homepage-product .duong-ke{
-    background-color: #f7f7f7;
-    height: 24px;
-}
-.product-brand h4{
-    font-weight: bold;
-    font-size: 24px;
-}
-.product-brand .duong-ke{
-    background-color: #f7f7f7;
-    height: 24px;
-}
-.brand-product{
+
+.brand-product {
     display: flex;
     justify-content: center;
-    border-radius: initial  ;
+    border-radius: initial;
 }
-.iteam-brand {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+
 .featured-end {
     background-color: #383838;
     height: 50px;
 }
+
 .featured-end h5 {
     font-size: 11px;
     color: #fff;
 }
+
 .featured-end h5 span {
     color: #ebca70;
 }
+
 .featured-end h4 {
     color: #fff;
     font-size: 18px;
