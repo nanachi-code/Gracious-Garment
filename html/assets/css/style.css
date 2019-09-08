@@ -677,14 +677,11 @@ footer a {
 /* ====================================
     Home Page
 ======================================= */
-.homepage-big-picture {
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 324px;
+#homepage .container-fluid {
+    margin: 0;
+    padding: 0;
 }
-.introduce-img img{
-    width: 60px;
-    height: 50px;
+.homepage-big-picture img {
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -696,6 +693,9 @@ footer a {
 .homepage-product h4 {
     font-weight: bold;
     font-size: 24px;
+}
+.introduce p {
+    font-weight: 500;
 }
 .homepage-product h4 span{
     font-weight: 400;
@@ -716,6 +716,10 @@ footer a {
     display: flex;
     justify-content: center;
     border-radius: initial  ;
+}
+.iteam-brand {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .featured-end {
     background-color: #383838;
