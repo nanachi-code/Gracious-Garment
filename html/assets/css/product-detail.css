@@ -2,51 +2,6 @@
     padding: 0;
     margin: 0;
 }
-.size-26{
-    font-size: 26pt;
-}
-.padding-40px{
-    padding-top:40px;
-}
-.padding-30px{
-    padding-top:30px;
-}
-.margin-10{
-    margin-top:10px;
-}
-.padding-6{
-    padding-top:6px;
-}
-.noncolor > a{
-    color:#ffffff !important;
-}
-.maunau{
-    color:#c9af69;
-}
-.mauxam{
-    color:#d7d7d7;
-}
-.nenxam{
-    background-color:#e5e5e5;
-}
-.nenxamdam{
-    background-color:#383838;
-}
-.font-oswald{
-    font-family: Oswald;
-}
-.in-dam{
-    font-weight: bold;
-}
-.float-right{
-    float:right;
-}
-.co-chu-11{
-    font-size:11pt;
-}
-.co-chu-14{
-    font-size:14pt;
-}
 #product-detail{
     width: 100%;
    height: 1800px;
@@ -300,3 +255,48 @@
 
 }
 
+.size-26{
+    font-size: 26pt;
+}
+.padding-40px{
+    padding-top:40px;
+}
+.padding-30px{
+    padding-top:30px;
+}
+.margin-10{
+    margin-top:10px;
+}
+.padding-6{
+    padding-top:6px;
+}
+.noncolor > a{
+    color:#ffffff !important;
+}
+.maunau{
+    color:#c9af69;
+}
+.mauxam{
+    color:#d7d7d7;
+}
+.nenxam{
+    background-color:#e5e5e5;
+}
+.nenxamdam{
+    background-color:#383838;
+}
+.font-oswald{
+    font-family: Oswald;
+}
+.in-dam{
+    font-weight: bold;
+}
+.float-right{
+    float:right;
+}
+.co-chu-11{
+    font-size:11pt;
+}
+.co-chu-14{
+    font-size:14pt;
+}
