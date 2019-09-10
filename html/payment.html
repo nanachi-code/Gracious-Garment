@@ -226,7 +226,7 @@
                     </h4>
                 </div>
             </div>
-            <form action="" method="get">
+            <form action="" method="get" id="payment-form">
                 <div class="row mt-4">
                     <div class="col-md-5">
                         <div class="pt-2 pb-2 mb-4 text-18 text-bold align-self-center">Choose shipping option</div>
@@ -240,7 +240,7 @@
                                 <div class="col-md-4">
                                     <input type="hidden" name="delivery" value="dhl">
                                     <span
-                                        class="delivery btn btn-dark option-selected text-uppercase text-bold text-12 px-4">
+                                        class="delivery btn btn-dark option-selected text-uppercase text-bold text-12 px-4" data-value="DHL Standard delivery">
                                         Select
                                     </span>
                                 </div>
@@ -254,8 +254,7 @@
                                     price: 2.99€
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="hidden" name="delivery" value="fedex">
-                                    <span class="delivery btn btn-dark text-uppercase text-bold text-12 px-4">
+                                    <span class="delivery btn btn-dark text-uppercase text-bold text-12 px-4" data-value="Fedex Standard delivery">
                                         Select
                                     </span>
                                 </div>
@@ -269,8 +268,7 @@
                                     price: 2.99€
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="hidden" name="delivery" value="post-office">
-                                    <span class="delivery btn btn-dark text-uppercase text-bold text-12 px-4">
+                                    <span class="delivery btn btn-dark text-uppercase text-bold text-12 px-4" data-value="Post Office delivery">
                                         Select
                                     </span>
                                 </div>
@@ -285,7 +283,6 @@
                             <div class="mb-4 text-12">You will only have pay once you receive the items.</div>
                             <div class="row">
                                 <div class="col-md-4 offset-md-8">
-                                    <input type="hidden" name="payment" value="cod">
                                     <span
                                         class="payment btn btn-dark option-selected text-uppercase text-bold text-12 px-4">
                                         Select
