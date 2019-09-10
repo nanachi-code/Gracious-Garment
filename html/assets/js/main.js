@@ -1,7 +1,10 @@
 (function ($) {
     "use strict";
     let cartObject = null; //* global pointer to cart   
-    
+    let cartOptions; //* global pointer to cart options
+
+
+
     //* localStorage function
     function getLocalData(name) {
         return localStorage.getItem(name)
@@ -18,27 +21,83 @@
     function initCart() {
         //* Check in browser memory if there are a saved cart
         if (getLocalData('graciousCart') != null) {
-            //* if previous cart is present load it
+            //* if previous cart is present then load it
             cartObject = JSON.parse(getLocalData('graciousCart'));
+        }
+        if (getLocalData('graciousCartOptions') != null) {
+            //* if previous cart options are present then load it
+            cartOptions = JSON.parse(getLocalData('graciousCartOptions'));
+        } else {
+            cartOptions = {
+                'billing': {
+                    'billingName': '',
+                    'billingAddress': '',
+                    'billingPhone': '',
+                },
+                'delivery': {
+                    'deliveryName': '',
+                    'deliveryAddress': '',
+                    'deliveryPhone': '',
+                },
+                'comment': '',
+                'payment': '',
+                'shipping': ''
+            };
+
+            setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
         }
     }
 
-    $("#checkbox").change(function () {
+    //* Save address info on submit
+    $('#address-form').submit(() => {
+        cartOptions.billing = {
+            'billingName': $("#billingName").val(),
+            'billingAddress': $("#billingAddress").val(),
+            'billingPhone': $("#billingPhone").val(),
+        };
+
+        cartOptions.delivery = {
+            'deliveryName': $("#deliveryName").val(),
+            'deliveryAddress': $("#deliveryAddress").val(),
+            'deliveryPhone': $("#deliveryPhone").val(),
+        };
+
+        cartOptions.comment = $("#comment").val();
+
+        setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
+    });
+
+    //* Copy delivery info from billing info on checkbox tick
+    $("#copyInfo").change(() => {
         if (this.checked) {
-            $("#firstname1").val($("#firstname").val());
-            $("#lastname1").val($("#lastname").val());
-            $("#streetname1").val($("#streetname").val());
-            $("#city1").val($("#city").val());
-            $("#country1").val($("#country").val());
-            $("#phone1").val($("#phone").val());
+            $("#deliveryName").val($("#billingName").val());
+            $("#deliveryAddress").val($("#billingAddress").val());
+            $("#deliveryPhone").val($("#billingPhone").val());
         } else {
-            $("#firstname1").val("");
-            $("#lastname1").val("");
-            $("#streetname1").val("");
-            $("#city1").val("");
-            $("#country1").val("");
-            $("#phone1").val("");
+            $("#deliveryName").val("");
+            $("#deliveryAddress").val("");
+            $("#deliveryPhone").val("");
         }
+    });
+
+    //* Button get selected class on click, also remove selected class from all other button with same type delivery/payment
+    $('.delivery').on('click', function () {
+        $('span.delivery').removeClass('option-selected')
+        $(this).addClass('option-selected');
+    });
+
+    $('.payment').on('click', function () {
+        $('span.payment').removeClass('option-selected')
+        $(this).addClass('option-selected');
+    });
+
+
+    //* Save payment & shipping option on submit
+    $('#payment-form').submit(function () {
+        cartOptions.payment = $('.payment, .option-selected').attr('data-value');
+        cartOptions.delivery = $('.delivery, .option-selected').attr('data-value');
+
+        setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
 
     //* Load header cart
@@ -91,34 +150,13 @@
         }
     }
 
-    //* Add to cart
-    function addToCart(id, name, brand, size, color, price, quantity, imgURL) {
-        //* Check if this item is already in the cart or not
-        cartObject.forEach(element => {
-            //* if it is already in the cart then increase the quantity
-            if (element.id == id) {
-                element.quantity = element.quantity + quantity;
-            }
-        });
-        //* if not then add new item to localStorage
-        let cartItem = {
-            'id': id,
-            'name': name,
-            'brand': brand,
-            'price': price,
-            'imgURL': imgURL,
-            'quantity': quantity
-        };
-        cartObject.push(cartItem);
-        setLocalData('graciousCart', JSON.stringify(cartObject));
-    }
-
     //* Load cart page
     function loadPageCart() {
+        //* Load cart
         if (cartObject != null) {
             //* if cartObject is set then display the header cart
             let totalPrice;
-            cartObject.forEach(element => {
+            cartObject.forEach((element) => {
                 let singleTotalPrice = element.price * element.quantity;
                 let cartHTML =
                     `<div class="row border-top border-3">
@@ -134,9 +172,14 @@
                             <input type="number" class="form-control text-26 col-md-5 text-bold" value="${element.quantity}">
                         </div>
                         <div class="col-md-2 align-self-center">
-                            <div>
-                                <h5 class="line price-tag text-secondary">${element.quantity}x/$${element.price}</h5>
-                                <h1 class="price-tag text-bold">/$${singleTotalPrice}</h1>
+                            <div class="row>
+                                <div class="col-md-9">
+                                    <h5 class="line price-tag text-secondary">${element.quantity}x/$${element.price}</h5>
+                                    <h1 class="price-tag text-bold">/$${singleTotalPrice}</h1>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="remove-cart" data-id="${element.id}">x</div>
+                                </div>
                             </div>
                         </div>
                     </div>`
@@ -160,12 +203,12 @@
         }
     }
 
-    //* load summary page
+    //* Load summary page
     function loadPageSummary() {
         if (cartObject != null) {
             //* if cartObject is set then display the header cart
             let totalPrice;
-            cartObject.forEach(element => {
+            cartObject.forEach((element) => {
                 let singleTotalPrice = element.price * element.quantity;
                 let cartHTML =
                     `<div class="row border-top border-3">
@@ -205,8 +248,66 @@
             $('#summary-price').find('.cart-total-quantity').text('0');
             $('#summary-price').find('.cart-total-price').text('$0');
         }
+
+        //* Load option
+        if (cartOptions != null) {
+            //* Load billing info
+            $('.billing-name').text(cartOptions.billing.billingName);
+            $('.billing-address').text(cartOptions.billing.billingAddress);
+            $('.billing-phone').text(cartOptions.billing.billingPhone);
+
+            //* Load delivery info
+            $('.delivery-name').text(cartOptions.delivery.deliveryName);
+            $('.delivery-address').text(cartOptions.delivery.deliveryName);
+            $('.delivery-phone').text(cartOptions.delivery.deliveryName);
+
+            //* Load shipping option
+            $('.shipping-option').text(cartOptions.shipping);
+
+            //* Load payment option
+            $('.payment-option').text(cartOptions.payment);
+        }
     }
 
+    //* Session cart methods
+    //* Add to cart
+    function addToCart(id, name, brand, price, quantity, imgURL) {
+        //* Check if this item is already in the cart or not
+        cartObject.forEach((element) => {
+            //* if it is already in the cart then increase the quantity
+            if (element.id == id) {
+                element.quantity = element.quantity + quantity;
+            }
+        });
+        //* if not then add new item to localStorage
+        let cartItem = {
+            'id': id,
+            'name': name,
+            'brand': brand,
+            'price': price,
+            'imgURL': imgURL,
+            'quantity': quantity
+        };
+        cartObject.push(cartItem);
+        setLocalData('graciousCart', JSON.stringify(cartObject));
+    }
+
+    //* Remove from cart
+    function removeFromCart(id) {
+        let afterFilter = cartObject.filter((element) => {
+            element.id != id;
+        })
+
+        cartObject = afterFilter;
+        setLocalData('graciousCart', JSON.stringify(cartObject));
+    }
+
+    //* Remove an item from cart
+    $('.remove-cart').click((e) => {
+        e.preventDefault();
+        removeFromCart($(this).attr('data-id'));
+        $(this).parent().parent().parent().parent().remove();
+    });
 
     $(document).ready(function () {
         initCart();

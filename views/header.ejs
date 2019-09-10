@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Gracious Garment</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+
+<body>
+    <!-- header start -->
+    <header>
+        <!-- container start -->
+        <div class="container">
+            <!-- row start -->
+            <div class="row">
+                <!-- col-md-3 start -->
+                <div class="col-md-3">
+                    <a href="/">
+                        <img src="/assets/images/Logo-alt.png" alt="">
+                    </a>
+                </div>
+                <!-- col-md-3 end -->
+
+                <!-- col-md-9 start -->
+                <div class="col-md-9 py-3">
+                    <!-- cart start -->
+                    <div class="float-right cart">
+                        <!-- cart btn start -->
+                        <div class="ml-2 d-inline-block btn cart-btn text-bold">
+                            <i class="fas fa-shopping-basket"></i>
+                            <span class="cart-btn text-bold" id="header-cart-quantity">0</span>
+                        </div>
+                        <!-- cart btn end -->
+
+                        <!-- has dropdown start -->
+                        <div class="ml-2 btn btn-dark d-inline-block has-dropdown">
+                            <span class="cart-btn text-bold" id="header-cart-total">$0</span>
+                            <!-- dropdowns start -->
+                            <div class="dropdowns cart-dropdown px-2" id="header-cart-product">
+                                <!-- cart checkout start -->
+                                <div class="cart-checkout py-2" id="header-cart-price">
+                                    <!-- row start -->
+                                    <div class="row">
+                                        <!-- col md 4 start -->
+                                        <div class="col-md-4">
+                                            <!-- clearfix start -->
+                                            <div class="clearfix">
+                                                <!-- float left start -->
+                                                <div class="float-left">
+                                                    <h6 class="text-dark text-bold text-uppercase">
+                                                        Subtotal
+                                                    </h6>
+                                                    <div class="price-tag text-dark float-left">
+                                                        $0
+                                                    </div>
+                                                </div>
+                                                <!-- float left end -->
+                                            </div>
+                                            <!-- clearfix end -->
+                                        </div>
+                                        <!-- col md 4 end -->
+
+                                        <!-- col md 8 start -->
+                                        <div class="col-md-8">
+                                            <a href="/checkout"
+                                                class="text-uppercase btn btn-dark float-right text-bold"
+                                                style="font-size: 12px;">
+                                                View cart
+                                            </a>
+                                        </div>
+                                        <!-- col md 8 end -->
+                                    </div>
+                                    <!-- row end-->
+                                </div>
+                                <!-- cart checkout end -->
+                            </div>
+                            <!-- dropdowns end -->
+                        </div>
+                        <!-- has dropdown end -->
+                    </div>
+                    <!-- cart end -->
+                </div>
+                <!-- col-md-9 -->
+            </div>
+            <!-- row end -->
+
+            <!-- row start -->
+            <div class="row py-2">
+                <!-- col-md-3 start -->
+                <div class="col-md-3">
+                    <!-- menu title start -->
+                    <div class="menu-title text-uppercase text-bold">
+                        You are now in
+                    </div>
+                    <!-- menu title end -->
+
+                    <!-- menu toggle start -->
+                    <div class="menu-toggle text-uppercase text-bold">
+                        <%= page %>
+                    </div>
+                    <!-- menu toggle end -->
+                </div>
+                <!-- col-md-3 end -->
+
+                <!-- col-md-9 start -->
+                <div class="col-md-9">
+                    <!-- search wrapper start -->
+                    <div class="search-wrapper">
+                        <div class="search-bar">
+                            <input type="text" name="" id="" class="form-control" placeholder="Product search">
+                        </div>
+                        <div class="search-submit">
+                            <button type="submit" class="btn btn-dark">
+                                Search
+                                <i class="fas fa-search text-grey pl-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- search wrapper end -->
+                </div>
+                <!-- col-md-9 end -->
+            </div>
+            <!-- row end -->
+
+            <!-- menu start -->
+            <div class="pb-4 pt-2 menu">
+                <ul>
+                    <li>
+                        <a href="/" class="active">Home</a>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="/archive">Brand</a>
+                        <div class="dropdowns menu-dropdown">
+                            <ul>
+                                <li>
+                                    <a href="#">Adidas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Dolce Gabana</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nike</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- menu end -->
+
+            <% if( isSingle ){ %>
+            <%= include('./partials/breadcrumb') %>
+            <% } %>
+        </div>
+        <!-- container end -->
+    </header>
+    <!-- header end -->
