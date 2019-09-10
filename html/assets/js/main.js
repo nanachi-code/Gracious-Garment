@@ -1,7 +1,8 @@
 (function ($) {
     "use strict";
     let cartObject = null; //* global pointer to cart   
-    let cartOptions = null //* global pointer to cart options
+    let cartOptions; //* global pointer to cart options
+
 
 
     //* localStorage function
@@ -26,6 +27,24 @@
         if (getLocalData('graciousCartOptions') != null) {
             //* if previous cart options are present then load it
             cartOptions = JSON.parse(getLocalData('graciousCartOptions'));
+        } else {
+            cartOptions = {
+                'billing': {
+                    'billingName': '',
+                    'billingAddress': '',
+                    'billingPhone': '',
+                },
+                'delivery': {
+                    'deliveryName': '',
+                    'deliveryAddress': '',
+                    'deliveryPhone': '',
+                },
+                'comment': '',
+                'payment': '',
+                'shipping': ''
+            };
+
+            setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
         }
     }
 
@@ -44,12 +63,12 @@
         };
 
         cartOptions.comment = $("#comment").val();
-        
+
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
 
-    //* Copy delivery address from billing address on checkbox tick
-    $("#copyAddress").change(() => {
+    //* Copy delivery info from billing info on checkbox tick
+    $("#copyInfo").change(() => {
         if (this.checked) {
             $("#deliveryName").val($("#billingName").val());
             $("#deliveryAddress").val($("#billingAddress").val());
@@ -62,19 +81,19 @@
     });
 
     //* Button get selected class on click, also remove selected class from all other button with same type delivery/payment
-    $('.delivery').on('click', function() {
+    $('.delivery').on('click', function () {
         $('span.delivery').removeClass('option-selected')
         $(this).addClass('option-selected');
     });
 
-    $('.payment').on('click', function() {
+    $('.payment').on('click', function () {
         $('span.payment').removeClass('option-selected')
         $(this).addClass('option-selected');
     });
 
 
     //* Save payment & shipping option on submit
-    $('#payment-form').submit(function () { 
+    $('#payment-form').submit(function () {
         cartOptions.payment = $('.payment, .option-selected').attr('data-value');
         cartOptions.delivery = $('.delivery, .option-selected').attr('data-value');
 
@@ -133,6 +152,7 @@
 
     //* Load cart page
     function loadPageCart() {
+        //* Load cart
         if (cartObject != null) {
             //* if cartObject is set then display the header cart
             let totalPrice;
@@ -228,6 +248,25 @@
             $('#summary-price').find('.cart-total-quantity').text('0');
             $('#summary-price').find('.cart-total-price').text('$0');
         }
+
+        //* Load option
+        if (cartOptions != null) {
+            //* Load billing info
+            $('.billing-name').text(cartOptions.billing.billingName);
+            $('.billing-address').text(cartOptions.billing.billingAddress);
+            $('.billing-phone').text(cartOptions.billing.billingPhone);
+
+            //* Load delivery info
+            $('.delivery-name').text(cartOptions.delivery.deliveryName);
+            $('.delivery-address').text(cartOptions.delivery.deliveryName);
+            $('.delivery-phone').text(cartOptions.delivery.deliveryName);
+
+            //* Load shipping option
+            $('.shipping-option').text(cartOptions.shipping);
+
+            //* Load payment option
+            $('.payment-option').text(cartOptions.payment);
+        }
     }
 
     //* Session cart methods
@@ -252,7 +291,7 @@
         cartObject.push(cartItem);
         setLocalData('graciousCart', JSON.stringify(cartObject));
     }
-    
+
     //* Remove from cart
     function removeFromCart(id) {
         let afterFilter = cartObject.filter((element) => {
@@ -269,7 +308,7 @@
         removeFromCart($(this).attr('data-id'));
         $(this).parent().parent().parent().parent().remove();
     });
-    
+
     $(document).ready(function () {
         initCart();
         loadHeaderCart();
