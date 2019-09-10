@@ -548,6 +548,17 @@ footer a {
     background-color: #64c975;
     border-color: #64c975;
 }
+.confirm-margin{
+    margin-top: 160px;
+    margin-bottom: 160px;
+}
+.confirm-success{
+    padding: 20px 0 20px 0;
+    background-color: #f0d99c;
+}
+.confirm-thanks{
+    font-size: 30px;
+}
 
 /* ====================================
        Login
