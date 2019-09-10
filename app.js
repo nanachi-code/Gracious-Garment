@@ -1,28 +1,20 @@
-var PORT = process.env.PORT || 5000;
-var express = require('express');
-var app = express();
-var server = require("http").Server(app);
-var bodyParser = require('body-parser');
+const PORT = process.env.PORT || 5000;
+const express = require('express');
+const app = express();
+const server = require("http").Server(app);
+const bodyParser = require('body-parser');
 
-var urlencodedParser = bodyParser.urlencoded({
+const urlencodedParser = bodyParser.urlencoded({
     extended: false
 });
 
-app.set('view engine', 'ejs');
-
-//* Routes
+//* Set up view engine
 app.use(express.static("public"));
-app.use('/', require('./routes/index.js'));
+app.set('view engine', 'ejs');
 app.set("views","./views");
 
-// app.get('/', (req, res) => {
-//     res.render('index');
-// });
-
-// app.post('/request', urlencodedParser, (req, res) => {
-//     console.log(req.body);
-//     res.render('request', {data: req.body});
-// });
+//* Routes
+app.use('/', require('./routes/index.js'));
 
 //* Start server
 server.listen(PORT, console.log(`Server started on port ${PORT}`));

@@ -72,7 +72,7 @@
 
                                         <!-- col md 8 start -->
                                         <div class="col-md-8">
-                                            <a href="/checkout"
+                                            <a href="/cart"
                                                 class="text-uppercase btn btn-dark float-right text-bold"
                                                 style="font-size: 12px;">
                                                 View cart
@@ -106,6 +106,7 @@
 
                     <!-- menu toggle start -->
                     <div class="menu-toggle text-uppercase text-bold">
+                        <!-- In tên trang hiện tại ra -->
                         <%= page %>
                     </div>
                     <!-- menu toggle end -->
@@ -155,12 +156,13 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="/contact-us">Contact us</a>
                     </li>
                 </ul>
             </div>
             <!-- menu end -->
 
+            <!-- Kiểm tra xem đây có phải trang single product k, nếu đúng gọi breadcrumb vào -->
             <% if( isSingle ){ %>
             <%= include('./partials/breadcrumb') %>
             <% } %>

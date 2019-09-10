@@ -225,7 +225,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="bg-light p-3 rounded">
-                        <img src="assets/images/vest.jpg" alt="">
+                        <img id="product-img" src="assets/images/vest.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -233,9 +233,9 @@
                         <div class="col-md-12">
                             <div class="bg-light p-4 rounded">
                                 <div class="info">
-                                    <h1>Product name</h1>
-                                    <h5>by <span class="brand">Velour</span></h5>
-                                    <div class="price-tag text-36 my-2">$200</div>
+                                    <h1 id="product-name">Product name</h1>
+                                    <h5>by <span class="brand" id="product-brand">Velour</span></h5>
+                                    <div class="price-tag text-36 my-2" id="product-price" data-price="200">$200</div>
                                     <div class="excerpt mb-4">
                                         This is the excerpt
                                     </div>
@@ -245,16 +245,16 @@
                                     <div class="mt-4">
                                         <div class="form-group row mr-0">
                                             <label for="quantity" class="col-md-2">Quantity</label>
-                                            <input type="number" name="quantity"
-                                                class="form-control col-md-1" id="quantity" value="1">
+                                            <input type="number" name="product-quantity" class="form-control col-md-1"
+                                                id="product-quantity" value="1">
                                         </div>
-                                        <button class="btn btn-warning text-uppercase text-bold text-white text-12 mr-2">
+                                        <button
+                                            class="add-cart btn btn-warning text-uppercase text-bold text-white text-12 mr-2">
                                             Add to cart
                                         </button>
-                                        <button class="btn btn-dark text-uppercase text-bold text-white text-12"
-                                            onclick="exportHTML();">
+                                        <a class="btn btn-dark text-uppercase text-bold text-white text-12" href="">
                                             Download detailed features
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
 
@@ -449,32 +449,7 @@
 <script src="assets/js/jquery-3.4.1.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-<script>
-    function exportHTML() {
-        var html, link, blob, url, css;
-
-        css = (
-            '<style>' +
-            '@page WordSection1{size: 841.95pt 595.35pt;mso-page-orientation: landscape;}' +
-            'div.WordSection1 {page: WordSection1;}' +
-            '</style>'
-        );
-
-        html = window.prd.innerHTML;
-        blob = new Blob(['\ufeff', css + html], {
-            type: 'application/msword'
-        });
-        url = URL.createObjectURL(blob);
-        link = document.createElement('A');
-        link.href = url;
-        // Set default file name. 
-        // Word will append file extension - do not add an extension here.
-        link.download = 'Document';
-        document.body.appendChild(link);
-        if (navigator.msSaveOrOpenBlob) navigator.msSaveOrOpenBlob(blob, 'Document.doc'); // IE10-11
-        else link.click(); // other browsers
-        document.body.removeChild(link);
-    }
-</script>
+<script src="assets/js/all.js"></script>
+<script src="assets/js/main.js"></script>
 
 </html>
