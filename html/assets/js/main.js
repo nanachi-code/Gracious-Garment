@@ -29,27 +29,27 @@
         }
     }
 
-    $('#address-form').submit(function () {
-        cartOptions = {
-            'billing': {
-                'billingName': $("#billingName").val(),
-                'billingAddress': $("#billingAddress").val(),
-                'billingPhone': $("#billingPhone").val(),
-            },
+    //* Save address info on submit
+    $('#address-form').submit(() => {
+        cartOptions.billing = {
+            'billingName': $("#billingName").val(),
+            'billingAddress': $("#billingAddress").val(),
+            'billingPhone': $("#billingPhone").val(),
+        };
 
-            'delivery': {
-                'deliveryName': $("#deliveryName").val(),
-                'deliveryAddress': $("#deliveryAddress").val(),
-                'deliveryPhone': $("#deliveryPhone").val(),
-            },
-            'comment': $("#comment").val(),
-            'shipping': '',
-            'payment': ''
-        }
+        cartOptions.delivery = {
+            'deliveryName': $("#deliveryName").val(),
+            'deliveryAddress': $("#deliveryAddress").val(),
+            'deliveryPhone': $("#deliveryPhone").val(),
+        };
+
+        cartOptions.comment = $("#comment").val();
+        
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
 
-    $("#copyAddress").change(function () {
+    //* Copy delivery address from billing address on checkbox tick
+    $("#copyAddress").change(() => {
         if (this.checked) {
             $("#deliveryName").val($("#billingName").val());
             $("#deliveryAddress").val($("#billingAddress").val());
@@ -61,10 +61,24 @@
         }
     });
 
-    $('.remove-cart').click(function (e) {
-        e.preventDefault();
-        removeFromCart($(this).attr('data-id'));
-        $(this).parent().parent().parent().parent().remove();
+    //* Button get selected class on click, also remove selected class from all other button with same type delivery/payment
+    $('.delivery').on('click', function() {
+        $('span.delivery').removeClass('option-selected')
+        $(this).addClass('option-selected');
+    });
+
+    $('.payment').on('click', function() {
+        $('span.payment').removeClass('option-selected')
+        $(this).addClass('option-selected');
+    });
+
+
+    //* Save payment & shipping option on submit
+    $('#payment-form').submit(function () { 
+        cartOptions.payment = $('.payment, .option-selected').attr('data-value');
+        cartOptions.delivery = $('.delivery, .option-selected').attr('data-value');
+
+        setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
 
     //* Load header cart
@@ -122,7 +136,7 @@
         if (cartObject != null) {
             //* if cartObject is set then display the header cart
             let totalPrice;
-            cartObject.forEach(element => {
+            cartObject.forEach((element) => {
                 let singleTotalPrice = element.price * element.quantity;
                 let cartHTML =
                     `<div class="row border-top border-3">
@@ -174,7 +188,7 @@
         if (cartObject != null) {
             //* if cartObject is set then display the header cart
             let totalPrice;
-            cartObject.forEach(element => {
+            cartObject.forEach((element) => {
                 let singleTotalPrice = element.price * element.quantity;
                 let cartHTML =
                     `<div class="row border-top border-3">
@@ -216,11 +230,11 @@
         }
     }
 
-    //* Cart methods
+    //* Session cart methods
     //* Add to cart
     function addToCart(id, name, brand, price, quantity, imgURL) {
         //* Check if this item is already in the cart or not
-        cartObject.forEach(element => {
+        cartObject.forEach((element) => {
             //* if it is already in the cart then increase the quantity
             if (element.id == id) {
                 element.quantity = element.quantity + quantity;
@@ -238,7 +252,7 @@
         cartObject.push(cartItem);
         setLocalData('graciousCart', JSON.stringify(cartObject));
     }
-
+    
     //* Remove from cart
     function removeFromCart(id) {
         let afterFilter = cartObject.filter((element) => {
@@ -249,6 +263,13 @@
         setLocalData('graciousCart', JSON.stringify(cartObject));
     }
 
+    //* Remove an item from cart
+    $('.remove-cart').click((e) => {
+        e.preventDefault();
+        removeFromCart($(this).attr('data-id'));
+        $(this).parent().parent().parent().parent().remove();
+    });
+    
     $(document).ready(function () {
         initCart();
         loadHeaderCart();
