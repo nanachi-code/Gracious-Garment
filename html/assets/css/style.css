@@ -473,16 +473,16 @@ footer a {
 }
 
 /* ====================================
-        Information
+        About-Us
 ======================================= */
-.information h4,
-.information h5 {
+.about-us h4,
+.about-us h5 {
     font-weight: bold;
 }
-.information p {
+.about-us p {
     font-weight: 500;
 }
-.information h1 span {
+.about-us h1 span {
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
 }
