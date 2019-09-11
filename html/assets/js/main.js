@@ -51,15 +51,15 @@
     //* Save address info on submit
     $('#address-form').submit(() => {
         cartOptions.billing = {
-            'billingName': $("#billingName").val(),
-            'billingAddress': $("#billingAddress").val(),
-            'billingPhone': $("#billingPhone").val(),
+            billingName: $("#billingName").val(),
+            billingAddress: $("#billingAddress").val(),
+            billingPhone: $("#billingPhone").val(),
         };
 
         cartOptions.delivery = {
-            'deliveryName': $("#deliveryName").val(),
-            'deliveryAddress': $("#deliveryAddress").val(),
-            'deliveryPhone': $("#deliveryPhone").val(),
+            deliveryName: $("#deliveryName").val(),
+            deliveryAddress: $("#deliveryAddress").val(),
+            deliveryPhone: $("#deliveryPhone").val(),
         };
 
         cartOptions.comment = $("#comment").val();
