@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
 </head>
 
 <body>
@@ -168,7 +170,7 @@
             <div class="pb-4 pt-2 menu">
                 <ul>
                     <li>
-                        <a href="#" class="active">Home</a>
+                        <a href="#">Home</a>
                     </li>
                     <li>
                         <a href="#">Category</a>
@@ -245,9 +247,6 @@
                                     <h1 id="product-name">Product name</h1>
                                     <h5>by <span class="brand" id="product-brand">Velour</span></h5>
                                     <div class="price-tag text-36 my-2" id="product-price" data-price="200">$200</div>
-                                    <div class="excerpt mb-4">
-                                        This is the excerpt
-                                    </div>
                                 </div>
 
                                 <div class="order mb-4">
@@ -296,6 +295,100 @@
             </div>
         </div>
     </section>
+    <!--    VARIOUS PRODUCTS start-->
+    <section class="various mt-4 bg-light">
+        <div class="container pt-2">
+            <div class="text-left d-block bg-white p-2 my-2 text-24">
+                Various Products
+            </div>
+            <!-- carousel start -->
+            <div class="py-4 owl-carousel owl-theme">
+                <!-- category product start -->
+                <div class="category-product px-2">
+                    <!-- product img start-->
+                    <div class="category-product-img">
+                        <a href="">
+                            <img src="assets/images/vest.jpg" alt="" srcset="">
+                        </a>
+                    </div>
+                    <!-- product img end-->
+
+                    <!-- product title start -->
+                    <div class="category-product-title">
+                        <!-- clearfix start -->
+                        <div class="clearfix">
+                            <!-- float left start -->
+                            <div class="float-left">
+                                <h6 class="text-white text-bold">
+                                    <a href="" class="text-white">Men Vest</a><br>
+                                    by <a href="" class="brand">Velour</a>
+                                </h6>
+                            </div>
+                            <!-- float left end -->
+
+                            <!-- float right start -->
+                            <div class="float-right">
+                                <h3 class="category-product-price text-white price-tag">999.00$</h3>
+                            </div>
+                            <!-- float right end -->
+                        </div>
+                        <!-- clearfix end -->
+                    </div>
+                    <!-- product title end -->
+                </div>
+                <!-- category product end -->
+            </div>
+            <!-- carousel end -->
+        </div>
+    </section>
+    <!--    VARIOUS PRODUCTS end-->
+    <!--    other brand start-->
+    <section class="other-brand my-4">
+        <div class="container">
+            <div class="text-left d-block bg-light p-2 my-2 text-24">
+                Other Brand Products
+            </div>
+            <!-- carousel start -->
+            <div class="py-4 owl-carousel owl-theme">
+                <!-- category product start -->
+                <div class="category-product px-2">
+                    <!-- product img start-->
+                    <div class="category-product-img">
+                        <a href="">
+                            <img src="assets/images/vest.jpg" alt="" srcset="">
+                        </a>
+                    </div>
+                    <!-- product img end-->
+
+                    <!-- product title start -->
+                    <div class="category-product-title">
+                        <!-- clearfix start -->
+                        <div class="clearfix">
+                            <!-- float left start -->
+                            <div class="float-left">
+                                <h6 class="text-white text-bold">
+                                    <a href="" class="text-white">Men Vest</a><br>
+                                    by <a href="" class="brand">Velour</a>
+                                </h6>
+                            </div>
+                            <!-- float left end -->
+
+                            <!-- float right start -->
+                            <div class="float-right">
+                                <h3 class="category-product-price text-white price-tag">999.00$</h3>
+                            </div>
+                            <!-- float right end -->
+                        </div>
+                        <!-- clearfix end -->
+                    </div>
+                    <!-- product title end -->
+                </div>
+                <!-- category product end -->
+            </div>
+            <!-- carousel end -->
+        </div>
+    </section>
+    <!--    other brand end-->
     <!-- Footer -->
     <footer class="page-footer font-small">
 
@@ -312,12 +405,24 @@
                     <h4 class="text-uppercase text-dark footer-nav-title">BRANDS</h4>
                     <div class="footer-nav-content text-bold pt-md-4">
                         <ul class="list-unstyled">
-                            <li>Adidas, Adio, Birdhouse, C1rca,</li>
-                            <li>Calvin Klein, Cheap Monday, Dickies,</li>
-                            <li>Element, Emerica, Fallen, Herschel,</li>
-                            <li>HUF, Irie Daily, Lee, Levis, LRG,</li>
-                            <li>Mishka, Nike, Obey, Puma, Ray-ban,</li>
-                            <li>The Hundreds, Vans, Volcom</li>
+                            <li>
+                                <a href="...">Adidas</a>
+                            </li>
+                            <li>
+                                <a href="...">Channel</a>
+                            </li>
+                            <li>
+                                <a href="...">Nike</a>
+                            </li>
+                            <li>
+                                <a href="...">Gucci</a>
+                            </li>
+                            <li>
+                                <a href="...">Hermes</a>
+                            </li>
+                            <li>
+                                <a href="...">Louis Vuitton</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -456,9 +561,21 @@
 </body>
 <!-- Javascript -->
 <script src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/all.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            items: 4,
+            autoplay: true,
+            autoplayTimeout: 1000,
+            autoplayHoverPause: true
+        });
+    });
+</script>
 
 </html>
