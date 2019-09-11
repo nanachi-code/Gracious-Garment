@@ -303,7 +303,7 @@
                 <div class="col-md-2 py-2 text-bold">PRICE</div>
             </div>
             <div id="summary-product" class="border-top border-3">
-                
+
             </div>
 
             <div class="bg-light" id="summary-price">
@@ -323,7 +323,11 @@
                         <a href="" class="text-uppercase btn btn-dark text-12 text-bold px-4">Back to shipping</a>
                     </div>
                     <div class="col-md-6 text-right">
-                        <button type="submit" class="btn btn-warning text-white px-4">Confirm order</button>
+                        <form action="" method="post">
+                            <input type="hidden" name="cartProducts" id="cartProducts" value="">
+                            <input type="hidden" name="cartOptions"  id="cartOptions" value="">
+                            <button type="submit" class="btn btn-warning text-white px-4">Confirm order</button>
+                        </form>
                     </div>
                 </div>
             </div>

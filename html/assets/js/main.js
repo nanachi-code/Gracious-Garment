@@ -241,6 +241,8 @@
 
             $('#summary-price').find('.cart-total-quantity').text(cartObject.length);
             $('#summary-price').find('.cart-total-price').text('$' + totalPrice);
+            
+            $('#cartProducts').val(JSON.stringify(cartObject));
         } else {
             let cartHTML =
                 `<div class="py-2">
@@ -253,7 +255,7 @@
         }
 
         //* Load option
-        if (cartOptions) {
+        if (cartOptions.length != 0) {
             //* Load billing info
             $('.billing-name').text(cartOptions.billing.billingName);
             $('.billing-address').text(cartOptions.billing.billingAddress);
@@ -269,6 +271,24 @@
 
             //* Load payment option
             $('.payment-option').text(cartOptions.payment);
+            
+            $('#cartOptions').val(JSON.stringify(cartOptions));
+        } else {
+            //* Load billing info
+            $('.billing-name').text('Customer name');
+            $('.billing-address').text('Customer address');
+            $('.billing-phone').text('Customer phone');
+
+            //* Load delivery info
+            $('.delivery-name').text('');
+            $('.delivery-address').text('');
+            $('.delivery-phone').text('');
+
+            //* Load shipping option
+            $('.shipping-option').text('');
+
+            //* Load payment option
+            $('.payment-option').text('');
         }
     }
 

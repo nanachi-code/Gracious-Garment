@@ -3,9 +3,16 @@ const express = require('express');
 const app = express();
 const server = require("http").Server(app);
 const bodyParser = require('body-parser');
-
+const mongoose = require('mongoose');
 const urlencodedParser = bodyParser.urlencoded({
     extended: false
+});
+
+//* Connect to MongoDB Server
+mongoose.connect(uri, {
+    keepAlive: true,
+    keepAliveInitialDelay: 300000,
+    useNewUrlParser: true
 });
 
 //* Set up view engine
