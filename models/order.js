@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 const Order = new mongoose.Schema({
-    customerName: 'String',
-    customerAddress: 'String',
-    customerPhone: 'String',
-    customerComment: 'String',
+    billingName: 'String',
+    billingAddress: 'String',
+    billingPhone: 'String',
+    deliveryName: 'String',
+    deliverAddress: 'String',
+    deliverPhone: 'String',
+    comment: 'String',
     productName: 'String',
     productQuantity: 'String',
     productPayment: 'String',
