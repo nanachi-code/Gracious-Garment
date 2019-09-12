@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Order = new mongoose.Schema({
+const orderSchema = new mongoose.Schema({
     billingName: 'String',
     billingAddress: 'String',
     billingPhone: 'String',
@@ -14,4 +14,10 @@ const Order = new mongoose.Schema({
     productTotal: 'String',
 });
 
-module.exports = Order;
+orderSchema.methods.getAllOrder = function (cb) {
+    return this.model('Order').find({}, cb);
+}
+
+let order = mongoose.model('Order', orderSchema);
+
+module.exports = order;

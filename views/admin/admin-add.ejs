@@ -1,0 +1,82 @@
+<%- include('admin-header') %>
+<section>
+    <div class="container py-4">
+        <% if (typeof msg !== 'undefined') { 
+            if (msg.type == 'error') { %>
+            <div class="alert alert-danger">
+                <strong>Error!</strong> <%= msg.text %>
+            </div>
+        <%  } else { %>
+            <div class="alert alert-success">
+                <strong>Success!</strong> <%= msg.text %>
+            </div>
+        <%  }
+        } %>
+        <form action="add" method="POST">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" class="form-control" id="productName" name="productName"
+                            placeholder="Enter product name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productCategory">Product Category</label>
+                        <input type="text" class="form-control" id="productCategory" name="productCategory"
+                            placeholder="Enter product category">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productBrand">Product Brand</label>
+                        <input type="text" class="form-control" id="productBrand" name="productBrand"
+                            placeholder="Enter product brand">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productPrice">Product Price</label>
+                        <input type="text" class="form-control" id="productPrice" name="productPrice"
+                            placeholder="Enter product price">
+                    </div>
+                    <div class="form-group">
+                        <label for="productDOC">Link Document</label>
+                        <input type="text" class="form-control" id="productDoc" name="productDoc"
+                            placeholder="Enter Document link">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="productSize">Product Size</label>
+                        <input type="text" class="form-control" id="productSize" name="productSize"
+                            placeholder="Enter product size">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productColor">Product Color</label>
+                        <input type="text" class="form-control" id="productColor" name="productColor"
+                            placeholder="Enter product color">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productDesc">Product Description</label>
+                        <input type="text" class="form-control" id="productDesc" name="productDesc"
+                            placeholder="Enter product description">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productImg">Product Image link</label>
+                        <input type="text" class="form-control" id="productImgURL" name="productImgURL"
+                            placeholder="Enter product image link">
+                    </div>
+                    <div class="form-group" style="padding-top: 34px">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-primary">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</section>
+<%- include('admin-footer') %>

@@ -355,8 +355,12 @@
         loadHeaderCart();
         loadPageCart();
         loadPageSummary();
-        // console.log(cartObject);
-
+        $(".latest-slider").owlCarousel({
+            items: 4,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 1000,
+        });
     });
 
 
