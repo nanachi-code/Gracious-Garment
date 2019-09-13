@@ -1,0 +1,318 @@
+<%- include('header') %>
+
+<!-- Category Start -->
+<section class="category">
+    <!-- container start-->
+    <div class="container py-4">
+        <!-- row start -->
+        <div class="row">
+            <!-- sidebar start -->
+            <div class="col-md-3">
+                <!-- form start-->
+                <form action="/brand/<%= brand.name %>">
+                    <h5 class="text-uppercase text-bold">
+                        Filter
+                    </h5>
+
+                    <!-- Price range start-->
+                    <div class="sidebar mt-2">
+                        <h6 class="text-bold sidebar-title">
+                            Price range
+                        </h6>
+                        <!-- sidebar content start -->
+                        <div class="overflow-auto sidebar-content">
+                            <!-- form group start -->
+                            <div class="form-group">
+                                <label for="maxPrice">
+                                    Max price
+                                </label>
+                                <input type="number" name="maxPrice" id="maxPrice">
+                            </div>
+                            <!-- form group end -->
+
+                            <!-- form group start -->
+                            <div class="form-group">
+                                <label for="minPrice">
+                                    Min price
+                                </label>
+                                <input type="number" name="minPrice" id="minPrice">
+
+                            </div>
+                            <!-- form group end -->
+                        </div>
+                        <!-- sidebar content end -->
+                    </div>
+                    <!-- price range end -->
+
+                    <!-- Sort by start -->
+                    <div class="sidebar mt-2">
+                        <h6 class="text-bold sidebar-title">
+                            Sort by
+                        </h6>
+                        <!-- sidebar content start -->
+                        <div class="overflow-auto sidebar-content">
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" id="sortNew" value="new">
+                                <label class="form-check-label" for="sortNew">
+                                    New
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" id="sortPriceASC"
+                                    value="priceASC">
+                                <label class="form-check-label" for="sortPriceASC">
+                                    Price ascending
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" id="sortPriceDESC"
+                                    value="priceDESC">
+                                <label class="form-check-label" for="sortPriceDESC">
+                                    Price descending
+                                </label>
+                            </div>
+                            <!-- form check end -->
+                        </div>
+                        <!-- sidebar content end -->
+                    </div>
+                    <!-- sort by end -->
+
+                    <!-- size start -->
+                    <div class="sidebar mt-2">
+                        <h6 class="text-bold sidebar-title">
+                            Size
+                        </h6>
+                        <!-- sidebar content start -->
+                        <div class="overflow-auto sidebar-content">
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="size" id="sizeXS" value="XS">
+                                <label class="form-check-label" for="sizeXS">
+                                    XS
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="size" id="sizeS" value="S">
+                                <label class="form-check-label" for="sizeS">
+                                    S
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="size" id="sizeM" value="M">
+                                <label class="form-check-label" for="sizeM">
+                                    M
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="size" id="sizeXL" value="XL">
+                                <label class="form-check-label" for="sizeML">
+                                    XL
+                                </label>
+                            </div>
+                            <!-- form check end -->
+                        </div>
+                        <!-- sidebar content end -->
+                    </div>
+                    <!-- size end -->
+
+                    <!-- color start -->
+                    <div class="sidebar mt-2">
+                        <h6 class="text-bold sidebar-title">
+                            Color
+                        </h6>
+                        <!-- sidebar content start -->
+                        <div class="overflow-auto sidebar-content">
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="color" id="colorRed" value="red">
+                                <label class="form-check-label" for="colorRed">
+                                    Red
+                                </label>
+                            </div>
+                            <!-- form check end -->
+                        </div>
+                        <!-- sidebar content end -->
+                    </div>
+                    <!-- color end -->
+
+
+                    <!-- brand start -->
+                    <div class="sidebar mt-2">
+                        <h6 class="text-bold sidebar-title">
+                            Brand
+                        </h6>
+                        <!-- sidebar content start -->
+                        <div class="overflow-auto sidebar-content">
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
+                                    value="adidas">
+                                <label class="form-check-label" for="colorRed">
+                                    Adidas
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
+                                    value="adidas">
+                                <label class="form-check-label" for="colorRed">
+                                    Adidas
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
+                                    value="adidas">
+                                <label class="form-check-label" for="colorRed">
+                                    Adidas
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
+                                    value="adidas">
+                                <label class="form-check-label" for="colorRed">
+                                    Adidas
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
+                                    value="adidas">
+                                <label class="form-check-label" for="colorRed">
+                                    Adidas
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
+                                    value="adidas">
+                                <label class="form-check-label" for="colorRed">
+                                    Adidas
+                                </label>
+                            </div>
+                            <!-- form check end -->
+                        </div>
+                        <!-- sidebar content end -->
+                    </div>
+                    <!-- brand end -->
+
+                    <!-- Submit start -->
+                    <div class="mt-2 clearfix">
+                        <button type="submit" class="btn btn-dark float-left" style="width: 80px">Apply</button>
+                        <input type="reset" class="btn btn-dark float-right" value="Reset filter">
+                    </div>
+                    <!-- Submit end -->
+                </form>
+                <!-- form end -->
+            </div>
+            <!-- sidebar end -->
+
+            <!-- list product start -->
+            <div class="col-md-9">
+                <!-- category banner start -->
+                <div class="category-banner">
+                    <a href="#">
+                        <img src="assets/images/Banner.png" alt="banner" srcset="">
+                    </a>
+
+                </div>
+                <!-- category banner end -->
+
+                <!-- row start -->
+                <div class="row">
+                    <!-- col md-4 start-->
+                    <div class="col-md-4 mb-3">
+                        <!-- category product start -->
+                        <div class="category-product">
+                            <!-- product img start-->
+                            <div class="category-product-img">
+                                <a href="">
+                                    <img src="assets/images/vest.jpg" alt="" srcset="">
+                                </a>
+                            </div>
+                            <!-- product img end-->
+
+                            <!-- product title start -->
+                            <div class="category-product-title">
+                                <!-- clearfix start -->
+                                <div class="clearfix">
+                                    <!-- float left start -->
+                                    <div class="float-left">
+                                        <h6 class="text-white text-bold">
+                                            <a href="" class="text-white">Men Vest</a><br>
+                                            by <a href="" class="brand">Velour</a>
+                                        </h6>
+                                    </div>
+                                    <!-- float left end -->
+
+                                    <!-- float right start -->
+                                    <div class="float-right">
+                                        <h3 class="category-product-price text-white price-tag">999.00$</h3>
+                                    </div>
+                                    <!-- float right end -->
+                                </div>
+                                <!-- clearfix end -->
+                            </div>
+                            <!-- product title end -->
+                        </div>
+                        <!-- category product end -->
+                    </div>
+                    <!-- col md-4 end -->
+
+                </div>
+                <!-- row end -->
+
+                <!-- clearfix start -->
+                <div class="clearfix">
+                    <!-- float right start -->
+                    <div class="float-right">
+                        <!-- pagination start -->
+                        <div class="pagination">
+                            <span class="active btn btn-dark">1</span>
+                            <a href="" class="btn">2</a>
+                            <a href="" class="btn">3</a>
+                            <a href="" class="btn">4</a>
+                            <a href="" class="btn">5</a>
+                        </div>
+                        <!-- pagination end -->
+                    </div>
+                    <!-- float right end -->
+                </div>
+                <!-- clearfix end -->
+            </div>
+            <!-- list product end-->
+        </div>
+        <!-- row end-->
+    </div>
+    <!-- container end -->
+</section>
+<!-- Category End -->
+
+<%- include('footer') %>
