@@ -7,11 +7,9 @@ const orderSchema = new mongoose.Schema({
     deliverAddress: 'String',
     deliverPhone: 'String',
     comment: 'String',
-    productName: 'String',
-    productQuantity: 'String',
-    productPayment: 'String',
-    productShipping: 'String',
-    productTotal: 'String',
+    product: 'Array',
+    payment: 'String',
+    shipping: 'String'
 });
 
 orderSchema.methods.getAllOrder = function (cb) {

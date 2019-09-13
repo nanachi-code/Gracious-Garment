@@ -37,6 +37,7 @@ app.use('/', require('./routes/cart.js'));
 app.use('/', require('./routes/shipping-payment.js'));
 app.use('/', require('./routes/address.js'));
 app.use('/', require('./routes/summary.js'));
+app.use('/', require('./routes/confirm.js'));
 
 
 

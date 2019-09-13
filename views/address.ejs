@@ -24,7 +24,7 @@
                 </h4>
             </div>
         </div>
-
+        <form action="/shipping-payment" method="post" id="address-form">
             <div class="row mt-4">
                 <div class="col-md-6">
                     <div class="pt-2 pb-2 mb-4 text-18 text-bold align-self-center">Billing info</div>
@@ -86,12 +86,12 @@
                     <a href="/cart" class="text-uppercase btn btn-dark text-12 text-bold px-4">Back to cart</a>
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="/shipping-payment" id="address-redirect"
+                    <button type="submit"
                             class="btn btn-warning text-white px-4 text-12 text-bold text-uppercase">Process to
-                        payment</a>
+                        payment</button>
                 </div>
             </div>
-
+        </form>
     </div>
 </section>
 
