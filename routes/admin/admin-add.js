@@ -30,12 +30,13 @@ router.post('/admin/add', urlencodedParser, (req, res) => {
                     }
                 };
             }
-            localVar = {
+            else {
+                localVar = {
                 msg: {
                     type: 'success',
                     text: `${product.productName} is successfully added to database`
                 }
-            };
+            }};
 
 
             res.render('admin/admin-add', localVar);

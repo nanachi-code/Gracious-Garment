@@ -2,19 +2,15 @@
     "use strict";
     let cartObject = [] //* global pointer to cart   
     let cartOptions = { //* global pointer to cart options
-        'billing': {
-            'billingName': '',
-            'billingAddress': '',
-            'billingPhone': '',
-        },
-        'delivery': {
-            'deliveryName': '',
-            'deliveryAddress': '',
-            'deliveryPhone': '',
-        },
-        'comment': '',
-        'payment': '',
-        'shipping': ''
+        billingName: '',
+        billingAddress: '',
+        billingPhone: '',
+        deliveryName: '',
+        deliverAddress: '',
+        deliverPhone: '',
+        comment: '',
+        payment: '',
+        shipping: ''
     };
 
     //* localStorage function
@@ -49,20 +45,16 @@
     }
 
     //* Save address info on submit
-    $('#address-redirect').click(() => {
-        cartOptions.billing = {
+    $('#address-form').submit(() => {
+        cartOptions = { //* global pointer to cart options
             billingName: $("#billingName").val(),
             billingAddress: $("#billingAddress").val(),
             billingPhone: $("#billingPhone").val(),
-        };
-
-        cartOptions.delivery = {
             deliveryName: $("#deliveryName").val(),
             deliveryAddress: $("#deliveryAddress").val(),
             deliveryPhone: $("#deliveryPhone").val(),
+            comment : $("#comment").val(),
         };
-
-        cartOptions.comment = $("#comment").val();
 
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
@@ -96,7 +88,7 @@
     $('#summary-redirect').click(function () {
         cartOptions.payment = $('.payment.option-selected').attr('data-value');
         cartOptions.shipping = $('.delivery.option-selected').attr('data-value');
-
+        cartOptions.product = cartObject;
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
 
@@ -239,8 +231,6 @@
 
             $('#summary-price').find('.cart-total-quantity').text(cartObject.length);
             $('#summary-price').find('.cart-total-price').text('$' + totalPrice);
-            
-            $('#cartProducts').val(JSON.stringify(cartObject));
         } else {
             let cartHTML =
                 `<div class="py-2">
@@ -255,14 +245,14 @@
         //* Load option
         if (cartOptions.length != 0) {
             //* Load billing info
-            $('.billing-name').text(cartOptions.billing.billingName);
-            $('.billing-address').text(cartOptions.billing.billingAddress);
-            $('.billing-phone').text(cartOptions.billing.billingPhone);
+            $('.billing-name').text(cartOptions.billingName);
+            $('.billing-address').text(cartOptions.billingAddress);
+            $('.billing-phone').text(cartOptions.billingPhone);
 
             //* Load delivery info
-            $('.delivery-name').text(cartOptions.delivery.deliveryName);
-            $('.delivery-address').text(cartOptions.delivery.deliveryAddress);
-            $('.delivery-phone').text(cartOptions.delivery.deliveryPhone);
+            $('.delivery-name').text(cartOptions.deliveryName);
+            $('.delivery-address').text(cartOptions.deliveryAddress);
+            $('.delivery-phone').text(cartOptions.deliveryPhone);
 
             //* Load shipping option
             $('.shipping-option').text(cartOptions.shipping);
