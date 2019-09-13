@@ -49,7 +49,7 @@
     }
 
     //* Save address info on submit
-    $('#address-form').submit(() => {
+    $('#address-redirect').click(() => {
         cartOptions.billing = {
             billingName: $("#billingName").val(),
             billingAddress: $("#billingAddress").val(),
@@ -84,8 +84,6 @@
     $('.delivery').on('click', function () {
         $('span.delivery').removeClass('option-selected')
         $(this).addClass('option-selected');
-        
-        alert($('.delivery.option-selected').attr('data-value'))
     });
 
     $('.payment').on('click', function () {
@@ -95,7 +93,7 @@
 
 
     //* Save payment & shipping option on submit
-    $('#payment-form').submit(function () {
+    $('#summary-redirect').click(function () {
         cartOptions.payment = $('.payment.option-selected').attr('data-value');
         cartOptions.shipping = $('.delivery.option-selected').attr('data-value');
 

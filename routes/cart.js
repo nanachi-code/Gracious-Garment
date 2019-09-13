@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get('/cart', (req, res) => {
     let localVar = {
-        'page': 'Cart',
+        'page': 'CHECKOUT',
         'isSingle': false
     };
 

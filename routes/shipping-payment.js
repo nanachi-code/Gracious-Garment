@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/address', (req, res) => {
+router.get('/shipping-payment', (req, res) => {
     let localVar = {
         'page': 'CHECKOUT',
         'isSingle': false
     };
 
-    res.render('address', localVar)
+    res.render('payment', localVar)
 })
 
 module.exports = router;
