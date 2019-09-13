@@ -1,0 +1,126 @@
+<%- include('header') %>
+
+<section class="py-4">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3 pr-0">
+                <h4 class="border-bottom border-3 border-light text-center py-2 text-secondary">
+                    1. SHOPPING CART
+                </h4>
+            </div>
+            <div class="col-md-3 px-0">
+                <h4 class="border-bottom border-3 border-light text-center py-2 text-secondary">
+                    2. DELIVERY ADDRESS
+                </h4>
+            </div>
+            <div class="col-md-4 px-0">
+                <h4 class="border-bottom border-3 border-light text-center py-2 text-secondary">
+                    3. SHIPPING & PAYMENT
+                </h4>
+            </div>
+            <div class="col-md-2 pl-0">
+                <h4 class="border-bottom border-3 border-dark text-center text-bold py-2">
+                    4. SUMMARY
+                </h4>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="bg-light p-4">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="text-bold text-16 text-uppercase mb-2">
+                                Billing info
+                            </div>
+                            <ul>
+                                <li class="billing-name">nanachi</li>
+                                <li class="billing-address">An Khanh, Hoai Duc</li>
+                                <li class="billing-phone">Hanoi</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="text-bold text-16 text-uppercase mb-2">
+                                Delivery info
+                            </div>
+                            <ul>
+                                <li class="delivery-name">nanachi</li>
+                                <li class="delivery-address">An Khanh, Hoai Duc</li>
+                                <li class="delivery-phone">Hanoi</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-2 align-self-end">
+                            <a href="" class="text-uppercase btn btn-dark float-right text-bold text-12">Change</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="bg-light p-4">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="text-bold text-16 text-uppercase mb-2">
+                                Shipping option
+                            </div>
+                            <ul>
+                                <li class="shipping-option">Fedex</li>
+                                <li class="shipping-date">2-5 working days</li>
+                                <li class="shipping-fees">Freeship</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="text-bold text-16 text-uppercase mb-2">
+                                Payment method
+                            </div>
+                            <span class="payment-option">Cash on delivery</span>
+                        </div>
+
+                        <div class="col-md-2 align-self-end">
+                            <a href="" class="text-uppercase btn btn-dark float-right text-bold text-12">Change</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-8 py-2 text-bold">PRODUCT</div>
+            <div class="col-md-2 py-2 text-bold">QTY.</div>
+            <div class="col-md-2 py-2 text-bold">PRICE</div>
+        </div>
+        <div id="summary-product" class="border-top border-3">
+
+        </div>
+
+        <div class="bg-light" id="summary-price">
+            <div class="row">
+                <div class="col-md-3 offset-md-7 align-self-center py-2 text-bold text-14">
+                    <span class="cart-total-quantity">1</span> items in total price
+                </div>
+                <div class="col-md-2 py-2">
+                    <h1 class="text-bold price-tag cart-total-price">$35</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="/shipping-payment" class="text-uppercase btn btn-dark text-12 text-bold px-4">Back to payment</a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <form action="" method="post">
+                        <input type="hidden" name="cartProducts" id="cartProducts" value="">
+                        <input type="hidden" name="cartOptions"  id="cartOptions" value="">
+                        <button type="submit" class="btn btn-warning text-white px-4">Confirm order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-2 pb-2"></div>
+</section>
+
+<%- include('footer') %>
