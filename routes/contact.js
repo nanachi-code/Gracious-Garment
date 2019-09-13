@@ -7,7 +7,7 @@ router.get('/contact', (req, res) => {
         'isSingle': false
     };
 
-    res.render('contact', localVar)
+    res.render('single.ejs', localVar)
 })
 
 module.exports = router;
