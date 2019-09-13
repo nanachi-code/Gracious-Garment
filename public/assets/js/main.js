@@ -1,8 +1,21 @@
 (function ($) {
     "use strict";
-    let cartObject = null; //* global pointer to cart   
-    let cartOptions = null //* global pointer to cart options
-
+    let cartObject = [] //* global pointer to cart   
+    let cartOptions = { //* global pointer to cart options
+        'billing': {
+            'billingName': '',
+            'billingAddress': '',
+            'billingPhone': '',
+        },
+        'delivery': {
+            'deliveryName': '',
+            'deliveryAddress': '',
+            'deliveryPhone': '',
+        },
+        'comment': '',
+        'payment': '',
+        'shipping': ''
+    };
 
     //* localStorage function
     function getLocalData(name) {
@@ -19,37 +32,43 @@
 
     function initCart() {
         //* Check in browser memory if there are a saved cart
-        if (getLocalData('graciousCart') != null) {
+        if ((getLocalData('graciousCart') != null)) {
             //* if previous cart is present then load it
             cartObject = JSON.parse(getLocalData('graciousCart'));
+        } else {
+            setLocalData('graciousCart', JSON.stringify(cartObject));
         }
+
         if (getLocalData('graciousCartOptions') != null) {
             //* if previous cart options are present then load it
             cartOptions = JSON.parse(getLocalData('graciousCartOptions'));
+        } else {
+
+            setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
         }
     }
 
-    $('#address-form').submit(function () {
-        cartOptions = {
-            'billing': {
-                'billingName': $("#billingName").val(),
-                'billingAddress': $("#billingAddress").val(),
-                'billingPhone': $("#billingPhone").val(),
-            },
+    //* Save address info on submit
+    $('#address-form').submit(() => {
+        cartOptions.billing = {
+            billingName: $("#billingName").val(),
+            billingAddress: $("#billingAddress").val(),
+            billingPhone: $("#billingPhone").val(),
+        };
 
-            'delivery': {
-                'deliveryName': $("#deliveryName").val(),
-                'deliveryAddress': $("#deliveryAddress").val(),
-                'deliveryPhone': $("#deliveryPhone").val(),
-            },
-            'comment': $("#comment").val(),
-            'shipping': '',
-            'payment': ''
-        }
+        cartOptions.delivery = {
+            deliveryName: $("#deliveryName").val(),
+            deliveryAddress: $("#deliveryAddress").val(),
+            deliveryPhone: $("#deliveryPhone").val(),
+        };
+
+        cartOptions.comment = $("#comment").val();
+
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
 
-    $("#copyAddress").change(function () {
+    //* Copy delivery info from billing info on checkbox tick
+    $("#copyInfo").change(function() {
         if (this.checked) {
             $("#deliveryName").val($("#billingName").val());
             $("#deliveryAddress").val($("#billingAddress").val());
@@ -61,18 +80,35 @@
         }
     });
 
-    $('.remove-cart').click(function (e) {
-        e.preventDefault();
-        removeFromCart($(this).attr('data-id'));
-        $(this).parent().parent().parent().parent().remove();
+    //* Button get selected class on click, also remove selected class from all other button with same type delivery/payment
+    $('.delivery').on('click', function () {
+        $('span.delivery').removeClass('option-selected')
+        $(this).addClass('option-selected');
+        
+        alert($('.delivery.option-selected').attr('data-value'))
+    });
+
+    $('.payment').on('click', function () {
+        $('span.payment').removeClass('option-selected')
+        $(this).addClass('option-selected');
+    });
+
+
+    //* Save payment & shipping option on submit
+    $('#payment-form').submit(function () {
+        cartOptions.payment = $('.payment.option-selected').attr('data-value');
+        cartOptions.shipping = $('.delivery.option-selected').attr('data-value');
+
+        setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
 
     //* Load header cart
     function loadHeaderCart() {
-        if (cartObject != null) {
+        if (cartObject.length != 0) {
             //* if cartObject is set then display the header cart
-            let totalPrice;
-            cartObject.forEach(element => {
+            let totalPrice = 0;
+
+            $.each(cartObject, function (index, element) {
                 let singleTotalPrice = element.price * element.quantity;
                 let cartHTML =
                     `<div class="cart-product py-2">
@@ -89,7 +125,7 @@
                                     </h6>
                                 </div>
                                 <div class="float-left text-dark mt-2">
-                                    <span class="price-tag">/$${element.price}</span>
+                                    <span class="price-tag">$${element.price} </span>
                                     <span class="cart-quantity text-bold">x ${element.quantity}</span>
                                 </div>
                             </div>
@@ -98,10 +134,10 @@
 
                 $('.cart-checkout').parent().prepend(cartHTML);
 
-                totalPrice += singleTotalPrice
+                totalPrice += Number(singleTotalPrice)
             });
 
-            $('cart-total-quantity').text(cartObject.length());
+            $('cart-total-quantity').text(cartObject.length);
             $('#cart-total-price').text('$' + totalPrice);
             $('#header-cart-price').find('.price-tag').text('$' + totalPrice);
         } else {
@@ -119,32 +155,33 @@
 
     //* Load cart page
     function loadPageCart() {
-        if (cartObject != null) {
+        //* Load cart
+        if (cartObject.length != 0) {
             //* if cartObject is set then display the header cart
-            let totalPrice;
-            cartObject.forEach(element => {
+            let totalPrice = 0;
+            cartObject.forEach((element) => {
                 let singleTotalPrice = element.price * element.quantity;
                 let cartHTML =
-                    `<div class="row border-top border-3">
+                    `<div class="row">
                         <div class="col-md-8 align-self-center">
                             <div class="row py-2">
-                                <div class="col-md-2"><img src="${element.imageURL}" alt=""></div>
+                                <div class="col-md-2"><img src="${element.imgURL}" alt=""></div>
                                 <div class="col-md-10 align-self-center">
-                                    <h5 class="text-bold line">${element.name} by <a href="" class="brand">${element.brand}</a></h5>
+                                    <h5 class="py-2">${element.name} by <a href="/brand/${element.brand}" class="brand">${element.brand}</a></h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2 line align-self-center">
-                            <input type="number" class="form-control text-26 col-md-5 text-bold" value="${element.quantity}">
+                        <div class="col-md-2 py-2 align-self-center">
+                            <input type="number" class="form-control text-26 border-0 text-bold" value="${element.quantity}" name="product">
                         </div>
                         <div class="col-md-2 align-self-center">
-                            <div class="row>
+                            <div class="row">
                                 <div class="col-md-9">
-                                    <h5 class="line price-tag text-secondary">${element.quantity}x/$${element.price}</h5>
-                                    <h1 class="price-tag text-bold">/$${singleTotalPrice}</h1>
+                                    <h5 class="py-2 price-tag text-secondary">${element.quantity} x $${element.price}</h5>
+                                    <h1 class="price-tag text-bold">$${singleTotalPrice}</h1>
                                 </div>
                                 <div class="col-md-3">
-                                    <div class="remove-cart" data-id="${element.id}">x</div>
+                                    <div class="remove-cart btn" data-name="${element.name}">x</div>
                                 </div>
                             </div>
                         </div>
@@ -152,10 +189,10 @@
 
                 $('#cart-product').prepend(cartHTML);
 
-                totalPrice += singleTotalPrice
+                totalPrice += Number(singleTotalPrice);
             });
 
-            $('#cart-price').find('.cart-total-quantity').text(cartObject.length());
+            $('#cart-price').find('.cart-total-quantity').text(cartObject.length);
             $('#cart-price').find('.cart-total-price').text('$' + totalPrice);
         } else {
             let cartHTML =
@@ -171,39 +208,41 @@
 
     //* Load summary page
     function loadPageSummary() {
-        if (cartObject != null) {
+        if (cartObject.length != 0) {
             //* if cartObject is set then display the header cart
-            let totalPrice;
-            cartObject.forEach(element => {
+            let totalPrice = 0;
+            cartObject.forEach((element) => {
                 let singleTotalPrice = element.price * element.quantity;
                 let cartHTML =
-                    `<div class="row border-top border-3">
+                    `<div class="row">
                         <div class="col-md-8 align-self-center">
                             <div class="row py-2">
-                                <div class="col-md-2"><img src="${element.imageURL}" alt=""></div>
+                                <div class="col-md-2"><img src="${element.imgURL}" alt=""></div>
                                 <div class="col-md-10 align-self-center">
-                                    <h5 class="text-bold line">${element.name} by <a href="" class="brand">${element.brand}</a></h5>
+                                    <h5 class="text-bold py-2">${element.name} by <a href="/brand/${element.brand}" class="brand">${element.brand}</a></h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2 line align-self-center">
+                        <div class="col-md-2 py-2 align-self-center">
                             <div class="text-26 col-md-5 text-bold">${element.quantity}</div>
                         </div>
                         <div class="col-md-2 align-self-center">
                             <div>
-                                <h5 class="line price-tag text-secondary">${element.quantity}x/$${element.price}</h5>
-                                <h1 class="price-tag text-bold">/$${singleTotalPrice}</h1>
+                                <h5 class="py-2 price-tag text-secondary">${element.quantity} x $${element.price}</h5>
+                                <h1 class="price-tag text-bold">$${singleTotalPrice}</h1>
                             </div>
                         </div>
                     </div>`
 
                 $('#summary-product').prepend(cartHTML);
 
-                totalPrice += singleTotalPrice
+                totalPrice += Number(singleTotalPrice);
             });
 
-            $('#summary-price').find('.cart-total-quantity').text(cartObject.length());
+            $('#summary-price').find('.cart-total-quantity').text(cartObject.length);
             $('#summary-price').find('.cart-total-price').text('$' + totalPrice);
+            
+            $('#cartProducts').val(JSON.stringify(cartObject));
         } else {
             let cartHTML =
                 `<div class="py-2">
@@ -214,46 +253,114 @@
             $('#summary-price').find('.cart-total-quantity').text('0');
             $('#summary-price').find('.cart-total-price').text('$0');
         }
+
+        //* Load option
+        if (cartOptions.length != 0) {
+            //* Load billing info
+            $('.billing-name').text(cartOptions.billing.billingName);
+            $('.billing-address').text(cartOptions.billing.billingAddress);
+            $('.billing-phone').text(cartOptions.billing.billingPhone);
+
+            //* Load delivery info
+            $('.delivery-name').text(cartOptions.delivery.deliveryName);
+            $('.delivery-address').text(cartOptions.delivery.deliveryAddress);
+            $('.delivery-phone').text(cartOptions.delivery.deliveryPhone);
+
+            //* Load shipping option
+            $('.shipping-option').text(cartOptions.shipping);
+
+            //* Load payment option
+            $('.payment-option').text(cartOptions.payment);
+            
+            $('#cartOptions').val(JSON.stringify(cartOptions));
+        } else {
+            //* Load billing info
+            $('.billing-name').text('Customer name');
+            $('.billing-address').text('Customer address');
+            $('.billing-phone').text('Customer phone');
+
+            //* Load delivery info
+            $('.delivery-name').text('');
+            $('.delivery-address').text('');
+            $('.delivery-phone').text('');
+
+            //* Load shipping option
+            $('.shipping-option').text('');
+
+            //* Load payment option
+            $('.payment-option').text('');
+        }
     }
 
-    //* Cart methods
+    //* Session cart methods
     //* Add to cart
-    function addToCart(id, name, brand, price, quantity, imgURL) {
-        //* Check if this item is already in the cart or not
-        cartObject.forEach(element => {
-            //* if it is already in the cart then increase the quantity
-            if (element.id == id) {
-                element.quantity = element.quantity + quantity;
-            }
+    function addToCart(name, brand, price, quantity, imgURL) {
+        let tempIndex = cartObject.findIndex((element) => {
+            return element.name == name;
         });
-        //* if not then add new item to localStorage
-        let cartItem = {
-            'id': id,
-            'name': name,
-            'brand': brand,
-            'price': price,
-            'imgURL': imgURL,
-            'quantity': quantity
-        };
-        cartObject.push(cartItem);
+
+        let tempValue = cartObject.find((element) => {
+            return element.name == name;
+        });
+
+        if (tempIndex != -1 && tempValue != undefined) {
+            tempValue.quantity = Number(tempValue.quantity) + Number(quantity);
+            cartObject.splice(tempIndex, 1, tempValue);
+        } else {
+            //* if not then add new item to localStorage
+            let cartItem = {
+                'name': name,
+                'brand': brand,
+                'price': price,
+                'imgURL': imgURL,
+                'quantity': quantity
+            };
+            cartObject.push(cartItem);
+        }
+
         setLocalData('graciousCart', JSON.stringify(cartObject));
     }
 
+    //* Add an item to cart on click
+    $('.add-cart').click(() => {
+        let name = $('#product-name').text();
+        let brand = $('#product-brand').text();
+        let price = $('#product-price').attr('data-price');
+        let imgURL = $('#product-img').attr('src');
+        let quantity = $('#product-quantity').val();
+        addToCart(name, brand, price, quantity, imgURL);
+        alert('Item added to cart successfully.');
+    });
+
     //* Remove from cart
-    function removeFromCart(id) {
+    function removeFromCart(name) {
         let afterFilter = cartObject.filter((element) => {
-            element.id != id;
+            element.name != name;
         })
 
         cartObject = afterFilter;
         setLocalData('graciousCart', JSON.stringify(cartObject));
     }
 
+    //* Remove an item from cart on click
+    $('.remove-cart').click((e) => {
+        e.preventDefault();
+        removeFromCart($(this).attr('data-name'));
+        $(this).parent().parent().parent().parent().parent().remove();
+        alert('Item removed from cart successfully.');
+    });
+
     $(document).ready(function () {
         initCart();
         loadHeaderCart();
         loadPageCart();
         loadPageSummary();
+        $(".latest-slider").owlCarousel({
+            items: 4,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 1000,
+        });
     });
 
 

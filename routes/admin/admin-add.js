@@ -7,15 +7,6 @@ const urlencodedParser = bodyParser.urlencoded({
 });
 
 router.get('/admin/add', (req, res) => {
-    // product
-    //     .find(function (err, product) {
-    //         if (err) return console.error(err);
-    //         console.log({
-    //             'product': product
-    //         });
-    //     })
-    //     .limit(8);
-
     let localVar = {};
 
     res.render('admin/admin-add', localVar);

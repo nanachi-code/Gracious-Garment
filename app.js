@@ -30,7 +30,11 @@ app.set("views", "./views");
 
 //* Routes
 app.use('/', require('./routes/index.js'));
+app.use('/', require('./routes/about-us.js'));
+app.use('/', require('./routes/cart.js'));
+app.use('/', require('./routes/contact.js'));
 app.use('/', require('./routes/admin/admin-add.js'));
+
 
 //* Start server
 server.listen(PORT, console.log(`Server started on port ${PORT}`));

@@ -1,0 +1,62 @@
+<%- include('header') %>
+
+<section class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 pr-0">
+                <h4 class="border-bottom border-3 border-dark text-center text-bold py-2">
+                    1. SHOPPING CART
+                </h4>
+            </div>
+            <div class="col-md-3 px-0">
+                <h4 class="border-bottom border-3 border-light text-center py-2 text-secondary">
+                    2. DELIVERY ADDRESS
+                </h4>
+            </div>
+            <div class="col-md-4 px-0">
+                <h4 class="border-bottom border-3 border-light text-center py-2 text-secondary">
+                    3. SHIPPING & PAYMENT
+                </h4>
+            </div>
+            <div class="col-md-2 pl-0">
+                <h4 class="border-bottom border-3 border-light text-center py-2 text-secondary">
+                    4. SUMMARY
+                </h4>
+            </div>
+        </div>
+        <form action="" method="post">
+            <div class="row mt-4">
+                <div class="col-md-8 py-2 text-bold">PRODUCT</div>
+                <div class="col-md-2 py-2 text-bold">QTY.</div>
+                <div class="col-md-2 py-2 text-bold">PRICE</div>
+            </div>
+            <div id="cart-product" class="border-top border-3">
+            </div>
+
+            <div class="bg-light" id="cart-price">
+                <div class="row">
+                    <div class="col-md-3 offset-md-7 align-self-center py-2 text-bold text-14">
+                        <span class="cart-total-quantity">0</span> items in total price
+                    </div>
+                    <div class="col-md-2 py-2">
+                        <h1 class="text-bold price-tag cart-total-price">$0</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="" class="text-uppercase btn btn-dark text-12 text-bold px-4">Back to shopping</a>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button type="submit" class="btn btn-warning text-white px-4">Process to address</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+<%- include('footer') %>
