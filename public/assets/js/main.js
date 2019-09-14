@@ -2,15 +2,19 @@
     "use strict";
     let cartObject = [] //* global pointer to cart   
     let cartOptions = { //* global pointer to cart options
-        billingName: '',
-        billingAddress: '',
-        billingPhone: '',
-        deliveryName: '',
-        deliverAddress: '',
-        deliverPhone: '',
-        comment: '',
-        payment: '',
-        shipping: ''
+        'billing': {
+            'billingName': '',
+            'billingAddress': '',
+            'billingPhone': '',
+        },
+        'delivery': {
+            'deliveryName': '',
+            'deliveryAddress': '',
+            'deliveryPhone': '',
+        },
+        'comment': '',
+        'payment': '',
+        'shipping': ''
     };
 
     //* localStorage function
@@ -46,21 +50,25 @@
 
     //* Save address info on submit
     $('#address-form').submit(() => {
-        cartOptions = { //* global pointer to cart options
+        cartOptions.billing = {
             billingName: $("#billingName").val(),
             billingAddress: $("#billingAddress").val(),
             billingPhone: $("#billingPhone").val(),
+        };
+
+        cartOptions.delivery = {
             deliveryName: $("#deliveryName").val(),
             deliveryAddress: $("#deliveryAddress").val(),
             deliveryPhone: $("#deliveryPhone").val(),
-            comment : $("#comment").val(),
         };
+
+        cartOptions.comment = $("#comment").val();
 
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
 
     //* Copy delivery info from billing info on checkbox tick
-    $("#copyInfo").change(function() {
+    $("#copyInfo").change(function () {
         if (this.checked) {
             $("#deliveryName").val($("#billingName").val());
             $("#deliveryAddress").val($("#billingAddress").val());
@@ -85,10 +93,10 @@
 
 
     //* Save payment & shipping option on submit
-    $('#summary-redirect').click(function () {
+    $('#payment-form').submit(function () {
         cartOptions.payment = $('.payment.option-selected').attr('data-value');
         cartOptions.shipping = $('.delivery.option-selected').attr('data-value');
-        cartOptions.product = cartObject;
+
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
 
@@ -231,6 +239,8 @@
 
             $('#summary-price').find('.cart-total-quantity').text(cartObject.length);
             $('#summary-price').find('.cart-total-price').text('$' + totalPrice);
+
+            $('#cartProducts').val(JSON.stringify(cartObject));
         } else {
             let cartHTML =
                 `<div class="py-2">
@@ -245,21 +255,21 @@
         //* Load option
         if (cartOptions.length != 0) {
             //* Load billing info
-            $('.billing-name').text(cartOptions.billingName);
-            $('.billing-address').text(cartOptions.billingAddress);
-            $('.billing-phone').text(cartOptions.billingPhone);
+            $('.billing-name').text(cartOptions.billing.billingName);
+            $('.billing-address').text(cartOptions.billing.billingAddress);
+            $('.billing-phone').text(cartOptions.billing.billingPhone);
 
             //* Load delivery info
-            $('.delivery-name').text(cartOptions.deliveryName);
-            $('.delivery-address').text(cartOptions.deliveryAddress);
-            $('.delivery-phone').text(cartOptions.deliveryPhone);
+            $('.delivery-name').text(cartOptions.delivery.deliveryName);
+            $('.delivery-address').text(cartOptions.delivery.deliveryAddress);
+            $('.delivery-phone').text(cartOptions.delivery.deliveryPhone);
 
             //* Load shipping option
             $('.shipping-option').text(cartOptions.shipping);
 
             //* Load payment option
             $('.payment-option').text(cartOptions.payment);
-            
+
             $('#cartOptions').val(JSON.stringify(cartOptions));
         } else {
             //* Load billing info
@@ -343,11 +353,26 @@
         loadHeaderCart();
         loadPageCart();
         loadPageSummary();
-        $(".latest-slider").owlCarousel({
-            items: 4,
-            loop: true,
+        $(".latest-slider").slick({
             autoplay: true,
-            autoplayTimeout: 1000,
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplaySpeed: 2000,
+        });
+        $(".similar-slider").slick({
+            autoplay: true,
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplaySpeed: 2000,
+        });
+        $(".other-slider").slick({
+            autoplay: true,
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplaySpeed: 2000,
         });
     });
 
