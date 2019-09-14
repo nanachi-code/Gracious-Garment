@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/contact', (req, res) => {
+router.get('/confirm', (req, res) => {
     let localVar = {
-        'page': 'Contact',
+        'page': 'CHECKOUT',
         'isSingle': false
     };
 
-    res.render('contact.ejs', localVar)
+    res.render('confirm', localVar)
 })
 
 module.exports = router;
