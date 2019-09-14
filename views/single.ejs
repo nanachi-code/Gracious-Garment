@@ -1,0 +1,164 @@
+<%- include('header');%>
+
+<!--product-detail-->
+<section class="product-detail my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="bg-light p-3 rounded">
+                    <img id="product-img" src="assets/images/vest.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bg-light p-4 rounded">
+                            <div class="info">
+                                <h1 id="product-name">Product name</h1>
+                                <h5>by <span class="brand" id="product-brand">Velour</span></h5>
+                                <div class="price-tag text-36 my-2" id="product-price" data-price="200">$200</div>
+                            </div>
+
+                            <div class="order mb-4">
+                                <div class="mt-4">
+                                    <div class="form-group row mr-0">
+                                        <label for="quantity" class="col-md-2">Quantity</label>
+                                        <input type="number" name="product-quantity" class="form-control col-md-1"
+                                               id="product-quantity" value="1">
+                                    </div>
+                                    <button
+                                            class="add-cart btn btn-warning text-uppercase text-bold text-white text-12 mr-2">
+                                        Add to cart
+                                    </button>
+                                    <a class="btn btn-dark text-uppercase text-bold text-white text-12" href="">
+                                        Download detailed features
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="detail mb-4">
+                                <div class="bg-white p-2">
+                                    Product detail
+                                </div>
+                                <div class="mt-4">
+                                    <ul>
+                                        <li>Category: </li>
+                                        <li>Brand: </li>
+                                        <li>Color: </li>
+                                        <li>Size: </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="description mb-4">
+                                <div class="bg-white p-2">
+                                    Description
+                                </div>
+                                <div class="mt-4">
+                                    Lorem ispum
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--  similar PRODUCTS start-->
+<section class="similar mt-4 bg-light">
+    <div class="container pt-2">
+        <div class="text-left d-block bg-white p-2 my-2 text-24">
+            Similar Products
+        </div>
+        <!-- carousel start -->
+        <div class="py-4 similar-slider">
+            <!-- category product start -->
+            <div class="category-product px-2">
+                <!-- product img start-->
+                <div class="category-product-img">
+                    <a href="">
+                        <img src="assets/images/vest.jpg" alt="" srcset="">
+                    </a>
+                </div>
+                <!-- product img end-->
+
+                <!-- product title start -->
+                <div class="category-product-title">
+                    <!-- clearfix start -->
+                    <div class="clearfix">
+                        <!-- float left start -->
+                        <div class="float-left">
+                            <h6 class="text-white text-bold">
+                                <a href="" class="text-white">Men Vest</a><br>
+                                by <a href="" class="brand">Velour</a>
+                            </h6>
+                        </div>
+                        <!-- float left end -->
+
+                        <!-- float right start -->
+                        <div class="float-right">
+                            <h3 class="category-product-price text-white price-tag">999.00$</h3>
+                        </div>
+                        <!-- float right end -->
+                    </div>
+                    <!-- clearfix end -->
+                </div>
+                <!-- product title end -->
+            </div>
+            <!-- category product end -->
+        </div>
+        <!-- carousel end -->
+    </div>
+</section>
+<!--    VARIOUS PRODUCTS end-->
+
+<!--    other brand start-->
+<section class="other-brand my-4">
+    <div class="container">
+        <div class="text-left d-block bg-light p-2 my-2 text-24">
+            Other Brand Products
+        </div>
+        <!-- carousel start -->
+        <div class="py-4 other-slider">
+            <!-- category product start -->
+            <div class="category-product px-2">
+                <!-- product img start-->
+                <div class="category-product-img">
+                    <a href="">
+                        <img src="assets/images/vest.jpg" alt="" srcset="">
+                    </a>
+                </div>
+                <!-- product img end-->
+
+                <!-- product title start -->
+                <div class="category-product-title">
+                    <!-- clearfix start -->
+                    <div class="clearfix">
+                        <!-- float left start -->
+                        <div class="float-left">
+                            <h6 class="text-white text-bold">
+                                <a href="" class="text-white">Men Vest</a><br>
+                                by <a href="" class="brand">Velour</a>
+                            </h6>
+                        </div>
+                        <!-- float left end -->
+
+                        <!-- float right start -->
+                        <div class="float-right">
+                            <h3 class="category-product-price text-white price-tag">999.00$</h3>
+                        </div>
+                        <!-- float right end -->
+                    </div>
+                    <!-- clearfix end -->
+                </div>
+                <!-- product title end -->
+            </div>
+            <!-- category product end -->
+        </div>
+        <!-- carousel end -->
+    </div>
+</section>
+<!--    other brand end-->
+
+<%- include('footer');%>
