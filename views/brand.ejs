@@ -9,7 +9,7 @@
             <!-- sidebar start -->
             <div class="col-md-3">
                 <!-- form start-->
-                <form action="/brand/<%= brand.name %>">
+                <form action="/brand/<%= brand.permalink %>" method="POST">
                     <h5 class="text-uppercase text-bold">
                         Filter
                     </h5>
@@ -53,17 +53,8 @@
                         <div class="overflow-auto sidebar-content">
                             <!-- form check start -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sort" id="sortNew" value="new">
-                                <label class="form-check-label" for="sortNew">
-                                    New
-                                </label>
-                            </div>
-                            <!-- form check end -->
-
-                            <!-- form check start -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sort" id="sortPriceASC"
-                                    value="priceASC">
+                                <input class="form-check-input" type="radio" name="sortPrice" id="sortPriceASC"
+                                    value="ascending">
                                 <label class="form-check-label" for="sortPriceASC">
                                     Price ascending
                                 </label>
@@ -72,8 +63,8 @@
 
                             <!-- form check start -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sort" id="sortPriceDESC"
-                                    value="priceDESC">
+                                <input class="form-check-input" type="radio" name="sortPrice" id="sortPriceDESC"
+                                    value="descending">
                                 <label class="form-check-label" for="sortPriceDESC">
                                     Price descending
                                 </label>
@@ -93,7 +84,8 @@
                         <div class="overflow-auto sidebar-content">
                             <!-- form check start -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="sizeXS" value="XS">
+                                <input class="form-check-input" type="checkbox" name="productSize" id="sizeXS"
+                                    value="XS">
                                 <label class="form-check-label" for="sizeXS">
                                     XS
                                 </label>
@@ -102,7 +94,7 @@
 
                             <!-- form check start -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="sizeS" value="S">
+                                <input class="form-check-input" type="checkbox" name="productSize" id="sizeS" value="S">
                                 <label class="form-check-label" for="sizeS">
                                     S
                                 </label>
@@ -111,18 +103,9 @@
 
                             <!-- form check start -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="sizeM" value="M">
+                                <input class="form-check-input" type="checkbox" name="productSize" id="sizeM" value="M">
                                 <label class="form-check-label" for="sizeM">
                                     M
-                                </label>
-                            </div>
-                            <!-- form check end -->
-
-                            <!-- form check start -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="size" id="sizeXL" value="XL">
-                                <label class="form-check-label" for="sizeML">
-                                    XL
                                 </label>
                             </div>
                             <!-- form check end -->
@@ -140,9 +123,30 @@
                         <div class="overflow-auto sidebar-content">
                             <!-- form check start -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="color" id="colorRed" value="red">
+                                <input class="form-check-input" type="checkbox" name="productColor" id="colorRed"
+                                    value="red">
                                 <label class="form-check-label" for="colorRed">
                                     Red
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="productColor" id="colorWhite"
+                                    value="white">
+                                <label class="form-check-label" for="colorRed">
+                                    White
+                                </label>
+                            </div>
+                            <!-- form check end -->
+
+                            <!-- form check start -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="productColor" id="colorBlack"
+                                    value="black">
+                                <label class="form-check-label" for="colorRed">
+                                    Black
                                 </label>
                             </div>
                             <!-- form check end -->
@@ -167,7 +171,7 @@
                 <!-- category banner start -->
                 <div class="category-banner">
                     <a href="#">
-                        <img src="assets/images/Banner.png" alt="banner" srcset="">
+                        <img src="/assets/images/Banner.png" alt="banner" srcset="">
                     </a>
 
                 </div>
@@ -184,7 +188,7 @@
                             <!-- product img start-->
                             <div class="category-product-img">
                                 <a href="">
-                                    <img src="<%= element.productImgURL %>" alt="">
+                                    <img src="<%= element.productImg %>" alt="">
                                 </a>
                             </div>
                             <!-- product img end-->
@@ -197,14 +201,16 @@
                                     <div class="float-left">
                                         <h6 class="text-white text-bold">
                                             <a href="" class="text-white"><%= element.productName %></a><br>
-                                            by <a href="/brand/<%= element.productBrand %>" class="brand"><%= element.productBrand %></a>
+                                            by <a href="/brand/<%= element.productBrand %>"
+                                                class="brand"><%= element.productBrand %></a>
                                         </h6>
                                     </div>
                                     <!-- float left end -->
 
                                     <!-- float right start -->
                                     <div class="float-right">
-                                        <h3 class="category-product-price text-white price-tag">$<%= element.productPrice %></h3>
+                                        <h3 class="category-product-price text-white price-tag">
+                                            $<%= element.productPrice %></h3>
                                     </div>
                                     <!-- float right end -->
                                 </div>
@@ -219,24 +225,6 @@
 
                 </div>
                 <!-- row end -->
-
-                <!-- clearfix start -->
-                <div class="clearfix">
-                    <!-- float right start -->
-                    <div class="float-right">
-                        <!-- pagination start -->
-                        <div class="pagination">
-                            <span class="active btn btn-dark">1</span>
-                            <a href="" class="btn">2</a>
-                            <a href="" class="btn">3</a>
-                            <a href="" class="btn">4</a>
-                            <a href="" class="btn">5</a>
-                        </div>
-                        <!-- pagination end -->
-                    </div>
-                    <!-- float right end -->
-                </div>
-                <!-- clearfix end -->
             </div>
             <!-- list product end-->
         </div>

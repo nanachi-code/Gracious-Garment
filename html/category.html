@@ -264,14 +264,6 @@
                             </h6>
                             <!-- sidebar content start -->
                             <div class="overflow-auto sidebar-content">
-                                <!-- form check start -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sort" id="sortNew" value="new">
-                                    <label class="form-check-label" for="sortNew">
-                                        New
-                                    </label>
-                                </div>
-                                <!-- form check end -->
 
                                 <!-- form check start -->
                                 <div class="form-check">
@@ -306,7 +298,8 @@
                             <div class="overflow-auto sidebar-content">
                                 <!-- form check start -->
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="size" id="sizeXS" value="XS">
+                                    <input class="form-check-input" type="checkbox" name="productSize" id="sizeXS"
+                                        value="XS">
                                     <label class="form-check-label" for="sizeXS">
                                         XS
                                     </label>
@@ -315,7 +308,8 @@
 
                                 <!-- form check start -->
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="size" id="sizeS" value="S">
+                                    <input class="form-check-input" type="checkbox" name="productSize" id="sizeS"
+                                        value="S">
                                     <label class="form-check-label" for="sizeS">
                                         S
                                     </label>
@@ -324,64 +318,10 @@
 
                                 <!-- form check start -->
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="size" id="sizeM" value="M">
+                                    <input class="form-check-input" type="checkbox" name="productSize" id="sizeM"
+                                        value="M">
                                     <label class="form-check-label" for="sizeM">
                                         M
-                                    </label>
-                                </div>
-                                <!-- form check end -->
-
-                                <!-- form check start -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="size" id="sizeXL" value="XL">
-                                    <label class="form-check-label" for="sizeXL">
-                                        XL
-                                    </label>
-                                </div>
-                                <!-- form check end -->
-
-                                <!-- form check start -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="size" id="sizeXXL"
-                                        value="XXL">
-                                    <label class="form-check-label" for="sizeXXL">
-                                        XXL
-                                    </label>
-                                </div>
-                                <!-- form check end -->
-
-                                <!-- form check start -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="size" id="size26" value="26">
-                                    <label class="form-check-label" for="size26">
-                                        26
-                                    </label>
-                                </div>
-                                <!-- form check end -->
-
-                                <!-- form check start -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="size" id="size28" value="28">
-                                    <label class="form-check-label" for="size28">
-                                        28
-                                    </label>
-                                </div>
-                                <!-- form check end -->
-
-                                <!-- form check start -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="size" id="size29" value="29">
-                                    <label class="form-check-label" for="size29">
-                                        29
-                                    </label>
-                                </div>
-                                <!-- form check end -->
-
-                                <!-- form check start -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="size" id="size30" value="30">
-                                    <label class="form-check-label" for="size30">
-                                        30
                                     </label>
                                 </div>
                                 <!-- form check end -->
@@ -399,10 +339,30 @@
                             <div class="overflow-auto sidebar-content">
                                 <!-- form check start -->
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="color" id="colorRed"
+                                    <input class="form-check-input" type="checkbox" name="productColor" id="colorRed"
                                         value="red">
                                     <label class="form-check-label" for="colorRed">
                                         Red
+                                    </label>
+                                </div>
+                                <!-- form check end -->
+
+                                <!-- form check start -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="productColor" id="colorWhite"
+                                        value="red">
+                                    <label class="form-check-label" for="colorRed">
+                                        White
+                                    </label>
+                                </div>
+                                <!-- form check end -->
+
+                                <!-- form check start -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="productColor" id="colorBlack"
+                                        value="red">
+                                    <label class="form-check-label" for="colorRed">
+                                        Black
                                     </label>
                                 </div>
                                 <!-- form check end -->
@@ -411,31 +371,9 @@
                         </div>
                         <!-- color end -->
 
-
-                        <!-- brand start -->
-                        <div class="sidebar mt-2">
-                            <h6 class="text-bold sidebar-title">
-                                Brand
-                            </h6>
-                            <!-- sidebar content start -->
-                            <div class="overflow-auto sidebar-content">
-                                <!-- form check start -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
-                                        value="adidas">
-                                    <label class="form-check-label" for="colorRed">
-                                        Adidas
-                                    </label>
-                                </div>
-                                <!-- form check end -->
-                            </div>
-                            <!-- sidebar content end -->
-                        </div>
-                        <!-- brand end -->
-
                         <!-- Submit start -->
                         <div class="mt-2 clearfix">
-                            <button type="submit" class="btn btn-dark float-left" style="width: 80px">Apply</button>
+                            <button type="submit" class="btn btn-warning float-left px-4 text-white">Apply</button>
                             <input type="reset" class="btn btn-dark float-right" value="Reset filter">
                         </div>
                         <!-- Submit end -->

@@ -647,7 +647,7 @@ footer a {
 }
 
 /* ====================================
-    Home Page
+        Home Page
 ======================================= */
 .slider .container-fluid {
     margin: 0;
@@ -686,4 +686,11 @@ footer a {
     color: #fff;
     font-size: 18px;
     font-family: 'Oswald', sans-serif;
+}
+
+/* ====================================
+        Admin
+======================================= */
+.permalink{
+    color: blue;
 }

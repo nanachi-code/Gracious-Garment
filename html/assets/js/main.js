@@ -2,20 +2,37 @@
     "use strict";
     let cartObject = [] //* global pointer to cart   
     let cartOptions = { //* global pointer to cart options
-        'billing': {
-            'billingName': '',
-            'billingAddress': '',
-            'billingPhone': '',
-        },
-        'delivery': {
-            'deliveryName': '',
-            'deliveryAddress': '',
-            'deliveryPhone': '',
-        },
+        'billingName': '',
+        'billingAddress': '',
+        'billingPhone': '',
+        'deliveryName': '',
+        'deliveryAddress': '',
+        'deliveryPhone': '',
         'comment': '',
         'payment': '',
-        'shipping': ''
+        'shipping': '',
+        'product': [],
+        'totalPrice': ''
     };
+
+    //* String manipulate function, which convert special characters in other languages' alphabet into latin characters
+    function convertSpecialCharacters(str) {
+        str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+        str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+        str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+        str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+        str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+        str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+        str = str.replace(/đ/g, "d");
+        str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "A");
+        str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "E");
+        str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "I");
+        str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "O");
+        str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
+        str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
+        str = str.replace(/Đ/g, "D");
+        return str;
+    }
 
     //* localStorage function
     function getLocalData(name) {
@@ -43,25 +60,18 @@
             //* if previous cart options are present then load it
             cartOptions = JSON.parse(getLocalData('graciousCartOptions'));
         } else {
-
             setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
         }
     }
 
     //* Save address info on submit
     $('#address-form').submit(() => {
-        cartOptions.billing = {
-            billingName: $("#billingName").val(),
-            billingAddress: $("#billingAddress").val(),
-            billingPhone: $("#billingPhone").val(),
-        };
-
-        cartOptions.delivery = {
-            deliveryName: $("#deliveryName").val(),
-            deliveryAddress: $("#deliveryAddress").val(),
-            deliveryPhone: $("#deliveryPhone").val(),
-        };
-
+        cartOptions.billingName = $("#billingName").val();
+        cartOptions.billingAddress = $("#billingAddress").val();
+        cartOptions.billingPhone = $("#billingPhone").val();
+        cartOptions.deliveryName = $("#deliveryName").val();
+        cartOptions.deliveryAddress = $("#deliveryAddress").val();
+        cartOptions.deliveryPhone = $("#deliveryPhone").val();
         cartOptions.comment = $("#comment").val();
 
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
@@ -93,9 +103,10 @@
 
 
     //* Save payment & shipping option on submit
-    $('#payment-form').submit(function () {
+    $('#summary-redirect').click(() => {
         cartOptions.payment = $('.payment.option-selected').attr('data-value');
         cartOptions.shipping = $('.delivery.option-selected').attr('data-value');
+        cartOptions.product = cartObject;
 
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
@@ -239,8 +250,8 @@
 
             $('#summary-price').find('.cart-total-quantity').text(cartObject.length);
             $('#summary-price').find('.cart-total-price').text('$' + totalPrice);
+            cartObject.totalPrice = totalPrice;
 
-            $('#cartProducts').val(JSON.stringify(cartObject));
         } else {
             let cartHTML =
                 `<div class="py-2">
@@ -253,41 +264,23 @@
         }
 
         //* Load option
-        if (cartOptions.length != 0) {
-            //* Load billing info
-            $('.billing-name').text(cartOptions.billing.billingName);
-            $('.billing-address').text(cartOptions.billing.billingAddress);
-            $('.billing-phone').text(cartOptions.billing.billingPhone);
+        //* Load billing info
+        $('.billing-name').text(cartOptions.billingName);
+        $('.billing-address').text(cartOptions.billingAddress);
+        $('.billing-phone').text(cartOptions.billingPhone);
 
-            //* Load delivery info
-            $('.delivery-name').text(cartOptions.delivery.deliveryName);
-            $('.delivery-address').text(cartOptions.delivery.deliveryAddress);
-            $('.delivery-phone').text(cartOptions.delivery.deliveryPhone);
+        //* Load delivery info
+        $('.delivery-name').text(cartOptions.deliveryName);
+        $('.delivery-address').text(cartOptions.deliveryAddress);
+        $('.delivery-phone').text(cartOptions.deliveryPhone);
 
-            //* Load shipping option
-            $('.shipping-option').text(cartOptions.shipping);
+        //* Load shipping option
+        $('.shipping-option').text(cartOptions.shipping);
 
-            //* Load payment option
-            $('.payment-option').text(cartOptions.payment);
+        //* Load payment option
+        $('.payment-option').text(cartOptions.payment);
 
-            $('#cartOptions').val(JSON.stringify(cartOptions));
-        } else {
-            //* Load billing info
-            $('.billing-name').text('Customer name');
-            $('.billing-address').text('Customer address');
-            $('.billing-phone').text('Customer phone');
-
-            //* Load delivery info
-            $('.delivery-name').text('');
-            $('.delivery-address').text('');
-            $('.delivery-phone').text('');
-
-            //* Load shipping option
-            $('.shipping-option').text('');
-
-            //* Load payment option
-            $('.payment-option').text('');
-        }
+        $('#cartOptions').val(JSON.stringify(cartOptions));
     }
 
     //* Session cart methods
@@ -346,6 +339,19 @@
         removeFromCart($(this).attr('data-name'));
         $(this).parent().parent().parent().parent().parent().remove();
         alert('Item removed from cart successfully.');
+    });
+
+    //* Admin page
+    //* Permalink generator
+    $('#productName').change(function () {
+        let permalink = convertSpecialCharacters($(this).val().toLowerCase().replace(/\s/g, '-'));
+        $('.permalink').text('/product/' + permalink);
+        $('#productPermalink').val(permalink);
+    });
+
+    $('input[name="productBrand"]').click(function () {
+        let permalink = convertSpecialCharacters($(this).val().toLowerCase().replace(/\s/g, '-'));
+        $('#productBrandPermalink').val(permalink);
     });
 
     $(document).ready(function () {

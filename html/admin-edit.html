@@ -46,7 +46,7 @@
                         <a href="#">List Product</a>
                     </li>
                     <li>
-                        <a href="#">Add Product</a>
+                        <a href="#" class="active">Add Product</a>
                     </li>
                     <li>
                         <a href="#">Order</a>
@@ -61,58 +61,123 @@
 
     <section>
         <div class="container py-4">
-            <form>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="productName">Product Name</label>
-                            <input type="text" class="form-control" id="productName" placeholder="Enter product name">
-                        </div>
+            <div class="text-36 mb-4">Edit product</div>
+            <form action="/admin/add" method="POST">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="productName">Product Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="productName" id="productName"
+                            placeholder="Enter product name" required>
+                        <span class="form-text text-muted">Your product page permalink will be <span
+                                class="permalink"></span></span>
+                        <input type="hidden" id="productPermalink" name="productPermalink" value="">
+                    </div>
+                </div>
 
-                        <div class="form-group">
-                            <label for="productCategory">Product Category</label>
-                            <input type="text" class="form-control" id="productCategory" placeholder="Enter product category">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Product Category</label>
+                    <div class="col-sm-9">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="category-1" name="productCategory" class="custom-control-input"
+                                value="men" checked>
+                            <label class="custom-control-label" for="category-1">Men</label>
                         </div>
-
-                        <div class="form-group">
-                            <label for="productBrand">Product Brand</label>
-                            <input type="text" class="form-control" id="productBrand" placeholder="Enter product brand">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="productPrice">Product Price</label>
-                            <input type="text" class="form-control" id="productPrice" placeholder="Enter product price">
-                        </div>
-                        <div class="form-group">
-                            <label for="productDOC">Link Document</label>
-                            <input type="text" class="form-control" id="productDOC" placeholder="Enter Document link">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="category-2" name="productCategory" class="custom-control-input"
+                                value="women">
+                            <label class="custom-control-label" for="category-2">Women</label>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="productSize">Product Size</label>
-                            <input type="text" class="form-control" id="productSize" placeholder="Enter product size">
-                        </div>
+                </div>
 
-                        <div class="form-group">
-                            <label for="productColor">Product Color</label>
-                            <input type="text" class="form-control" id="productColor" placeholder="Enter product color">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Product Brand</label>
+                    <div class="col-sm-9">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-1" name="productBrand" class="custom-control-input"
+                                value="adidas" checked>
+                            <label class="custom-control-label" for="brand-1">Adidas</label>
                         </div>
-
-                        <div class="form-group">
-                            <label for="productDesc">Product Description</label>
-                            <input type="text" class="form-control" id="productDesc" placeholder="Enter product description">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-2" name="productBrand" class="custom-control-input"
+                                value="channel">
+                            <label class="custom-control-label" for="brand-2">Channel</label>
                         </div>
-
-                        <div class="form-group">
-                            <label for="productImg">Product Image link</label>
-                            <input type="text" class="form-control" id="productImg" placeholder="Enter product image link">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-3" name="productBrand" class="custom-control-input"
+                                value="gucci">
+                            <label class="custom-control-label" for="brand-3">Gucci</label>
                         </div>
-                        <div class="form-group" style="padding-top: 34px">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <button type="reset" class="btn btn-primary">Reset</button>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-4" name="productBrand" class="custom-control-input"
+                                value="nike">
+                            <label class="custom-control-label" for="brand-4">Nike</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-5" name="productBrand" class="custom-control-input"
+                                value="hermes">
+                            <label class="custom-control-label" for="brand-5">Hermes</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-6" name="productBrand" class="custom-control-input"
+                                value="louis-vuiton">
+                            <label class="custom-control-label" for="brand-6">Louis Vuiton</label>
                         </div>
                     </div>
+                    <input type="hidden" id="productBrandPermalink" name="productBrandPermalink" value="adidas">
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="productPrice">Product Price</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" name="productPrice" id="productPrice"
+                            placeholder="Enter product price" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="productDoc">Link Document</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="productDoc" id="productDoc"
+                            placeholder="Enter Document link" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="productSize">Product Size</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="productSize" id="productSize"
+                            placeholder="Enter product size" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="productColor">Product Color</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="productColor" id="productColor"
+                            placeholder="Enter product color" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="productDesc">Product Description</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="productDesc" id="productDesc"
+                            placeholder="Enter product description" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="productImg">Product Image link</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="productImg" id="productImg"
+                            placeholder="Enter product image link" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
                 </div>
             </form>
         </div>

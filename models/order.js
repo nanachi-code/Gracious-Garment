@@ -9,7 +9,8 @@ const orderSchema = new mongoose.Schema({
     comment: 'String',
     product: 'Array',
     payment: 'String',
-    shipping: 'String'
+    shipping: 'String',
+    totalPrice: 'Number'
 });
 
 orderSchema.methods.getAllOrder = function (cb) {
