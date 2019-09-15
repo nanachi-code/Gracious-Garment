@@ -6,7 +6,7 @@ const productSchema = new mongoose.Schema({
     productColor: 'String',
     productBrand: 'String',
     productSize: 'String',
-    productImgURL: 'String',
+    productImg: 'String',
     productDoc: 'String',
     productDesc: 'String',
 });
