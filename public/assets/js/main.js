@@ -2,19 +2,16 @@
     "use strict";
     let cartObject = [] //* global pointer to cart   
     let cartOptions = { //* global pointer to cart options
-        'billing': {
-            'billingName': '',
-            'billingAddress': '',
-            'billingPhone': '',
-        },
-        'delivery': {
-            'deliveryName': '',
-            'deliveryAddress': '',
-            'deliveryPhone': '',
-        },
+        'billingName': '',
+        'billingAddress': '',
+        'billingPhone': '',
+        'deliveryName': '',
+        'deliveryAddress': '',
+        'deliveryPhone': '',
         'comment': '',
         'payment': '',
-        'shipping': ''
+        'shipping': '',
+        'product': [],
     };
 
     //* localStorage function
@@ -43,25 +40,18 @@
             //* if previous cart options are present then load it
             cartOptions = JSON.parse(getLocalData('graciousCartOptions'));
         } else {
-
             setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
         }
     }
 
     //* Save address info on submit
     $('#address-form').submit(() => {
-        cartOptions.billing = {
-            billingName: $("#billingName").val(),
-            billingAddress: $("#billingAddress").val(),
-            billingPhone: $("#billingPhone").val(),
-        };
-
-        cartOptions.delivery = {
-            deliveryName: $("#deliveryName").val(),
-            deliveryAddress: $("#deliveryAddress").val(),
-            deliveryPhone: $("#deliveryPhone").val(),
-        };
-
+        cartOptions.billingName = $("#billingName").val();
+        cartOptions.billingAddress = $("#billingAddress").val();
+        cartOptions.billingPhone = $("#billingPhone").val();
+        cartOptions.deliveryName = $("#deliveryName").val();
+        cartOptions.deliveryAddress = $("#deliveryAddress").val();
+        cartOptions.deliveryPhone = $("#deliveryPhone").val();
         cartOptions.comment = $("#comment").val();
 
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
@@ -93,9 +83,10 @@
 
 
     //* Save payment & shipping option on submit
-    $('#payment-form').submit(function () {
+    $('#summary-redirect').click(() => {
         cartOptions.payment = $('.payment.option-selected').attr('data-value');
         cartOptions.shipping = $('.delivery.option-selected').attr('data-value');
+        cartOptions.product = cartObject;
 
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
@@ -239,8 +230,6 @@
 
             $('#summary-price').find('.cart-total-quantity').text(cartObject.length);
             $('#summary-price').find('.cart-total-price').text('$' + totalPrice);
-
-            $('#cartProducts').val(JSON.stringify(cartObject));
         } else {
             let cartHTML =
                 `<div class="py-2">
@@ -255,14 +244,14 @@
         //* Load option
         if (cartOptions.length != 0) {
             //* Load billing info
-            $('.billing-name').text(cartOptions.billing.billingName);
-            $('.billing-address').text(cartOptions.billing.billingAddress);
-            $('.billing-phone').text(cartOptions.billing.billingPhone);
+            $('.billing-name').text(cartOptions.billingName);
+            $('.billing-address').text(cartOptions.billingAddress);
+            $('.billing-phone').text(cartOptions.billingPhone);
 
             //* Load delivery info
-            $('.delivery-name').text(cartOptions.delivery.deliveryName);
-            $('.delivery-address').text(cartOptions.delivery.deliveryAddress);
-            $('.delivery-phone').text(cartOptions.delivery.deliveryPhone);
+            $('.delivery-name').text(cartOptions.deliveryName);
+            $('.delivery-address').text(cartOptions.deliveryAddress);
+            $('.delivery-phone').text(cartOptions.deliveryPhone);
 
             //* Load shipping option
             $('.shipping-option').text(cartOptions.shipping);

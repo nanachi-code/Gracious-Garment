@@ -1,15 +1,16 @@
 <%- include('admin-header') %>
 <section>
     <div class="container py-4">
+        <div class="text-36 mb-2">Add new product</div>
         <% if (typeof msg !== 'undefined') { 
             if (msg.type == 'error') { %>
-            <div class="alert alert-danger">
-                <strong>Error!</strong> <%= msg.text %>
-            </div>
+        <div class="alert alert-danger">
+            <strong>Error!</strong> <%= msg.text %>
+        </div>
         <%  } else { %>
-            <div class="alert alert-success">
-                <strong>Success!</strong> <%= msg.text %>
-            </div>
+        <div class="alert alert-success">
+            <strong>Success!</strong> <%= msg.text %>
+        </div>
         <%  }
         } %>
         <form action="add" method="POST">
@@ -28,9 +29,43 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="productCategory">Product Category</label>
+                        <input type="text" class="form-control" id="productCategory"
+                            placeholder="Enter product category">
+                    </div>
+
+                    <div class="form-group">
                         <label for="productBrand">Product Brand</label>
-                        <input type="text" class="form-control" id="productBrand" name="productBrand"
-                            placeholder="Enter product brand">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-1" name="productBrand" class="custom-control-input"
+                                value="adidas">
+                            <label class="custom-control-label" for="brand-1">Adidas</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-2" name="productBrand" class="custom-control-input"
+                                value="channel">
+                            <label class="custom-control-label" for="brand-2">Channel</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-3" name="productBrand" class="custom-control-input"
+                                value="gucci">
+                            <label class="custom-control-label" for="brand-3">Gucci</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-4" name="productBrand" class="custom-control-input"
+                                value="nike">
+                            <label class="custom-control-label" for="brand-4">Nike</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-5" name="productBrand" class="custom-control-input"
+                                value="hermes">
+                            <label class="custom-control-label" for="brand-5">Hermes</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="brand-6" name="productBrand" class="custom-control-input"
+                                value="louis-vuiton">
+                            <label class="custom-control-label" for="brand-6">Louis Vuiton</label>
+                        </div>
                     </div>
 
                     <div class="form-group">

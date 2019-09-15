@@ -151,81 +151,9 @@
                     </div>
                     <!-- color end -->
 
-
-                    <!-- brand start -->
-                    <div class="sidebar mt-2">
-                        <h6 class="text-bold sidebar-title">
-                            Brand
-                        </h6>
-                        <!-- sidebar content start -->
-                        <div class="overflow-auto sidebar-content">
-                            <!-- form check start -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
-                                    value="adidas">
-                                <label class="form-check-label" for="colorRed">
-                                    Adidas
-                                </label>
-                            </div>
-                            <!-- form check end -->
-
-                            <!-- form check start -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
-                                    value="adidas">
-                                <label class="form-check-label" for="colorRed">
-                                    Adidas
-                                </label>
-                            </div>
-                            <!-- form check end -->
-
-                            <!-- form check start -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
-                                    value="adidas">
-                                <label class="form-check-label" for="colorRed">
-                                    Adidas
-                                </label>
-                            </div>
-                            <!-- form check end -->
-
-                            <!-- form check start -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
-                                    value="adidas">
-                                <label class="form-check-label" for="colorRed">
-                                    Adidas
-                                </label>
-                            </div>
-                            <!-- form check end -->
-
-                            <!-- form check start -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
-                                    value="adidas">
-                                <label class="form-check-label" for="colorRed">
-                                    Adidas
-                                </label>
-                            </div>
-                            <!-- form check end -->
-
-                            <!-- form check start -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="brand" id="brandAdidas"
-                                    value="adidas">
-                                <label class="form-check-label" for="colorRed">
-                                    Adidas
-                                </label>
-                            </div>
-                            <!-- form check end -->
-                        </div>
-                        <!-- sidebar content end -->
-                    </div>
-                    <!-- brand end -->
-
                     <!-- Submit start -->
                     <div class="mt-2 clearfix">
-                        <button type="submit" class="btn btn-dark float-left" style="width: 80px">Apply</button>
+                        <button type="submit" class="btn btn-warning float-left px-4 text-white">Apply</button>
                         <input type="reset" class="btn btn-dark float-right" value="Reset filter">
                     </div>
                     <!-- Submit end -->
@@ -247,6 +175,8 @@
 
                 <!-- row start -->
                 <div class="row">
+
+                    <% product.forEach(element => { %>
                     <!-- col md-4 start-->
                     <div class="col-md-4 mb-3">
                         <!-- category product start -->
@@ -254,7 +184,7 @@
                             <!-- product img start-->
                             <div class="category-product-img">
                                 <a href="">
-                                    <img src="assets/images/vest.jpg" alt="" srcset="">
+                                    <img src="<%= element.productImgURL %>" alt="">
                                 </a>
                             </div>
                             <!-- product img end-->
@@ -266,15 +196,15 @@
                                     <!-- float left start -->
                                     <div class="float-left">
                                         <h6 class="text-white text-bold">
-                                            <a href="" class="text-white">Men Vest</a><br>
-                                            by <a href="" class="brand">Velour</a>
+                                            <a href="" class="text-white"><%= element.productName %></a><br>
+                                            by <a href="/brand/<%= element.productBrand %>" class="brand"><%= element.productBrand %></a>
                                         </h6>
                                     </div>
                                     <!-- float left end -->
 
                                     <!-- float right start -->
                                     <div class="float-right">
-                                        <h3 class="category-product-price text-white price-tag">999.00$</h3>
+                                        <h3 class="category-product-price text-white price-tag">$<%= element.productPrice %></h3>
                                     </div>
                                     <!-- float right end -->
                                 </div>
@@ -285,6 +215,7 @@
                         <!-- category product end -->
                     </div>
                     <!-- col md-4 end -->
+                    <% }); %>
 
                 </div>
                 <!-- row end -->

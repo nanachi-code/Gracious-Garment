@@ -30,6 +30,7 @@ app.set("views", "./views");
 
 //* Routes
 app.use('/', require('./routes/index.js'));
+app.use('/', require('./routes/brand.js'));
 app.use('/', require('./routes/about-us.js'));
 app.use('/', require('./routes/contact.js'));
 app.use('/', require('./routes/admin/admin-add.js'));

@@ -13,7 +13,7 @@ router.get('/admin/add', (req, res) => {
 });
 
 router.post('/admin/add', urlencodedParser, (req, res) => {
-    //console.log(req.body);
+    console.log(req.body);
     //* Create new product instance
     let newProduct = new Product(req.body);
     let localVar = {};
