@@ -442,7 +442,11 @@ footer a {
 .category-product-img {
     background-color: #f7f7f7;
 }
-
+.category-product-img img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+}
 .category-product-title {
     background-color: #383838;
     padding: 10px;
