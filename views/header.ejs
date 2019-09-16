@@ -138,10 +138,10 @@
             <div class="pb-4 pt-2 menu">
                 <ul>
                     <li>
-                        <a href="/" class="active">Home</a>
+                        <a href="/" <% if (page == 'Home'){%> class="active" <%}%>>Home</a>
                     </li>
                     <li class="has-dropdown">
-                        <a href="/brand">Brands</a>
+                        <a href="/brand" <% if (page == 'Brands'){%> class="active" <%}%>>Brands</a>
                         <div class="dropdowns menu-dropdown">
                             <ul>
                                 <li>
@@ -169,10 +169,10 @@
                         </div>
                     </li>
                     <li>
-                        <a href="/contact">Contact</a>
+                        <a href="/contact"<% if (page == 'Contact'){%> class="active" <%}%>>Contact</a>
                     </li>
                     <li>
-                        <a href="/about-us">About us</a>
+                        <a href="/about-us"<% if (page == 'About us'){%> class="active" <%}%>>About us</a>
                     </li>
                 </ul>
             </div>
@@ -180,7 +180,7 @@
 
             <!-- Kiểm tra xem đây có phải trang single product k, nếu đúng gọi breadcrumb vào -->
             <% if( isSingle ){ %>
-            <%= include('./partials/breadcrumb') %>
+            <%- include('./partials/breadcrumb') %>
             <% } %>
         </div>
         <!-- container end -->

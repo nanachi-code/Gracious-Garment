@@ -4,12 +4,12 @@
         <div class="float-left">
             <a href="/">Home</a>
             <i class="fas fa-chevron-right"></i>
-            <a href=""><%= product.brand %></5></a>
+            <a href="/brand/<%= product.productBrandPermalink %>"><%= product.productBrand %></a>
             <i class="fas fa-chevron-right"></i>
-            <span><%= product.name %></span>
+            <span><%= product.productName %></span>
         </div>
         <div class="float-right">
-            <a href="/<% product.brand %>" class="btn btn-dark text-12 text-bold text-uppercase">Back to list</a>
+            <a href="/brand/<%= product.productBrandPermalink %>" class="btn btn-dark text-12 text-bold text-uppercase">Back to list</a>
         </div>
     </div>
 </div>

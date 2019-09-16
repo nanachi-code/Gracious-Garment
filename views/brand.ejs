@@ -187,7 +187,7 @@
                         <div class="category-product">
                             <!-- product img start-->
                             <div class="category-product-img">
-                                <a href="">
+                                <a href="/product/<%= element.productPermalink %>">
                                     <img src="<%= element.productImg %>" alt="">
                                 </a>
                             </div>
@@ -200,7 +200,7 @@
                                     <!-- float left start -->
                                     <div class="float-left">
                                         <h6 class="text-white text-bold">
-                                            <a href="" class="text-white"><%= element.productName %></a><br>
+                                            <a href="/product/<%= element.productPermalink %>" class="text-white"><%= element.productName %></a><br>
                                             by <a href="/brand/<%= element.productBrand %>"
                                                 class="brand"><%= element.productBrand %></a>
                                         </h6>

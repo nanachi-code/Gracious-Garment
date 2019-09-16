@@ -9,7 +9,7 @@ const Product = require('../models/product');
 //* Display all brands
 router.get('/brand', (req, res) => {
     let localVar = {
-        'page': 'All brands',
+        'page': 'Brands',
         'isSingle': false,
         'brand': {
             'name': '',
@@ -28,7 +28,7 @@ router.get('/brand', (req, res) => {
 
 router.post('/brand', urlencodedParser, (req, res) => {
     let localVar = {
-        'page': 'All brands',
+        'page': 'Brands',
         'isSingle': false,
         'brand': {
             'name': '',
@@ -55,8 +55,8 @@ router.post('/brand', urlencodedParser, (req, res) => {
 
 //* Display a specific brand
 router.get('/brand/:productBrandPermalink', (req, res) => {
-    console.log(req.params);
     let localVar = {
+        'page': 'Brands',
         'isSingle': false,
         'brand': {}
     };
@@ -69,8 +69,6 @@ router.get('/brand/:productBrandPermalink', (req, res) => {
                 console.log(err);
             }
             console.log(product);
-            
-            localVar.page = product[0].productBrand;
             localVar.product = product;
             localVar.brand.name = product[0].productBrand;
             localVar.brand.permalink = product[0].productBrandPermalink;
@@ -78,4 +76,29 @@ router.get('/brand/:productBrandPermalink', (req, res) => {
         });
 });
 
+router.post('/brand/:productBrandPermalink', urlencodedParser, (req, res) => {
+    let localVar = {
+        'page': 'Brands',
+        'isSingle': false,
+        'brand': {}
+    };
+    Product
+        .find({
+            'productBrandPermalink': req.params.productBrandPermalink
+        })
+        .where('productPrice').gt(req.body.minPrice).lt(req.body.maxPrice)
+        .where('productSize').in(req.body.productSize)
+        .where('productColor').in(req.body.productColor)
+        .sort(req.body.sortPrice)
+        .exec(function (err, product) {
+            if (err) {
+                console.log(err);
+            }
+            console.log(product);
+            localVar.product = product;
+            localVar.brand.name = product[0].productBrand;
+            localVar.brand.permalink = product[0].productBrandPermalink;
+            res.render('brand', localVar);
+        });
+});
 module.exports = router;
