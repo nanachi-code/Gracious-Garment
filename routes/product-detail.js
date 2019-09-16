@@ -20,10 +20,45 @@ router.get('/product/:productPermalink', (req, res) => {
             if (err) {
                 console.log(err);
             }
-            console.log(product);
-            
+
             localVar.product = product;
-            res.render('product-detail', localVar)
+
+            //* Get products with same brands
+            Product
+                .find({
+                    'productBrand': product.productBrand
+                })
+                .sort({
+                    'productPrice': 'descending'
+                })
+                .exec(function (err, sameBrandProduct) {
+                    if (err) {
+                        console.log(err);
+                    }
+
+                    localVar.sameBrandProduct = sameBrandProduct;
+
+                    //* Get products from different brands
+                    Product
+                        .find({
+                            'productBrand': {
+                                '$ne': product.productBrand
+                            }
+                        })
+                        .sort({
+                            'productPrice': 'descending'
+                        })
+                        .limit(10)
+                        .exec(function (err, diffBrandProduct) {
+                            if (err) {
+                                console.log(err);
+                                log
+                            }
+                            console.log(diffBrandProduct);
+                            localVar.diffBrandProduct = diffBrandProduct;
+                            res.render('product-detail', localVar)
+                        })
+                })
         })
 })
 

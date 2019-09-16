@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="bg-light p-3 rounded">
-                    <img id="product-img" src="assets/images/vest.jpg" alt="">
+                    <img id="product-img" src="<%= product.productImg %>" alt="">
                 </div>
             </div>
             <div class="col-lg-8">
@@ -14,9 +14,10 @@
                     <div class="col-md-12">
                         <div class="bg-light p-4 rounded">
                             <div class="info">
-                                <h1 id="product-name">Product name</h1>
-                                <h5>by <span class="brand" id="product-brand">Velour</span></h5>
-                                <div class="price-tag text-36 my-2" id="product-price" data-price="200">$200</div>
+                                <h1 id="product-name"><%= product.productName %></h1>
+                                <h5>by <span class="brand" id="product-brand"><%= product.productBrand %></span></h5>
+                                <div class="price-tag text-36 my-2" id="product-price"
+                                    data-price="<%= product.productPrice %>">$<%= product.productPrice %></div>
                             </div>
 
                             <div class="order mb-4">
@@ -24,13 +25,14 @@
                                     <div class="form-group row mr-0">
                                         <label for="quantity" class="col-md-2">Quantity</label>
                                         <input type="number" name="product-quantity" class="form-control col-md-1"
-                                               id="product-quantity" value="1">
+                                            id="product-quantity" value="1">
                                     </div>
                                     <button
-                                            class="add-cart btn btn-warning text-uppercase text-bold text-white text-12 mr-2">
+                                        class="add-cart btn btn-warning text-uppercase text-bold text-white text-12 mr-2">
                                         Add to cart
                                     </button>
-                                    <a class="btn btn-dark text-uppercase text-bold text-white text-12" href="">
+                                    <a class="btn btn-dark text-uppercase text-bold text-white text-12"
+                                        href="<%= product.productDoc %>">
                                         Download detailed features
                                     </a>
                                 </div>
@@ -42,10 +44,10 @@
                                 </div>
                                 <div class="mt-4">
                                     <ul>
-                                        <li>Category: </li>
-                                        <li>Brand: </li>
-                                        <li>Color: </li>
-                                        <li>Size: </li>
+                                        <li>Category: <%= product.productCategory %></li>
+                                        <li>Brand: <%= product.productBrand %></li>
+                                        <li>Color: <%= product.productColor %></li>
+                                        <li>Size: <%= product.productSize %></li>
                                     </ul>
                                 </div>
                             </div>
@@ -55,7 +57,7 @@
                                     Description
                                 </div>
                                 <div class="mt-4">
-                                    Lorem ispum
+                                    <%= product.productDesc %>
                                 </div>
                             </div>
                         </div>
@@ -73,12 +75,13 @@
         </div>
         <!-- carousel start -->
         <div class="py-4 similar-slider">
+            <% sameBrandProduct.forEach(element => { %>
             <!-- category product start -->
             <div class="category-product px-2">
                 <!-- product img start-->
                 <div class="category-product-img">
-                    <a href="">
-                        <img src="assets/images/vest.jpg" alt="" srcset="">
+                    <a href="/product/<%= element.productPermalink %>">
+                        <img src="<%= element.productImg %>" alt="" srcset="">
                     </a>
                 </div>
                 <!-- product img end-->
@@ -90,15 +93,17 @@
                         <!-- float left start -->
                         <div class="float-left">
                             <h6 class="text-white text-bold">
-                                <a href="" class="text-white">Men Vest</a><br>
-                                by <a href="" class="brand">Velour</a>
+                                <a href="/product/<%= element.productPermalink %>"
+                                    class="text-white"><%= element.productName %></a><br>
+                                by <a href="/brand/<%= element.productBrandPermalink %>"
+                                    class="brand"><%= element.productBrand %></a>
                             </h6>
                         </div>
                         <!-- float left end -->
 
                         <!-- float right start -->
                         <div class="float-right">
-                            <h3 class="category-product-price text-white price-tag">999.00$</h3>
+                            <h3 class="category-product-price text-white price-tag">$<%= element.productPrice %></h3>
                         </div>
                         <!-- float right end -->
                     </div>
@@ -107,6 +112,7 @@
                 <!-- product title end -->
             </div>
             <!-- category product end -->
+            <% }); %>
         </div>
         <!-- carousel end -->
     </div>
@@ -121,12 +127,13 @@
         </div>
         <!-- carousel start -->
         <div class="py-4 other-slider">
+            <% diffBrandProduct.forEach(element => { %>
             <!-- category product start -->
             <div class="category-product px-2">
                 <!-- product img start-->
                 <div class="category-product-img">
-                    <a href="">
-                        <img src="assets/images/vest.jpg" alt="" srcset="">
+                    <a href="/product/<%= element.productPermalink %>">
+                        <img src="<%= element.productImg %>" alt="" srcset="">
                     </a>
                 </div>
                 <!-- product img end-->
@@ -138,15 +145,17 @@
                         <!-- float left start -->
                         <div class="float-left">
                             <h6 class="text-white text-bold">
-                                <a href="" class="text-white">Men Vest</a><br>
-                                by <a href="" class="brand">Velour</a>
+                                <a href="/product/<%= element.productPermalink %>"
+                                    class="text-white"><%= element.productName %></a><br>
+                                by <a href="/brand/<%= element.productBrandPermalink %>"
+                                    class="brand"><%= element.productBrand %></a>
                             </h6>
                         </div>
                         <!-- float left end -->
 
                         <!-- float right start -->
                         <div class="float-right">
-                            <h3 class="category-product-price text-white price-tag">999.00$</h3>
+                            <h3 class="category-product-price text-white price-tag">$<%= element.productPrice %></h3>
                         </div>
                         <!-- float right end -->
                     </div>
@@ -155,6 +164,7 @@
                 <!-- product title end -->
             </div>
             <!-- category product end -->
+            <% }); %>
         </div>
         <!-- carousel end -->
     </div>
