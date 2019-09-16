@@ -1,0 +1,62 @@
+<%- include('admin-header') %>
+<section>
+    <div class="featured my-4">
+        <div class="container">
+            <div class="d-block text-36 py-5">Manage Products</div>
+            <!-- row start -->
+            <div class="row py-4">
+                <!-- col md-3 start-->
+
+                <!-- col md-3 end -->
+                <% if (product.length == 0) { %>
+                    <h2>No products found.</h2>
+                <% } else {
+                product.forEach(element => { %>
+                    <!-- col md-4 start-->
+                    <div class="col-md-3 mb-3">
+                        <!-- category product start -->
+                        <div class="category-product">
+                            <!-- product img start-->
+                            <div class="category-product-img">
+                                <a href="/admin/edit/<%= element.productPermalink %>">
+                                    <img src="<%= element.productImg %>" alt="">
+                                </a>
+                            </div>
+                            <!-- product img end-->
+
+                            <!-- product title start -->
+                            <div class="category-product-title">
+                                <!-- clearfix start -->
+                                <div class="clearfix">
+                                    <!-- float left start -->
+                                    <div class="float-left">
+                                        <h6 class="text-white text-bold">
+                                            <a href="/admin/edit/<%= element.productPermalink %>"
+                                               class="text-white"><%= element.productName %></a><br>
+                                            by <span class="brand"><%= element.productBrand %></span>
+                                        </h6>
+                                    </div>
+                                    <!-- float left end -->
+
+                                    <!-- float right start -->
+                                    <div class="float-right">
+                                        <h3 class="category-product-price text-white price-tag">
+                                            $<%= element.productPrice %></h3>
+                                    </div>
+                                    <!-- float right end -->
+                                </div>
+                                <!-- clearfix end -->
+                            </div>
+                            <!-- product title end -->
+                        </div>
+                        <!-- category product end -->
+                    </div>
+                    <!-- col md-4 end -->
+                <% });
+                } %>
+            </div>
+            <!-- row end -->
+        </div>
+    </div>
+</section>
+<%- include('admin-footer') %>

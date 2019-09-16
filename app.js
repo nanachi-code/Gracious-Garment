@@ -35,6 +35,7 @@ app.use('/', require('./routes/product-detail.js'));
 app.use('/', require('./routes/about-us.js'));
 app.use('/', require('./routes/contact.js'));
 app.use('/', require('./routes/admin/admin-add.js'));
+app.use('/', require('./routes/admin/admin-list.js'));
 app.use('/', require('./routes/cart.js'));
 app.use('/', require('./routes/shipping-payment.js'));
 app.use('/', require('./routes/address.js'));
