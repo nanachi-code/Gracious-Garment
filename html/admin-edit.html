@@ -62,7 +62,7 @@
     <section>
         <div class="container py-4">
             <div class="text-36 mb-4">Edit product</div>
-            <form action="/admin/delete" method="post">
+            <form action="/admin/delete" method="post" id="deleteForm">
                 <input type="hidden" name="">
             </form>
             <form action="/admin/edit/" method="POST">
@@ -181,7 +181,7 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Update</button>
                     <button type="reset" class="btn btn-primary">Reset</button>
-                    <div class="btn btn-primary text-12 text-bold text-uppercase">Delete</div>
+                    <div class="btn btn-primary text-12 text-bold text-uppercase" onclick="$('#deleteForm').submit();">Delete</div>
                 </div>
             </form>
         </div>
