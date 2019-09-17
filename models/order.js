@@ -4,8 +4,8 @@ const orderSchema = new mongoose.Schema({
     billingAddress: 'String',
     billingPhone: 'String',
     deliveryName: 'String',
-    deliverAddress: 'String',
-    deliverPhone: 'String',
+    deliveryAddress: 'String',
+    deliveryPhone: 'String',
     comment: 'String',
     product: 'Array',
     payment: 'String',
@@ -13,10 +13,6 @@ const orderSchema = new mongoose.Schema({
     totalPrice: 'Number'
 });
 
-orderSchema.methods.getAllOrder = function (cb) {
-    return this.model('Order').find({}, cb);
-}
+let Order = mongoose.model('Order', orderSchema);
 
-let order = mongoose.model('Order', orderSchema);
-
-module.exports = order;
+module.exports = Order;

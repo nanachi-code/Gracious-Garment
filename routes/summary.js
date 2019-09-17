@@ -16,20 +16,19 @@ router.get('/summary', (req, res) => {
 })
 
 router.post('/confirm', urlencodedParser, (req, res) => {
-    console.log(req.body);
-
-    let newOrder = new Order(req.body);
-    let localVar = {};
+    //console.log(req.body);
+    let reqDecoded = JSON.parse(req.body.cartOptions);
+    let newOrder = new Order(reqDecoded);
+    
+    let localVar = {
+        'page': 'CHECKOUT',
+        'isSingle': false
+    };
     newOrder
         .save(function (err, order) {
             if (err) {
-                console.log(err);
-            } else {
-                localVar = {
-                    'page': 'CHECKOUT',
-                    'isSingle': false
-                }
-            };
+                console.log(err)
+            }
 
             res.render('confirm', localVar);
         })

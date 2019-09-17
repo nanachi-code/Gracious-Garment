@@ -33,9 +33,9 @@
                                 Billing info
                             </div>
                             <ul>
-                                <li class="billing-name">nanachi</li>
-                                <li class="billing-address">An Khanh, Hoai Duc</li>
-                                <li class="billing-phone">Hanoi</li>
+                                <li class="billing-name"></li>
+                                <li class="billing-address"></li>
+                                <li class="billing-phone"></li>
                             </ul>
                         </div>
 
@@ -44,14 +44,14 @@
                                 Delivery info
                             </div>
                             <ul>
-                                <li class="delivery-name">nanachi</li>
-                                <li class="delivery-address">An Khanh, Hoai Duc</li>
-                                <li class="delivery-phone">Hanoi</li>
+                                <li class="delivery-name"></li>
+                                <li class="delivery-address"></li>
+                                <li class="delivery-phone"></li>
                             </ul>
                         </div>
 
                         <div class="col-md-2 align-self-end">
-                            <a href="" class="text-uppercase btn btn-dark float-right text-bold text-12">Change</a>
+                            <a href="/address" class="text-uppercase btn btn-dark float-right text-bold text-12">Change</a>
                         </div>
 
                     </div>
@@ -65,7 +65,7 @@
                                 Shipping option
                             </div>
                             <ul>
-                                <li class="shipping-option">Fedex</li>
+                                <li class="shipping-option"></li>
                                 <li class="shipping-date">2-5 working days</li>
                                 <li class="shipping-fees">Freeship</li>
                             </ul>
@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="col-md-2 align-self-end">
-                            <a href="" class="text-uppercase btn btn-dark float-right text-bold text-12">Change</a>
+                            <a href="/shipping-payment" class="text-uppercase btn btn-dark float-right text-bold text-12">Change</a>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                     </a>
                 </div>
                 <div class="col-md-6 text-right">
-                    <form action="/confirm" method="post">
+                    <form action="/confirm" method="post" id="confirmForm">
                         <input type="hidden" name="cartOptions" id="cartOptions" value="">
                         <button type="submit" class="btn btn-warning text-white px-4">Confirm order</button>
                     </form>

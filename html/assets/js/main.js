@@ -2,17 +2,17 @@
     "use strict";
     let cartObject = [] //* global pointer to cart   
     let cartOptions = { //* global pointer to cart options
-        'billingName': '',
-        'billingAddress': '',
-        'billingPhone': '',
-        'deliveryName': '',
-        'deliveryAddress': '',
-        'deliveryPhone': '',
-        'comment': '',
-        'payment': '',
-        'shipping': '',
-        'product': [],
-        'totalPrice': ''
+        billingName: '',
+        billingAddress: '',
+        billingPhone: '',
+        deliveryName: '',
+        deliveryAddress: '',
+        deliveryPhone: '',
+        comment: '',
+        payment: '',
+        shipping: '',
+        product: [],
+        totalPrice: ''
     };
 
     //* String manipulate function, which convert special characters in other languages' alphabet into latin characters
@@ -45,6 +45,10 @@
         } else {
             localStorage.removeItem(name);
         }
+    }
+
+    function resetLocalData(name) {
+        localStorage.setItem(name, null);
     }
 
     function initCart() {
@@ -101,7 +105,6 @@
         $(this).addClass('option-selected');
     });
 
-
     //* Save payment & shipping option on submit
     $('#summary-redirect').click(() => {
         cartOptions.payment = $('.payment.option-selected').attr('data-value');
@@ -111,8 +114,15 @@
         setLocalData('graciousCartOptions', JSON.stringify(cartOptions));
     });
 
+    //* Clear localStorage after user successfully checked out
+    $('#confirmForm').submit(function () {
+        resetLocalData('graciousCart');
+        resetLocalData('graciousCartOptions');
+    });
+
     //* Load header cart
     function loadHeaderCart() {
+        $('.cart-product').remove();
         if (cartObject.length != 0) {
             //* if cartObject is set then display the header cart
             let totalPrice = 0;
@@ -146,9 +156,9 @@
                 totalPrice += Number(singleTotalPrice)
             });
 
-            $('cart-total-quantity').text(cartObject.length);
-            $('#cart-total-price').text('$' + totalPrice);
+            $('#header-cart-quantity').text(cartObject.length);
             $('#header-cart-price').find('.price-tag').text('$' + totalPrice);
+            $('#header-cart-total').text('$' + totalPrice);
         } else {
             let cartHTML =
                 `<div class="cart-product py-2">
@@ -321,6 +331,7 @@
         let quantity = $('#product-quantity').val();
         addToCart(name, brand, price, quantity, imgURL);
         alert('Item added to cart successfully.');
+        loadHeaderCart();
     });
 
     //* Remove from cart
@@ -334,11 +345,12 @@
     }
 
     //* Remove an item from cart on click
-    $('.remove-cart').click((e) => {
-        e.preventDefault();
+    $(document).on('click', '.remove-cart', function () {
         removeFromCart($(this).attr('data-name'));
         $(this).parent().parent().parent().parent().parent().remove();
         alert('Item removed from cart successfully.');
+        loadPageCart();
+        loadHeaderCart();
     });
 
     //* Admin page
