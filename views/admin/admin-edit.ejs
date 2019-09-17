@@ -1,3 +1,146 @@
 <%- include('admin-header') %>
+<section>
+    <div class="container py-4">
+        <div class="text-36 mb-4">Edit product</div>
+        <% if (typeof msg !== 'undefined') { 
+            if (msg.type == 'error') { %>
+        <div class="alert alert-danger">
+            <strong>Error!</strong> <%= msg.text %>
+        </div>
+        <%  } else { %>
+        <div class="alert alert-success">
+            <strong>Success!</strong> <%= msg.text %>
+        </div>
+        <%  }
+        } %>
+        <form action="/admin/manage" method="post" id="deleteForm">
+            <input type="hidden" name="productName" value="<%= product.productName %>">
+        </form>
+        <form action="/admin/edit/<%= product.productPermalink %>" method="POST">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="productName">Product Name</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="productName" id="productName"
+                        placeholder="Enter product name" required value="<%= product.productName %>">
+                    <span class="form-text text-muted">Your product page permalink will be <span
+                            class="permalink">/product/<%= product.productPermalink %></span></span>
+                    <input type="hidden" id="productPermalink" name="productPermalink"
+                        value="<%= product.productPermalink %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Product Category</label>
+                <div class="col-sm-9">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="category-1" name="productCategory" class="custom-control-input"
+                            value="men" <% if (product.productCategory == 'men'){%> checked <% }%>>
+                        <label class="custom-control-label" for="category-1">Men</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="category-2" name="productCategory" class="custom-control-input"
+                            value="women" <% if (product.productCategory == 'women'){%> checked <% }%>>
+                        <label class="custom-control-label" for="category-2">Women</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Product Brand</label>
+                <div class="col-sm-9">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="brand-1" name="productBrand" class="custom-control-input" value="Adidas"
+                            <% if (product.productBrand == 'Adidas'){%> checked <% }%>>
+                        <label class="custom-control-label" for="brand-1">Adidas</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="brand-2" name="productBrand" class="custom-control-input"
+                            value="Channel" <% if (product.productBrand == 'Channel'){%> checked <% }%>>
+                        <label class="custom-control-label" for="brand-2">Channel</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="brand-3" name="productBrand" class="custom-control-input" value="Gucci"
+                            <% if (product.productBrand == 'Gucci'){%> checked <% }%>>
+                        <label class="custom-control-label" for="brand-3">Gucci</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="brand-4" name="productBrand" class="custom-control-input" value="Nike"
+                            <% if (product.productBrand == 'Nike'){%> checked <% }%>>
+                        <label class="custom-control-label" for="brand-4">Nike</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="brand-5" name="productBrand" class="custom-control-input" value="Hermes"
+                            <% if (product.productBrand == 'Hermes'){%> checked <% }%>>
+                        <label class="custom-control-label" for="brand-5">Hermes</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="brand-6" name="productBrand" class="custom-control-input"
+                            value="Louis Vuiton" <% if (product.productBrand == 'Louis Vuiton'){%> checked <% }%>>
+                        <label class="custom-control-label" for="brand-6">Louis Vuiton</label>
+                    </div>
+                </div>
+                <input type="hidden" id="productBrandPermalink" name="productBrandPermalink"
+                    value="<%= product.productBrandPermalink %>">
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="productPrice">Product Price</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" name="productPrice" id="productPrice"
+                        placeholder="Enter product price" required value="<%= product.productPrice %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="productDoc">Link Document</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="productDoc" id="productDoc"
+                        placeholder="Enter Document link" required value="<%= product.productDoc %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="productSize">Product Size</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="productSize" id="productSize"
+                        placeholder="Enter product size" required value="<%= product.productSize %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="productColor">Product Color</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="productColor" id="productColor"
+                        placeholder="Enter product color" required value="<%= product.productColor %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="productDesc">Product Description</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="productDesc" id="productDesc"
+                        placeholder="Enter product description" required value="<%= product.productDesc %>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="productImg">Product Image link</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="productImg" id="productImg"
+                        placeholder="Enter product image link" required value="<%= product.productImg %>">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="reset" class="btn btn-primary">Reset</button>
+                <div class="btn btn-primary text-12 text-bold text-uppercase" onclick="$('#deleteForm').submit();">
+                    Delete</div>
+            </div>
+        </form>
+    </div>
+
+
+</section>
 
 <%- include('admin-footer') %>

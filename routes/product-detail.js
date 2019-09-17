@@ -54,7 +54,6 @@ router.get('/product/:productPermalink', (req, res) => {
                                 console.log(err);
                                 log
                             }
-                            console.log(diffBrandProduct);
                             localVar.diffBrandProduct = diffBrandProduct;
                             res.render('product-detail', localVar)
                         })

@@ -3,6 +3,17 @@
     <div class="featured my-4">
         <div class="container">
             <div class="d-block text-36 py-5">Manage Products</div>
+            <% if (typeof msg !== 'undefined') { 
+                if (msg.type == 'error') { %>
+            <div class="alert alert-danger">
+                <strong>Error!</strong> <%= msg.text %>
+            </div>
+            <%  } else { %>
+            <div class="alert alert-success">
+                <strong>Success!</strong> <%= msg.text %>
+            </div>
+            <%  }
+            } %>
             <!-- row start -->
             <div class="row py-4">
                 <!-- col md-3 start-->
