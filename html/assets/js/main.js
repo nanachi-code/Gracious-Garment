@@ -47,15 +47,11 @@
         }
     }
 
-    function resetLocalData(name) {
-        localStorage.setItem(name, null);
-    }
-
     function initCart() {
         //* Check in browser memory if there are a saved cart
-        if ((getLocalData('graciousCart') != null)) {
+        if (getLocalData('graciousCart') != null) {
             //* if previous cart is present then load it
-            cartObject = JSON.parse(getLocalData('graciousCart'));
+            cartObject = JSON.parse(getLocalData('graciousCart'));            
         } else {
             setLocalData('graciousCart', JSON.stringify(cartObject));
         }
@@ -116,8 +112,8 @@
 
     //* Clear localStorage after user successfully checked out
     $('#confirmForm').submit(function () {
-        resetLocalData('graciousCart');
-        resetLocalData('graciousCartOptions');
+        setLocalData('graciousCart', null);
+        setLocalData('graciousCartOptions', null);
     });
 
     //* Load header cart
@@ -260,7 +256,7 @@
 
             $('#summary-price').find('.cart-total-quantity').text(cartObject.length);
             $('#summary-price').find('.cart-total-price').text('$' + totalPrice);
-            cartObject.totalPrice = totalPrice;
+            cartOptions.totalPrice = totalPrice;
 
         } else {
             let cartHTML =
@@ -367,7 +363,7 @@
     });
 
     $(document).ready(function () {
-        initCart();
+        initCart();        
         loadHeaderCart();
         loadPageCart();
         loadPageSummary();
