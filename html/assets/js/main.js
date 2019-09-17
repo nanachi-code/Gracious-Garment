@@ -51,7 +51,7 @@
         //* Check in browser memory if there are a saved cart
         if (getLocalData('graciousCart') != null) {
             //* if previous cart is present then load it
-            cartObject = JSON.parse(getLocalData('graciousCart'));            
+            cartObject = JSON.parse(getLocalData('graciousCart'));
         } else {
             setLocalData('graciousCart', JSON.stringify(cartObject));
         }
@@ -342,11 +342,15 @@
 
     //* Remove an item from cart on click
     $(document).on('click', '.remove-cart', function () {
-        removeFromCart($(this).attr('data-name'));
-        $(this).parent().parent().parent().parent().parent().remove();
-        alert('Item removed from cart successfully.');
-        loadPageCart();
-        loadHeaderCart();
+        if (confirm('Are you sure you want to remove this item?')) {
+            removeFromCart($(this).attr('data-name'));
+            $(this).parent().parent().parent().parent().parent().remove();
+            alert('Item removed from cart successfully.');
+            loadPageCart();
+            loadHeaderCart();
+        } else {
+            return false;
+        }
     });
 
     //* Admin page
@@ -363,7 +367,7 @@
     });
 
     $(document).ready(function () {
-        initCart();        
+        initCart();
         loadHeaderCart();
         loadPageCart();
         loadPageSummary();

@@ -10,12 +10,11 @@ router.get('/admin/order', (req, res) => {
     let localVar = {};
     //* Get all orders from database
     Order
-        .find({}, function (err, order) {
+        .find({})
+        .exec(function (err, order) {
             if (err) {
                 console.log(err);
             }
-            
-            console.log((order[0].product[0]));
 
             localVar.order = order;
             res.render('admin/admin-order', localVar);

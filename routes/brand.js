@@ -68,7 +68,6 @@ router.get('/brand/:productBrandPermalink', (req, res) => {
             if (err) {
                 console.log(err);
             }
-            console.log(product);
             localVar.product = product;
             localVar.brand.name = product[0].productBrand;
             localVar.brand.permalink = product[0].productBrandPermalink;
@@ -94,7 +93,6 @@ router.post('/brand/:productBrandPermalink', urlencodedParser, (req, res) => {
             if (err) {
                 console.log(err);
             }
-            console.log(product);
             localVar.product = product;
             localVar.brand.name = product[0].productBrand;
             localVar.brand.permalink = product[0].productBrandPermalink;
