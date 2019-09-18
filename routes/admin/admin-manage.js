@@ -25,24 +25,20 @@ router.post('/admin/manage', urlencodedParser, (req, res) => {
     let localVar = {
         page: 'Manage'
     };
-    console.log(req.body);
     Product
         .deleteOne(req.body, function (err, deletedProduct) {
             if (err) {
                 console.log(err);
-                localVar = {
-                    msg: {
-                        type: 'error',
-                        text: err
-                    }
-                };
-            } else {
-                localVar = {
-                    msg: {
-                        type: 'success',
-                        text: `${req.body.productName} is successfully removed`
-                    }
+                localVar.msg = {
+                    type: 'error',
+                    text: err
                 }
+            } else {
+                localVar.msg = {
+                    type: 'success',
+                    text: `${req.body.productName} is successfully removed`
+                }
+
             };
 
             //* Get all product from database

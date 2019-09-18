@@ -27,18 +27,14 @@ router.post('/admin/add', urlencodedParser, (req, res) => {
 
             if (err) {
                 console.log(err);
-                localVar = {
-                    msg: {
-                        type: 'error',
-                        text: err
-                    }
+                localVar.msg = {
+                    type: 'error',
+                    text: err
                 };
             } else {
-                localVar = {
-                    msg: {
-                        type: 'success',
-                        text: `${product.productName} is successfully added to database`
-                    }
+                localVar.msg = {
+                    type: 'success',
+                    text: `${product.productName} is successfully added to database`
                 }
             };
 

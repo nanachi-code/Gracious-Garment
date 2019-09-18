@@ -1,2 +1,74 @@
 <%- include('admin-header') %>
+<section id="admin-order">
+    <div class="container">
+        <div class="d-block text-36 py-5">List of Orders</div>
+        <% if (typeof msg !== 'undefined') { 
+            if (msg.type == 'error') { %>
+        <div class="alert alert-danger">
+            <strong>Error!</strong> <%= msg.text %>
+        </div>
+        <%  } else { %>
+        <div class="alert alert-success">
+            <strong>Success!</strong> <%= msg.text %>
+        </div>
+        <%  }
+        } %>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center align-middle">
+                        <th scope="col" class="align-middle">#</th>
+                        <th scope="col" class="align-middle">Billing info</th>
+                        <th scope="col" class="align-middle">Delivery info</th>
+                        <th scope="col" class="align-middle">Product</th>
+                        <th scope="col" class="align-middle">Shipping</th>
+                        <th scope="col" class="align-middle">Payment</th>
+                        <th scope="col" class="align-middle">Total Price</th>
+                        <th scope="col" class="align-middle">Comment</th>
+                        <th scope="col" class="align-middle">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% order.forEach((element, index) => { %>
+                    <tr>
+                        <th scope="row"><%= Number(index) + 1 %></th>
+                        <td>
+                            <ul>
+                                <li><%= element.billingName %></li>
+                                <li><%= element.billingPhone %></li>
+                                <li><%= element.billingAddress %></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><%= element.deliveryName %></li>
+                                <li><%= element.deliveryPhone %></li>
+                                <li><%= element.deliveryAddress %></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <% element.product.forEach(prod => { %>
+                                <li class="text-nowrap"><%= prod[0].name %> x <%= prod[0].quantity %></li>
+                                <% });%>
+                            </ul>
+                        </td>
+                        <td class="text-nowrap"><%= element.shipping %></td>
+                        <td class="text-nowrap"><%= element.payment %></td>
+                        <td class="text-nowrap">$<%= element.totalPrice %></td>
+                        <td><%= element.comment %></td>
+                        <td class="text-center">
+                            <form class="acc" method="post" action="/admin/order">
+                                <input type="hidden" value="<%= element._id %>" name="_id">
+                                <button class="delete-order" type="submit"><i class="far fa-trash-alt"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
 <%- include('admin-footer') %>
