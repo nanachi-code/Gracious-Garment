@@ -665,7 +665,7 @@ footer a {
 .homepage-big-picture img {
     background-repeat: no-repeat;
     background-size: cover;
-    height: 420px;
+    width: 100%;
 }
 .brands img {
     max-height: 70px;
