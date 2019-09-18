@@ -62,28 +62,24 @@
         <div class="container">
             <div class="d-block text-36 py-5">List of Orders</div>
             <div class="table-responsive">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered">
                     <thead>
                         <tr class="text-center align-middle">
-                            <th scope="col" rowspan="2" class="align-middle">#</th>
-                            <th scope="col" colspan="2">Product</th>
-                            <th scope="col" rowspan="2" class="align-middle">Billing info</th>
-                            <th scope="col" rowspan="2" class="align-middle">Delivery info</th>
-                            <th scope="col" rowspan="2" class="align-middle">Shipping</th>
-                            <th scope="col" rowspan="2" class="align-middle">Payment</th>
-                            <th scope="col" rowspan="2" class="align-middle">Comment</th>
-                        </tr>
-                        <tr class="text-center align-middle">
-                            <th scope="col">Name</th>
-                            <th scope="col">Qty.</th>
+                            <th scope="col" class="align-middle">#</th>
+                            <th scope="col" class="align-middle">Billing info</th>
+                            <th scope="col" class="align-middle">Delivery info</th>
+                            <th scope="col" class="align-middle">Product</th>
+                            <th scope="col" class="align-middle">Shipping</th>
+                            <th scope="col" class="align-middle">Payment</th>
+                            <th scope="col" class="align-middle">Total Price</th>
+                            <th scope="col" class="align-middle">Comment</th>
+                            <th scope="col" class="align-middle">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                         <tr>
                             <th scope="row">1</th>
-                            <td class="text-nowrap">Ao-somi-nam</td>
-                            <td>1</td>
                             <td>
                                 <ul>
                                     <li>Dinh Vu</li>
@@ -98,10 +94,19 @@
                                     <li>An Khanh, Hoai Duc, Hanoi</li>
                                 </ul>
                             </td>
+                            <td class="text-nowrap">Ao-somi-nam aaaaaaaaaaaaa</td>
                             <td>Yes</td>
-                            <td>200$</td>
+                            <td>CASH ON DELIVERY</td>
+                            <td>1500$</td>
                             <td>Ship on the weekend</td>
+                            <td class="text-center">
+                               <form class="acc" method="post" action="">
+                                   <input type="hidden" value="" name="_id">
+                                   <button class="delete-order" type="submit"><i class="far fa-trash-alt"></i></button>
+                               </form>
+                            </td>
                         </tr>
+
                     </tbody>
                 </table>
             </div>

@@ -352,7 +352,14 @@
             return false;
         }
     });
-
+    // delete order
+    $('.delete-order').click(function () {
+        if (confirm('Are you sure you want to remove this item?')) {
+            $(this).parent().submit();
+        }else{
+            return false;
+        }
+    });
     //* Admin page
     //* Permalink generator
     $('#productName').change(function () {
