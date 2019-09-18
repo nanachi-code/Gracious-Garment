@@ -170,6 +170,9 @@ label {
 .text-36 {
     font-size: 36px !important;
 }
+.text-70 {
+    font-size: 70px !important;
+}
 
 .border-light {
     border-color: #dbdbdb !important;
@@ -657,6 +660,7 @@ footer a {
 .homepage-big-picture img {
     background-repeat: no-repeat;
     background-size: cover;
+    height: 420px;
 }
 .brands img {
     max-height: 70px;
