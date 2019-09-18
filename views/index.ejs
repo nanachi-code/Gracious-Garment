@@ -61,7 +61,7 @@
                     <div class="text-center mb-4">
                         <img src="assets/images/iteam-icon/iteam-2.png">
                     </div>
-                    <h4 class="text-center mb-4">YOUR  BEST  DEAL</h4>
+                    <h4 class="text-center mb-4">YOUR BEST DEAL</h4>
                     <p class="text-center">We are pleased to serve you
                         the best products at good prices, with items
                         that are current fashion trends and the coming years.</p>
@@ -133,12 +133,13 @@
         </h2>
         <!-- carousel start -->
         <div class="py-4 latest-slider">
+            <% latestProduct.forEach(element => { %>
             <!-- category product start -->
             <div class="category-product px-2">
                 <!-- product img start-->
                 <div class="category-product-img">
-                    <a href="">
-                        <img src="assets/images/vest.jpg" alt="" srcset="">
+                    <a href="/product/<%= element.productPermalink %>">
+                        <img src="<%= element.productImg %>" alt="" srcset="">
                     </a>
                 </div>
                 <!-- product img end-->
@@ -150,15 +151,17 @@
                         <!-- float left start -->
                         <div class="float-left">
                             <h6 class="text-white text-bold">
-                                <a href="" class="text-white">Men Vest</a><br>
-                                by <a href="" class="brand">Velour</a>
+                                <a href="/product/<%= element.productPermalink %>"
+                                    class="text-white"><%= element.productName %></a><br>
+                                by <a href="/brand/<%= element.productBrandPermalink %>"
+                                    class="brand"><%= element.productBrand %></a>
                             </h6>
                         </div>
                         <!-- float left end -->
 
                         <!-- float right start -->
                         <div class="float-right">
-                            <h3 class="category-product-price text-white price-tag">999.00$</h3>
+                            <h3 class="category-product-price text-white price-tag">$<%= element.productPrice %></h3>
                         </div>
                         <!-- float right end -->
                     </div>
@@ -167,108 +170,7 @@
                 <!-- product title end -->
             </div>
             <!-- category product end -->
-            <!-- category product start -->
-            <div class="category-product px-2">
-                <!-- product img start-->
-                <div class="category-product-img">
-                    <a href="">
-                        <img src="assets/images/vest.jpg" alt="" srcset="">
-                    </a>
-                </div>
-                <!-- product img end-->
-
-                <!-- product title start -->
-                <div class="category-product-title">
-                    <!-- clearfix start -->
-                    <div class="clearfix">
-                        <!-- float left start -->
-                        <div class="float-left">
-                            <h6 class="text-white text-bold">
-                                <a href="" class="text-white">Men Vest</a><br>
-                                by <a href="" class="brand">Velour</a>
-                            </h6>
-                        </div>
-                        <!-- float left end -->
-
-                        <!-- float right start -->
-                        <div class="float-right">
-                            <h3 class="category-product-price text-white price-tag">999.00$</h3>
-                        </div>
-                        <!-- float right end -->
-                    </div>
-                    <!-- clearfix end -->
-                </div>
-                <!-- product title end -->
-            </div>
-            <!-- category product end -->
-            <!-- category product start -->
-            <div class="category-product px-2">
-                <!-- product img start-->
-                <div class="category-product-img">
-                    <a href="">
-                        <img src="assets/images/vest.jpg" alt="" srcset="">
-                    </a>
-                </div>
-                <!-- product img end-->
-
-                <!-- product title start -->
-                <div class="category-product-title">
-                    <!-- clearfix start -->
-                    <div class="clearfix">
-                        <!-- float left start -->
-                        <div class="float-left">
-                            <h6 class="text-white text-bold">
-                                <a href="" class="text-white">Men Vest</a><br>
-                                by <a href="" class="brand">Velour</a>
-                            </h6>
-                        </div>
-                        <!-- float left end -->
-
-                        <!-- float right start -->
-                        <div class="float-right">
-                            <h3 class="category-product-price text-white price-tag">999.00$</h3>
-                        </div>
-                        <!-- float right end -->
-                    </div>
-                    <!-- clearfix end -->
-                </div>
-                <!-- product title end -->
-            </div>
-            <!-- category product end -->
-            <!-- category product start -->
-            <div class="category-product px-2">
-                <!-- product img start-->
-                <div class="category-product-img">
-                    <a href="">
-                        <img src="assets/images/vest.jpg" alt="" srcset="">
-                    </a>
-                </div>
-                <!-- product img end-->
-
-                <!-- product title start -->
-                <div class="category-product-title">
-                    <!-- clearfix start -->
-                    <div class="clearfix">
-                        <!-- float left start -->
-                        <div class="float-left">
-                            <h6 class="text-white text-bold">
-                                <a href="" class="text-white">Men Vest</a><br>
-                                by <a href="" class="brand">Velour</a>
-                            </h6>
-                        </div>
-                        <!-- float left end -->
-
-                        <!-- float right start -->
-                        <div class="float-right">
-                            <h3 class="category-product-price text-white price-tag">999.00$</h3>
-                        </div>
-                        <!-- float right end -->
-                    </div>
-                    <!-- clearfix end -->
-                </div>
-                <!-- product title end -->
-            </div>
-            <!-- category product end -->
+            <% }); %>
         </div>
         <!-- carousel end -->
     </div>

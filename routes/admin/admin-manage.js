@@ -7,7 +7,9 @@ const urlencodedParser = bodyParser.urlencoded({
 });
 
 router.get('/admin/manage', (req, res) => {
-    let localVar = {};
+    let localVar = {
+        page: 'Manage'
+    };
     //* Get all product from database
     Product
         .find({}, function (err, product) {
@@ -20,7 +22,9 @@ router.get('/admin/manage', (req, res) => {
 });
 
 router.post('/admin/manage', urlencodedParser, (req, res) => {
-    let localVar = {};
+    let localVar = {
+        page: 'Manage'
+    };
     console.log(req.body);
     Product
         .deleteOne(req.body, function (err, deletedProduct) {

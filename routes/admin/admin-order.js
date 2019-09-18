@@ -7,7 +7,9 @@ const urlencodedParser = bodyParser.urlencoded({
 });
 
 router.get('/admin/order', (req, res) => {
-    let localVar = {};
+    let localVar = {
+        page: 'Order'
+    };
     //* Get all orders from database
     Order
         .find({})

@@ -37,16 +37,16 @@
         <div class="pb-4 pt-2 menu">
             <ul>
                 <li>
-                    <a href="/admin">Dashboard</a>
+                    <a href="/admin" <% if (page == 'Dashboard'){%> class="active" <%}%>>Dashboard</a>
                 </li>
                 <li>
-                    <a href="/admin/manage">Manage Products</a>
+                    <a href="/admin/manage" <% if (page == 'Manage'){%> class="active" <%}%>>Manage Products</a>
                 </li>
                 <li>
-                    <a href="/admin/add" class="active">Add Product</a>
+                    <a href="/admin/add" <% if (page == 'Add'){%> class="active" <%}%>>Add Product</a>
                 </li>
                 <li>
-                    <a href="/admin/order">Order</a>
+                    <a href="/admin/order" <% if (page == 'Orders'){%> class="active" <%}%>>Order</a>
                 </li>
             </ul>
         </div>

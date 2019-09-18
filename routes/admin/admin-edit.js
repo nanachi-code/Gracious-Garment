@@ -8,7 +8,9 @@ const Product = require('../../models/product');
 const url = require('url');
 
 router.get('/admin/edit/:productPermalink', (req, res) => {
-    let localVar = {};
+    let localVar = {
+        page: 'Manage'
+    };
 
     Product
         .findOne({
@@ -34,7 +36,9 @@ router.get('/admin/edit/:productPermalink', (req, res) => {
 })
 
 router.post('/admin/edit/:productPermalink', urlencodedParser, (req, res) => {
-    let localVar = {};
+    let localVar = {
+        page: 'Manage'
+    };
     Product
         .findOneAndUpdate(
             //* query

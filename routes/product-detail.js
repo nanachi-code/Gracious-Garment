@@ -1,9 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bodyParser = require('body-parser');
-const urlencodedParser = bodyParser.urlencoded({
-    extended: false
-});
 const Product = require('../models/product');
 
 router.get('/product/:productPermalink', (req, res) => {
@@ -20,7 +16,7 @@ router.get('/product/:productPermalink', (req, res) => {
             if (err) {
                 console.log(err);
             }
-
+            
             localVar.product = product;
 
             //* Get products with same brands

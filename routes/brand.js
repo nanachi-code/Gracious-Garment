@@ -21,6 +21,8 @@ router.get('/brand', (req, res) => {
             if (err) {
                 console.log(err);
             }
+            
+            console.log(product);
             localVar.product = product;
             res.render('brand', localVar);
         });
@@ -43,7 +45,6 @@ router.post('/brand', urlencodedParser, (req, res) => {
         .where('productColor').in(req.body.productColor)
         .sort(req.body.sortPrice)
         .exec(function (err, product) {
-            console.log(product);
             if (err) {
                 console.log(err);
             }

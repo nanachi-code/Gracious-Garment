@@ -7,7 +7,9 @@ const urlencodedParser = bodyParser.urlencoded({
 });
 
 router.get('/admin/add', (req, res) => {
-    let localVar = {};
+    let localVar = {
+        page: 'Add'
+    };
 
     res.render('admin/admin-add', localVar);
 });
@@ -16,11 +18,13 @@ router.post('/admin/add', urlencodedParser, (req, res) => {
     console.log(req.body);
     //* Create new product instance
     let newProduct = new Product(req.body);
-    let localVar = {};
+    let localVar = {
+        page: 'Add'
+    };
     newProduct
         .save(function (err, product) {
             console.log(product);
-            
+
             if (err) {
                 console.log(err);
                 localVar = {
@@ -29,14 +33,14 @@ router.post('/admin/add', urlencodedParser, (req, res) => {
                         text: err
                     }
                 };
-            }
-            else {
+            } else {
                 localVar = {
-                msg: {
-                    type: 'success',
-                    text: `${product.productName} is successfully added to database`
+                    msg: {
+                        type: 'success',
+                        text: `${product.productName} is successfully added to database`
+                    }
                 }
-            }};
+            };
 
 
             res.render('admin/admin-add', localVar);
