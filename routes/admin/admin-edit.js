@@ -22,11 +22,9 @@ router.get('/admin/edit/:productPermalink', (req, res) => {
             }
 
             if (req.query.success) {
-                localVar = {
-                    msg: {
-                        type: 'success',
-                        text: `${product.productName} is successfully updated`
-                    }
+                localVar.msg = {
+                    type: 'success',
+                    text: `${product.productName} is successfully updated`
                 }
             };
 
@@ -63,11 +61,9 @@ router.post('/admin/edit/:productPermalink', urlencodedParser, (req, res) => {
                         }
                     };
                 } else {
-                    localVar = {
-                        msg: {
-                            type: 'success',
-                            text: `${product.productName} is successfully updated`
-                        }
+                    localVar.msg = {
+                        type: 'success',
+                        text: `${product.productName} is successfully updated`
                     }
                 };
 
