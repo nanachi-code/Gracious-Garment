@@ -2,17 +2,25 @@
 <section>
     <div class="container py-4">
         <div class="text-36 mb-4">Add new product</div>
+        
         <% if (typeof msg !== 'undefined') { 
             if (msg.type == 'error') { %>
-        <div class="alert alert-danger">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Error!</strong> <%= msg.text %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <%  } else { %>
-        <div class="alert alert-success">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Success!</strong> <%= msg.text %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <%  }
         } %>
+        
         <form action="/admin/add" method="POST">
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label" for="productName">Product Name</label>
@@ -22,6 +30,22 @@
                     <span class="form-text text-muted">Your product page permalink will be <span
                             class="permalink"></span></span>
                     <input type="hidden" id="productPermalink" name="productPermalink" value="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="productPrice">Product Price</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" name="productPrice" id="productPrice"
+                        placeholder="Enter product price" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="productDesc">Product Description</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="productDesc" id="productDesc"
+                        placeholder="Enter product description" required>
                 </div>
             </div>
 
@@ -77,42 +101,65 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label" for="productPrice">Product Price</label>
+                <label class="col-sm-3 col-form-label">Product Size</label>
                 <div class="col-sm-9">
-                    <input type="number" class="form-control" name="productPrice" id="productPrice"
-                        placeholder="Enter product price" required>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label" for="productDoc">Product Document Link</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" name="productDoc" id="productDoc"
-                        placeholder="Enter document link" required>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label" for="productSize">Product Size</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" name="productSize" id="productSize"
-                        placeholder="Enter product size" required>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="size-1" name="productSize" class="custom-control-input" value="XS"
+                            checked>
+                        <label class="custom-control-label" for="size-1">XS</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="size-2" name="productSize" class="custom-control-input" value="S">
+                        <label class="custom-control-label" for="size-2">S</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="size-3" name="productSize" class="custom-control-input" value="M">
+                        <label class="custom-control-label" for="size-3">M</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="size-4" name="productSize" class="custom-control-input" value="L">
+                        <label class="custom-control-label" for="size-4">L</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="size-5" name="productSize" class="custom-control-input" value="XL">
+                        <label class="custom-control-label" for="size-5">XL</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="size-6" name="productSize" class="custom-control-input" value="XXL">
+                        <label class="custom-control-label" for="size-6">XXL</label>
+                    </div>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label" for="productColor">Product Color</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" name="productColor" id="productColor"
-                        placeholder="Enter product color" required>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label" for="productDesc">Product Description</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" name="productDesc" id="productDesc"
-                        placeholder="Enter product description" required>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="color-1" name="productColor" class="custom-control-input" value="Red"
+                            checked>
+                        <label class="custom-control-label" for="color-1">Red</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="color-2" name="productColor" class="custom-control-input" value="Blue">
+                        <label class="custom-control-label" for="color-2">Blue</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="color-3" name="productColor" class="custom-control-input" value="Black">
+                        <label class="custom-control-label" for="color-3">Black</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="color-4" name="productColor" class="custom-control-input" value="White">
+                        <label class="custom-control-label" for="color-4">White</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="color-5" name="productColor" class="custom-control-input" value="Green">
+                        <label class="custom-control-label" for="color-5">Green</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="color-6" name="productColor" class="custom-control-input"
+                            value="Yellow">
+                        <label class="custom-control-label" for="color-6">Yellow</label>
+                    </div>
                 </div>
             </div>
 
@@ -121,6 +168,14 @@
                 <div class="col-sm-9">
                     <input type="text" class="form-control" name="productImg" id="productImg"
                         placeholder="Enter product image link" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="productDoc">Product Document Link</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="productDoc" id="productDoc"
+                        placeholder="Enter document link" required>
                 </div>
             </div>
 

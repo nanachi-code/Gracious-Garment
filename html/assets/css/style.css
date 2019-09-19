@@ -59,7 +59,6 @@ img {
     background: #3a3a3a;
 }
 
-button,
 input[type=reset],
 button[type=submit] {
     font-size: 12px !important;
@@ -173,6 +172,7 @@ label {
 .text-70 {
     font-size: 70px !important;
 }
+
 
 .border-light {
     border-color: #dbdbdb !important;
@@ -445,7 +445,11 @@ footer a {
 .category-product-img {
     background-color: #f7f7f7;
 }
-
+.category-product-img img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+}
 .category-product-title {
     background-color: #383838;
     padding: 10px;
@@ -650,7 +654,7 @@ footer a {
 }
 
 /* ====================================
-    Home Page
+        Home Page
 ======================================= */
 .slider .container-fluid {
     margin: 0;
