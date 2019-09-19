@@ -54,11 +54,9 @@ router.post('/admin/edit/:productPermalink', urlencodedParser, (req, res) => {
             function (err, product) {
                 if (err) {
                     console.log(err);
-                    localVar = {
-                        msg: {
-                            type: 'error',
-                            text: err
-                        }
+                    localVar.msg = {
+                        type: 'error',
+                        text: err
                     };
                 } else {
                     localVar.msg = {

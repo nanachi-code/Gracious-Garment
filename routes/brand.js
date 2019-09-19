@@ -21,13 +21,13 @@ router.get('/brand', (req, res) => {
             if (err) {
                 console.log(err);
             }
-            
-            console.log(product);
+
             localVar.product = product;
             res.render('brand', localVar);
         });
 });
 
+//* Filter on brand page
 router.post('/brand', urlencodedParser, (req, res) => {
     let localVar = {
         'page': 'Brands',
@@ -37,12 +37,47 @@ router.post('/brand', urlencodedParser, (req, res) => {
             'permalink': '',
         }
     };
+    //console.log(req.body);
+
+    let query = {};
+
+    //* Price filter
+    if ((req.body.minPrice != '') && (req.body.maxPrice != '')) {
+        query.productPrice = {
+            $gt: req.body.minPrice,
+            $lt: req.body.maxPrice
+        }
+    } else if ((req.body.minPrice == '') && (req.body.maxPrice != '')) {
+        query.productPrice = {
+            $lt: req.body.maxPrice,
+        }
+    } else if ((req.body.maxPrice == '') && (req.body.minPrice != '')) {
+        query.productPrice = {
+            $gt: req.body.minPrice,
+        }
+    }
+
+    //* Size filter
+    if (typeof req.body.productSize === "string") {
+        query.productSize = req.body.productSize;
+
+    } else if (typeof req.body.productSize === "object") {
+        query.productSize = {
+            $in: req.body.productSize
+        };
+    }
+
+    //* Color filter
+    if (typeof req.body.productColor === "string") {
+        query.productColor = req.body.productColor;
+    } else if (typeof req.body.productColor === "object") {
+        query.productColor = {
+            $in: req.body.productColor
+        };
+    }
 
     Product
-        .find({})
-        .where('productPrice').gt(req.body.minPrice).lt(req.body.maxPrice)
-        .where('productSize').in(req.body.productSize)
-        .where('productColor').in(req.body.productColor)
+        .find(query)
         .sort(req.body.sortPrice)
         .exec(function (err, product) {
             if (err) {
@@ -82,21 +117,62 @@ router.post('/brand/:productBrandPermalink', urlencodedParser, (req, res) => {
         'isSingle': false,
         'brand': {}
     };
+
+    let query = {
+        'productBrandPermalink': req.params.productBrandPermalink
+    }
+
+    //* Price filter
+    if ((req.body.minPrice != '') && (req.body.maxPrice != '')) {
+        query.productPrice = {
+            $gt: req.body.minPrice,
+            $lt: req.body.maxPrice
+        }
+    } else if ((req.body.minPrice == '') && (req.body.maxPrice != '')) {
+        query.productPrice = {
+            $lt: req.body.maxPrice,
+        }
+    } else if ((req.body.maxPrice == '') && (req.body.minPrice != '')) {
+        query.productPrice = {
+            $gt: req.body.minPrice,
+        }
+    }
+
+    //* Size filter
+    if (typeof req.body.productSize === "string") {
+        query.productSize = req.body.productSize;
+
+    } else if (typeof req.body.productSize === "object") {
+        query.productSize = {
+            $in: req.body.productSize
+        };
+    }
+
+    //* Color filter
+    if (typeof req.body.productColor === "string") {
+        query.productColor = req.body.productColor;
+    } else if (typeof req.body.productColor === "object") {
+        query.productColor = {
+            $in: req.body.productColor
+        };
+    }
     Product
-        .find({
-            'productBrandPermalink': req.params.productBrandPermalink
-        })
-        .where('productPrice').gt(req.body.minPrice).lt(req.body.maxPrice)
-        .where('productSize').in(req.body.productSize)
-        .where('productColor').in(req.body.productColor)
+        .find(query)
         .sort(req.body.sortPrice)
         .exec(function (err, product) {
             if (err) {
                 console.log(err);
             }
-            localVar.product = product;
-            localVar.brand.name = product[0].productBrand;
-            localVar.brand.permalink = product[0].productBrandPermalink;
+
+            if (product.length == 0) {
+                localVar.product = product;
+                localVar.brand.name = '';
+                localVar.brand.permalink = '';
+            } else {
+                localVar.product = product;
+                localVar.brand.name = product[0].productBrand;
+                localVar.brand.permalink = product[0].productBrandPermalink;
+            }
             res.render('brand', localVar);
         });
 });
