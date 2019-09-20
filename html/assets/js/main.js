@@ -353,6 +353,15 @@
         }
     });
 
+    //* delete order
+    $('.delete-order').click(function () {
+        if (confirm('Are you sure you want to remove this item?')) {
+            $(this).parent().submit();
+        }else{
+            return false;
+        }
+    });
+
     //* Admin page
     //* Permalink generator
     $('#productName').change(function () {
@@ -414,3 +423,26 @@
 
 
 })(jQuery);
+
+// Map Api
+var map;
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 21.028765, lng: 105.781707},
+        zoom: 16
+    });
+    marker = new google.maps.Marker({
+        map: map,
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        position: {lat: 21.028765, lng: 105.781707}
+    });
+    marker.addListener('click', toggleBounce);
+}
+function toggleBounce() {
+    if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+    } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+}
