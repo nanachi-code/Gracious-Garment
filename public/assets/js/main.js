@@ -353,15 +353,6 @@
         }
     });
 
-    //* delete order
-    $('.delete-order').click(function () {
-        if (confirm('Are you sure you want to remove this item?')) {
-            $(this).parent().submit();
-        }else{
-            return false;
-        }
-    });
-    
     //* Admin page
     //* Permalink generator
     $('#productName').change(function () {
@@ -375,6 +366,24 @@
         $('#productBrandPermalink').val(permalink);
     });
 
+    //* Delete order confirmation
+    $('.delete-order').click(function () {
+        if (confirm('Are you sure you want to remove this item?')) {
+            $(this).parent().submit();
+        }else{
+            return false;
+        }
+    });
+    
+    //* Delete product confirmation
+    $('.delete-product').click(function () {
+        if (confirm('Are you sure you want to remove this item?')) {
+            $('#deleteForm').submit();
+        }else{
+            return false;
+        }
+    });
+    
     $(document).ready(function () {
         initCart();
         loadHeaderCart();

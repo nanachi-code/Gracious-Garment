@@ -59,7 +59,7 @@ img {
     background: #3a3a3a;
 }
 
-button,
+button[type=reset],
 input[type=reset],
 button[type=submit] {
     font-size: 12px !important;

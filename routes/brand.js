@@ -27,17 +27,15 @@ router.get('/brand', (req, res) => {
         });
 });
 
-//* Filter on brand page
+//* Filter on all brands page
 router.post('/brand', urlencodedParser, (req, res) => {
     let localVar = {
         'page': 'Brands',
         'isSingle': false,
         'brand': {
-            'name': '',
             'permalink': '',
         }
     };
-    //console.log(req.body);
 
     let query = {};
 
@@ -111,16 +109,19 @@ router.get('/brand/:productBrandPermalink', (req, res) => {
         });
 });
 
+//* Filter on specific brand page
 router.post('/brand/:productBrandPermalink', urlencodedParser, (req, res) => {
     let localVar = {
         'page': 'Brands',
         'isSingle': false,
-        'brand': {}
+        'brand': {
+            'permalink': req.params.productBrandPermalink
+        }
     };
 
     let query = {
-        'productBrandPermalink': req.params.productBrandPermalink
-    }
+        'productBrandPermalink': req.params.productBrandPermalink,
+    };
 
     //* Price filter
     if ((req.body.minPrice != '') && (req.body.maxPrice != '')) {
@@ -164,15 +165,8 @@ router.post('/brand/:productBrandPermalink', urlencodedParser, (req, res) => {
                 console.log(err);
             }
 
-            if (product.length == 0) {
-                localVar.product = product;
-                localVar.brand.name = '';
-                localVar.brand.permalink = '';
-            } else {
-                localVar.product = product;
-                localVar.brand.name = product[0].productBrand;
-                localVar.brand.permalink = product[0].productBrandPermalink;
-            }
+            localVar.product = product;
+
             res.render('brand', localVar);
         });
 });
