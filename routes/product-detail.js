@@ -7,7 +7,7 @@ router.get('/product/:productPermalink', (req, res) => {
         'page': 'Product',
         'isSingle': true,
     };
-
+    
     Product
         .findOne({
             'productPermalink': req.params.productPermalink
