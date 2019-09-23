@@ -11,6 +11,7 @@ const productSchema = new mongoose.Schema({
     productImg: 'String',
     productDoc: 'String',
     productDesc: 'String',
+    productStock: 'Number'
 });
 
 let Product = mongoose.model('Product', productSchema);
