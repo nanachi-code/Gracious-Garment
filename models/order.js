@@ -10,7 +10,8 @@ const orderSchema = new mongoose.Schema({
     product: 'Array',
     payment: 'String',
     shipping: 'String',
-    totalPrice: 'Number'
+    totalPrice: 'Number',
+    status: 'String'
 });
 
 let Order = mongoose.model('Order', orderSchema);

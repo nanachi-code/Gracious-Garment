@@ -40,7 +40,76 @@
                 <!-- col-md-3 end -->
 
                 <!-- col-md-9 start -->
-                <div class="col-md-9 py-3">
+                <div class="col-md-9 align-self-center">
+                    <!-- search wrapper start -->
+                    <div class="search-wrapper">
+                        <form action="/brand" method="get">
+                            <div class="search-bar">
+                                <input type="text" name="productName" class="form-control" placeholder="Enter keywords...">
+                            </div>
+                            <div class="search-submit">
+                                <button type="submit" class="btn btn-dark">
+                                    Search
+                                    <i class="fas fa-search text-grey pl-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- search wrapper end -->
+                </div>
+                <!-- col-md-9 end -->
+
+            </div>
+            <!-- row end -->
+
+            <!-- row start -->
+            <div class="row py-3 menu">
+                <!-- menu start -->
+                <div class="col-md-10 align-self-center">
+                    <ul>
+                        <li>
+                            <a href="/" <% if (page == 'Home'){%> class="active" <%}%>>Home</a>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="/brand" <% if (page == 'Brands'){%> class="active" <%}%>>Brands</a>
+                            <div class="dropdowns menu-dropdown">
+                                <ul>
+                                    <li>
+                                        <a href="/brand">All brands</a>
+                                    </li>
+                                    <li>
+                                        <a href="/brand/adidas">Adidas</a>
+                                    </li>
+                                    <li>
+                                        <a href="/brand/channel">Channel</a>
+                                    </li>
+                                    <li>
+                                        <a href="/brand/nike">Nike</a>
+                                    </li>
+                                    <li>
+                                        <a href="/brand/gucci">Gucci</a>
+                                    </li>
+                                    <li>
+                                        <a href="/brand/hermes">Hermes</a>
+                                    </li>
+                                    <li>
+                                        <a href="/brand/louis-vuiton">Louis Vuitton</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/contact"<% if (page == 'Contact'){%> class="active" <%}%>>Contact</a>
+                        </li>
+                        <li>
+                            <a href="/about-us"<% if (page == 'About us'){%> class="active" <%}%>>About us</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- menu end -->
+
+                <!-- cart start -->
+                <div class="col-md-2">
                     <!-- cart start -->
                     <div class="float-right cart">
                         <!-- cart btn start -->
@@ -81,7 +150,7 @@
                                         <!-- col md 8 start -->
                                         <div class="col-md-8">
                                             <a href="/cart" class="text-uppercase btn btn-dark float-right text-bold"
-                                                style="font-size: 12px;">
+                                               style="font-size: 12px;">
                                                 View cart
                                             </a>
                                         </div>
@@ -97,94 +166,11 @@
                     </div>
                     <!-- cart end -->
                 </div>
-                <!-- col-md-9 -->
+                <!-- cart end -->
             </div>
             <!-- row end -->
 
-            <!-- row start -->
-            <div class="row py-2">
-                <!-- col-md-3 start -->
-                <div class="col-md-3">
-                    <!-- menu title start -->
-                    <div class="menu-title text-uppercase text-bold">
-                        You are now in
-                    </div>
-                    <!-- menu title end -->
 
-                    <!-- menu toggle start -->
-                    <div class="menu-toggle text-uppercase text-bold">
-                        <!-- In tên trang hiện tại ra -->
-                        <%= page %>
-                    </div>
-                    <!-- menu toggle end -->
-                </div>
-                <!-- col-md-3 end -->
-
-                <!-- col-md-9 start -->
-                <div class="col-md-9">
-                    <!-- search wrapper start -->
-                    <div class="search-wrapper">
-                        <form action="/brand" method="get">
-                            <div class="search-bar">
-                                <input type="text" name="productName" class="form-control" placeholder="Enter keywords...">
-                            </div>
-                            <div class="search-submit">
-                                <button type="submit" class="btn btn-dark">
-                                    Search
-                                    <i class="fas fa-search text-grey pl-2"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- search wrapper end -->
-                </div>
-                <!-- col-md-9 end -->
-            </div>
-            <!-- row end -->
-
-            <!-- menu start -->
-            <div class="pb-4 pt-2 menu">
-                <ul>
-                    <li>
-                        <a href="/" <% if (page == 'Home'){%> class="active" <%}%>>Home</a>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="/brand" <% if (page == 'Brands'){%> class="active" <%}%>>Brands</a>
-                        <div class="dropdowns menu-dropdown">
-                            <ul>
-                                <li>
-                                    <a href="/brand">All brands</a>
-                                </li>
-                                <li>
-                                    <a href="/brand/adidas">Adidas</a>
-                                </li>
-                                <li>
-                                    <a href="/brand/channel">Channel</a>
-                                </li>
-                                <li>
-                                    <a href="/brand/nike">Nike</a>
-                                </li>
-                                <li>
-                                    <a href="/brand/gucci">Gucci</a>
-                                </li>
-                                <li>
-                                    <a href="/brand/hermes">Hermes</a>
-                                </li>
-                                <li>
-                                    <a href="/brand/louis-vuiton">Louis Vuitton</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="/contact"<% if (page == 'Contact'){%> class="active" <%}%>>Contact</a>
-                    </li>
-                    <li>
-                        <a href="/about-us"<% if (page == 'About us'){%> class="active" <%}%>>About us</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- menu end -->
 
             <!-- Kiểm tra xem đây có phải trang single product k, nếu đúng gọi breadcrumb vào -->
             <% if( isSingle ){ %> <%- include('./partials/breadcrumb') %> <% } %> </div> <!-- container end -->

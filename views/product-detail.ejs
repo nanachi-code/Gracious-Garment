@@ -23,9 +23,10 @@
                             <div class="order mb-4">
                                 <div class="mt-4">
                                     <div class="form-group row mr-0">
-                                        <label for="quantity" class="col-md-2">Quantity</label>
+                                        <label for="quantity" class="col-md-2 col-form-label">Quantity</label>
                                         <input type="number" name="product-quantity" class="form-control col-md-1"
-                                            id="product-quantity" value="1">
+                                               id="product-quantity" value="1" min="1" max="<%= product.productStock %>">
+                                        <div class="col-md-9 col-form-label"><%= product.productStock %> piece(s) available</div>
                                     </div>
                                     <button
                                         class="add-cart btn btn-warning text-uppercase text-bold text-white text-12 mr-2">

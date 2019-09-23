@@ -8,3 +8,5 @@
 *.xlsx
 *.osz
 *.osu
+*.xml
+.idea/workspace.xml
