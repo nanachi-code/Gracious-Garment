@@ -12,7 +12,11 @@ router.get('/admin/manage', (req, res) => {
     };
     //* Get all product from database
     Product
-        .find({}, function (err, product) {
+        .find({})
+        .sort({
+            productName: 'ascending'
+        })
+        .exec(function (err, product) {
             if (err) {
                 console.log(err);
             }
