@@ -124,15 +124,17 @@
                 <div class="col-md-9">
                     <!-- search wrapper start -->
                     <div class="search-wrapper">
-                        <div class="search-bar">
-                            <input type="text" name="" id="" class="form-control" placeholder="Enter keywords...">
-                        </div>
-                        <div class="search-submit">
-                            <button type="submit" class="btn btn-dark">
-                                Search
-                                <i class="fas fa-search text-grey pl-2"></i>
-                            </button>
-                        </div>
+                        <form action="/brand" method="get">
+                            <div class="search-bar">
+                                <input type="text" name="productName" class="form-control" placeholder="Enter keywords...">
+                            </div>
+                            <div class="search-submit">
+                                <button type="submit" class="btn btn-dark">
+                                    Search
+                                    <i class="fas fa-search text-grey pl-2"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                     <!-- search wrapper end -->
                 </div>

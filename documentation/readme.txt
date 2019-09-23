@@ -37,4 +37,3 @@ Click "Add to cart" button to add the product to cart.The page will show alert:"
 ---Other---
 
 Select "CONTACT" or "ABOUT US" to see any informtions of the company or send us your feedback.
-Currently, search bar is not functioning so sorry for the incovienience!

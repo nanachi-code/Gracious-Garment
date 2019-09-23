@@ -16,8 +16,22 @@ router.get('/brand', (req, res) => {
             'permalink': '',
         }
     };
+
+    let query = {};
+
+    //* Search
+    if (req.query.productName) {
+        query.productName = {
+            $regex: req.query.productName,
+            $options: 'i'
+        }
+
+        console.log(query);
+
+    }
+
     Product
-        .find({}, function (err, product) {
+        .find(query, function (err, product) {
             if (err) {
                 console.log(err);
             }
