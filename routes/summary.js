@@ -16,8 +16,8 @@ router.get('/summary', (req, res) => {
 })
 
 router.post('/confirm', urlencodedParser, (req, res) => {
-    //console.log(req.body);
     let reqDecoded = JSON.parse(req.body.cartOptions);
+    reqDecoded.status = 'Pending';
     let newOrder = new Order(reqDecoded);
     
     let localVar = {

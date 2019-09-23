@@ -170,6 +170,7 @@ label {
 .text-36 {
     font-size: 36px !important;
 }
+
 .text-70 {
     font-size: 70px !important;
 }
@@ -190,6 +191,10 @@ label {
 .btn-warning {
     background-color: #c9af69 !important;
     border-color: #c9af69 !important;
+}
+
+.text-warning {
+    color: #c9af69 !important;
 }
 
 .btn:hover {
@@ -446,11 +451,13 @@ footer a {
 .category-product-img {
     background-color: #f7f7f7;
 }
+
 .category-product-img img {
     width: 300px;
     height: 400px;
     object-fit: cover;
 }
+
 .category-product-title {
     background-color: #383838;
     padding: 10px;
@@ -487,9 +494,11 @@ footer a {
 .about-us h5 {
     font-weight: bold;
 }
+
 .about-us p {
     font-weight: 500;
 }
+
 .about-us h1 span {
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
@@ -556,15 +565,18 @@ footer a {
     background-color: #64c975;
     border-color: #64c975;
 }
-.confirm-margin{
+
+.confirm-margin {
     margin-top: 160px;
     margin-bottom: 160px;
 }
-.confirm-success{
+
+.confirm-success {
     padding: 20px 0 20px 0;
     background-color: #f0d99c;
 }
-.confirm-thanks{
+
+.confirm-thanks {
     font-size: 30px;
 }
 
@@ -667,6 +679,7 @@ footer a {
     background-size: cover;
     width: 100%;
 }
+
 .brands img {
     max-height: 70px;
 }
@@ -700,7 +713,7 @@ footer a {
 /* ====================================
         Admin
 ======================================= */
-.permalink{
+.permalink {
     color: blue;
 }
 

@@ -75,7 +75,7 @@
                             <th scope="col" class="align-middle">Payment</th>
                             <th scope="col" class="align-middle">Total Price</th>
                             <th scope="col" class="align-middle">Comment</th>
-                            <th scope="col" class="align-middle">Delete</th>
+                            <th scope="col" class="align-middle">Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -107,11 +107,31 @@
                             <td>CASH ON DELIVERY</td>
                             <td>1500$</td>
                             <td>Ship on the weekend</td>
-                            <td class="text-center">
-                               <form class="acc" method="post" action="">
-                                   <input type="hidden" value="" name="_id">
-                                   <button class="delete-order" type="submit"><i class="far fa-trash-alt"></i></button>
-                               </form>
+                            <td>
+                                <form action="" method="post">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" value="Resolved"
+                                            checked>
+                                        <label class="form-check-label  text-success">
+                                            Resolved
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="radio" name="status" value="Canceled">
+                                        <label class="form-check-label text-danger">
+                                            Canceled
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="radio" name="status" value="Pending">
+                                        <label class="form-check-label text-warning">
+                                            Pending
+                                        </label>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                            <button type="submit" class="btn btn-dark">Update</button>
+                                    </div>
+                                </form>
                             </td>
                         </tr>
 

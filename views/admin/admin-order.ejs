@@ -2,7 +2,7 @@
 <section>
     <div class="container py-4">
         <div class="text-36 mb-4">List of Orders</div>
-        
+
         <% if (typeof msg !== 'undefined') { 
             if (msg.type == 'error') { %>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -20,7 +20,7 @@
         </div>
         <%  }
         } %>
-        
+
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead>
@@ -33,7 +33,7 @@
                         <th scope="col" class="align-middle">Payment</th>
                         <th scope="col" class="align-middle">Total Price</th>
                         <th scope="col" class="align-middle">Comment</th>
-                        <th scope="col" class="align-middle">Delete</th>
+                        <th scope="col" class="align-middle">Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,10 +65,30 @@
                         <td class="text-nowrap"><%= element.payment %></td>
                         <td class="text-nowrap">$<%= element.totalPrice %></td>
                         <td><%= element.comment %></td>
-                        <td class="text-center">
-                            <form class="acc" method="post" action="/admin/order">
+                        <td>
+                            <form action="/admin/order" method="post">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="status" value="Resolved" <% if(element.status == 'Resolved'){ %> checked <% } %>>
+                                    <label class="form-check-label  text-success">
+                                        Resolved
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input " type="radio" name="status" value="Canceled" <% if(element.status == 'Canceled'){ %> checked <% } %>>
+                                    <label class="form-check-label text-danger">
+                                        Canceled
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input " type="radio" name="status" value="Pending" <% if(element.status == 'Pending'){ %> checked <% } %>>
+                                    <label class="form-check-label text-warning">
+                                        Pending
+                                    </label>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <button type="submit" class="btn btn-dark">Update</button>
+                                </div>
                                 <input type="hidden" value="<%= element._id %>" name="_id">
-                                <button class="delete-order" type="submit"><i class="far fa-trash-alt"></i></button>
                             </form>
                         </td>
                     </tr>
