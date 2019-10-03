@@ -12,7 +12,6 @@ router.get('/brand', (req, res) => {
         'page': 'Brands',
         'isSingle': false,
         'brand': {
-            'name': '',
             'permalink': '',
         }
     };
@@ -117,8 +116,7 @@ router.get('/brand/:productBrandPermalink', (req, res) => {
                 console.log(err);
             }
             localVar.product = product;
-            localVar.brand.name = product[0].productBrand;
-            localVar.brand.permalink = product[0].productBrandPermalink;
+            localVar.brand.permalink = req.params.productBrandPermalink;
             res.render('brand', localVar);
         });
 });
