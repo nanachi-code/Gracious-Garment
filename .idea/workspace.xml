@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e8945662-edd1-4d92-9e68-2c22a3ed6d24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/footer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/footer.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -14,21 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/html/homepage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="195" column="37" lean-forward="true" selection-start-line="195" selection-start-column="37" selection-end-line="195" selection-end-column="37" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -64,7 +52,6 @@
         <option value="$PROJECT_DIR$/html/admin-list.html" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/views/footer.ejs" />
         <option value="$PROJECT_DIR$/views/header.ejs" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/html/assets/css/style.css" />
@@ -74,11 +61,13 @@
         <option value="$PROJECT_DIR$/html/admin-edit.html" />
         <option value="$PROJECT_DIR$/html/cart.html" />
         <option value="$PROJECT_DIR$/html/category.html" />
-        <option value="$PROJECT_DIR$/html/homepage.html" />
         <option value="$PROJECT_DIR$/html/information.html" />
         <option value="$PROJECT_DIR$/html/payment.html" />
         <option value="$PROJECT_DIR$/html/product-detail.html" />
         <option value="$PROJECT_DIR$/html/summary.html" />
+        <option value="$PROJECT_DIR$/html/homepage.html" />
+        <option value="$PROJECT_DIR$/views/footer.ejs" />
+        <option value="$PROJECT_DIR$/html/contact.html" />
       </list>
     </option>
   </component>
@@ -95,6 +84,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -110,6 +100,19 @@
             <path>
               <item name="Gracious-Garment" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gracious-Garment" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gracious-Garment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gracious-Garment" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gracious-Garment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gracious-Garment" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -121,7 +124,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -186,6 +188,15 @@
       <workItem from="1568191152723" duration="753000" />
       <workItem from="1568219936043" duration="1851000" />
       <workItem from="1568537374376" duration="547000" />
+      <workItem from="1569258300820" duration="609000" />
+      <workItem from="1569265458616" duration="393000" />
+      <workItem from="1569298659163" duration="236000" />
+      <workItem from="1569495328811" duration="40000" />
+      <workItem from="1569553971797" duration="101000" />
+      <workItem from="1569640075500" duration="136000" />
+      <workItem from="1570078666057" duration="789000" />
+      <workItem from="1570194888342" duration="255000" />
+      <workItem from="1570195190727" duration="39000" />
     </task>
     <task id="LOCAL-00001" summary="shipment">
       <created>1567154491415</created>
@@ -261,13 +272,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75550000" />
+    <option name="totallyTimeSpent" value="78148000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24907456" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24851191" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -281,13 +291,13 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32542372" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32405892" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27752978" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24851191" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -299,9 +309,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32542372" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32405892" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -335,9 +345,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="complete checkout" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/html/footer.html" />
-    <entry file="file://$PROJECT_DIR$/html/header.html" />
-    <entry file="file://$PROJECT_DIR$/html/aa.html" />
     <entry file="file://$PROJECT_DIR$/html/assets/css/information.css" />
     <entry file="file://$PROJECT_DIR$/html/assets/css/checkout.css" />
     <entry file="file://$PROJECT_DIR$/routes/about.js" />
@@ -358,16 +365,7 @@
     <entry file="file://$PROJECT_DIR$/public/assets/js/all.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/footer.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/request.ejs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/views/request.ejs" />
     <entry file="file://$PROJECT_DIR$/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -419,13 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/address.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="184" column="37" lean-forward="true" selection-start-line="184" selection-start-column="37" selection-end-line="184" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/admin-add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -466,9 +457,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/information.html" />
-    <entry file="file://$PROJECT_DIR$/html/login.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/html/login.html" />
     <entry file="file://$PROJECT_DIR$/html/payment.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4389">
@@ -525,21 +514,15 @@
     <entry file="file://$PROJECT_DIR$/routes/address.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/archive.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/archive.js" />
     <entry file="file://$PROJECT_DIR$/routes/cart.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/contact.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/shiping-payment.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/single.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/shiping-payment.js" />
+    <entry file="file://$PROJECT_DIR$/routes/single.js" />
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -561,13 +544,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4179">
-          <caret line="199" column="65" selection-start-line="199" selection-start-column="65" selection-end-line="199" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/html/category.html" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -575,13 +552,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/untitled/Product-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="93" lean-forward="true" selection-start-line="7" selection-start-column="93" selection-end-line="7" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="195" column="37" lean-forward="true" selection-start-line="195" selection-start-column="37" selection-end-line="195" selection-end-column="37" />
+        <state relative-caret-position="156">
+          <caret line="191" column="56" selection-start-line="191" selection-start-column="56" selection-end-line="191" selection-end-column="56" />
           <folding>
-            <element signature="n#section#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#1;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="407" column="53" selection-start-line="407" selection-start-column="53" selection-end-line="407" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/address.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="184" column="37" selection-start-line="184" selection-start-column="37" selection-end-line="184" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/about-us.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/footer.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="164" column="33" selection-start-line="164" selection-start-column="33" selection-end-line="164" selection-end-column="33" />
         </state>
       </provider>
     </entry>
